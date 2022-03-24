@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/Pages/index.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
@@ -9,6 +10,8 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var state = context.watch<StateProvider>();
+    var s = context.read<StateProvider>();
     return SizedBox(
       // color: Colors.black54,
       height: 80,
@@ -16,6 +19,8 @@ class CustomAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+         
+          
           HoverButton(
             name: "About",
             index: 0,
@@ -44,7 +49,7 @@ class CustomAppBar extends StatelessWidget {
 
 class HoverButton extends StatefulWidget {
   String name;
-  double index;
+  int index;
   HoverButton({Key? key, required this.name, required this.index})
       : super(key: key);
 
@@ -62,23 +67,24 @@ class _HoverButtonState extends State<HoverButton> {
       height: 35,
       width: 120,
       decoration: BoxDecoration(
-          // color: Colors.grey,
-          borderRadius: BorderRadius.circular(10),
-          gradient: const LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [
-              Colors.deepPurpleAccent,
-              Colors.cyan,
-            ],
-          ),
-          boxShadow: [
-            isSelected
-                ? const BoxShadow(
-                    color: btnColor, offset: Offset(0, 0), blurRadius: 12)
-                : const BoxShadow(
-                    color: Colors.black, offset: Offset(2, 2), blurRadius: 3)
-          ]),
+        // color: Colors.grey,
+        borderRadius: BorderRadius.circular(10),
+        // gradient: const LinearGradient(
+        //   begin: Alignment.topRight,
+        //   end: Alignment.bottomLeft,
+        //   colors: [
+        //     Colors.deepPurpleAccent,
+        //     Colors.cyan,
+        //   ],
+        // ),
+        // boxShadow: [
+        //   isSelected
+        //       ? const BoxShadow(
+        //           color: btnColor, offset: Offset(0, 0), blurRadius: 12)
+        //       : const BoxShadow(
+        //           color: Colors.black, offset: Offset(2, 2), blurRadius: 3)
+        // ]
+      ),
       child: GestureDetector(
         onTap: () => context.read<StateProvider>().setCont(widget.index),
         child: MouseRegion(

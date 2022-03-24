@@ -2,6 +2,8 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
 import 'package:flutter_portfolio_website/custom%20widgets/blurry_container.dart';
+import 'package:flutter_portfolio_website/providers/state_provider.dart';
+import 'package:provider/provider.dart';
 
 class About extends StatelessWidget {
   const About({Key? key}) : super(key: key);
@@ -9,36 +11,34 @@ class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return BlurryContainer(
-      height: 400,
-      bgColor: Colors.black.withOpacity(0.7),
-      blur: 6,
-      width: size.width * 0.9,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Column(
+    var state = context.watch<StateProvider>();
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        BlurryContainer(
+          height: 400,
+          bgColor: Colors.black.withOpacity(0.0),
+          blur: 6,
+          width: 550,
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               RichText(
-                text: const TextSpan(
-                    text: "I",
-                    style: TextStyle(fontSize: 55, color: Colors.white),
-                    children: [
-                      TextSpan(
-                        text: "'",
-                        style: TextStyle(fontSize: 55, color: btnColor),
-                      ),
-                      TextSpan(
-                        text: "M AMYR FEZZENI",
-                        style: TextStyle(fontSize: 55, color: Colors.white),
-                      ),
-                      TextSpan(
-                        text: ".",
-                        style: TextStyle(fontSize: 55, color: btnColor),
-                      )
-                    ]),
+                text: TextSpan(text: "I", style: state.title, children: [
+                  TextSpan(
+                    text: "'",
+                    style: state.secondTitle,
+                  ),
+                  TextSpan(
+                    text: "M AMYR FEZZENI",
+                    style: state.title,
+                  ),
+                  TextSpan(
+                    text: ".",
+                    style: state.secondTitle,
+                  )
+                ]),
               ),
               SizedBox(
                 child: Row(
@@ -46,7 +46,8 @@ class About extends StatelessWidget {
                   children: [
                     DefaultTextStyle(
                       textAlign: TextAlign.left,
-                      style: const TextStyle(fontSize: 20.0, color: btnColor),
+                      style:
+                          TextStyle(fontSize: 20.0, color: state.secondColor),
                       child: AnimatedTextKit(
                         repeatForever: true,
                         pause: const Duration(seconds: 3),
@@ -71,30 +72,33 @@ class About extends StatelessWidget {
                 width: 450,
                 child: Text(
                   textAbout,
-                  style: text18white,
+                  style: state.text18,
                 ),
               )
             ],
           ),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(200),
-              boxShadow: const [
-                BoxShadow(blurRadius: 12, color: btnColor, offset: Offset(0, 0))
-              ],
-            ),
-            child: const CircleAvatar(
-              backgroundColor: Colors.white,
-              radius: 150,
-              child: CircleAvatar(
-                radius: 145,
-                backgroundImage: myImage,
-                backgroundColor: bgColor,
-              ),
+        ),
+        Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(200),
+            boxShadow: [
+              BoxShadow(
+                  blurRadius: 12,
+                  color: state.secondColor,
+                  offset: const Offset(0, 0))
+            ],
+          ),
+          child: CircleAvatar(
+            backgroundColor: Colors.white,
+            radius: 150,
+            child: CircleAvatar(
+              radius: 145,
+              backgroundImage: myImage,
+              backgroundColor: state.bgcolor,
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

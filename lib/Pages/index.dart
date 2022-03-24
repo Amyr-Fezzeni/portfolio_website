@@ -1,10 +1,12 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/Pages/bg.dart';
 import 'package:flutter_portfolio_website/Pages/sections/about.dart';
 import 'package:flutter_portfolio_website/Pages/sections/photography.dart';
 import 'package:flutter_portfolio_website/Pages/sections/projects.dart';
 import 'package:flutter_portfolio_website/Pages/sections/skills.dart';
+import 'package:flutter_portfolio_website/Pages/sections/swiper.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
 import 'package:flutter_portfolio_website/custom%20widgets/appbar.dart';
 import 'package:flutter_portfolio_website/custom%20widgets/progress_bar.dart';
@@ -20,30 +22,11 @@ class Index extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     var state = context.watch<StateProvider>();
+    var s = context.read<StateProvider>();
     return Scaffold(
-      // body: NestedScrollView(
-      //   headerSliverBuilder: (context, e) => [
-      //     SliverAppBar(
-      //       // backgroundColor: bgColor,
-      //       elevation: 5,
-
-      //       shadowColor: Colors.black,
-      //       forceElevated: true,
-      //       title: Row(
-      //         mainAxisAlignment: MainAxisAlignment.center,
-      //         children: [
-      //           HoverButton(name: "About"),
-      //           HoverButton(name: "Skills"),
-      //           HoverButton(name: "Projects"),
-      //           HoverButton(name: "Experience"),
-      //           HoverButton(name: "Contact"),
-      //         ],
-      //       ),
-      //     )
-      //   ],
       body: Stack(
         children: [
-          const Opacity(opacity: 0.5, child: BG()),
+          const Opacity(opacity: 1, child: BG()),
           SingleChildScrollView(
             controller: state.controller,
             // physics: const NeverScrollableScrollPhysics(),
@@ -52,6 +35,7 @@ class Index extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: size.width * 0.1),
               child: Column(
                 children: [
+                  // SwiperInfo()
                   const CustomAppBar(),
                   const SizedBox(
                     height: 100,
@@ -69,7 +53,8 @@ class Index extends StatelessWidget {
                   const SizedBox(
                     height: 100,
                   ),
-                  Photography(),
+                  Container(),
+                  // Photography(),
                   const SizedBox(
                     height: 100,
                   ),
@@ -77,6 +62,26 @@ class Index extends StatelessWidget {
               ),
             ),
           ),
+          Positioned(
+            top: 20,
+            left: 20,
+            child: CupertinoSwitch(
+                value: state.darkMode,
+                onChanged: (b) {
+                  s.changeDarkMode(b);
+                }),
+          ),
+          Positioned(
+              bottom: 50,
+              right: 50,
+              child: FloatingActionButton(
+                onPressed: () => s.setCont(1),
+                child: const Icon(
+                  Icons.keyboard_arrow_up,
+                  color: btnColor,
+                  size: 35,
+                ),
+              ))
         ],
       ),
       // ),

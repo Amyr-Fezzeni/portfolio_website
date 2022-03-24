@@ -9,7 +9,7 @@ class Skill extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return BlurryContainer(
-        bgColor: Colors.black.withOpacity(0.7),
+        bgColor: Colors.black.withOpacity(0.0),
         blur: 6,
         height: 500,
         width: size.width * 0.9,

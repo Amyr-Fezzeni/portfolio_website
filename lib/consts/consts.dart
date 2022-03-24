@@ -2,16 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 const bgColor = Color.fromARGB(255, 193, 207, 2013);
+const darkBgColor = Color.fromARGB(255, 24, 34, 44);
+
 const btnColor = Color.fromARGB(255, 66, 172, 221);
 
 // const btnColor = Color.fromARGB(255, 66, 221, 175);
 const myImage = AssetImage("assets/images/amyr fezzeni.jpg");
 
 TextStyle text18white = GoogleFonts.nunito(color: Colors.white, fontSize: 18);
+TextStyle text18black = GoogleFonts.nunito(color: Colors.black87, fontSize: 18);
 TextStyle text18blue = GoogleFonts.nunito(color: btnColor, fontSize: 18);
 
 TextStyle titleBlue = GoogleFonts.nunito(color: btnColor, fontSize: 50);
 TextStyle titleWhite = GoogleFonts.nunito(color: Colors.white, fontSize: 50);
+TextStyle titleblack = GoogleFonts.nunito(color: Colors.black, fontSize: 50);
 
 // about
 TextStyle key =
