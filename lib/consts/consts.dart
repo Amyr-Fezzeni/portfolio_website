@@ -7,15 +7,20 @@ const darkBgColor = Color.fromARGB(255, 24, 34, 44);
 const btnColor = Color.fromARGB(255, 66, 172, 221);
 
 // const btnColor = Color.fromARGB(255, 66, 221, 175);
-const myImage = AssetImage("assets/images/amyr fezzeni.jpg");
+const myImage = AssetImage("assets/images/profile.jpg");
 
-TextStyle text18white = GoogleFonts.nunito(color: Colors.white, fontSize: 18);
-TextStyle text18black = GoogleFonts.nunito(color: Colors.black87, fontSize: 18);
-TextStyle text18blue = GoogleFonts.nunito(color: btnColor, fontSize: 18);
+TextStyle text18white = GoogleFonts.arimaMadurai(color: Colors.white, fontSize: 18);
+TextStyle text18black = GoogleFonts.arimaMadurai(color: Colors.black87, fontSize: 18);
+TextStyle text18blue = GoogleFonts.arimaMadurai(color: btnColor, fontSize: 18);
 
 TextStyle titleBlue = GoogleFonts.nunito(color: btnColor, fontSize: 50);
 TextStyle titleWhite = GoogleFonts.nunito(color: Colors.white, fontSize: 50);
 TextStyle titleblack = GoogleFonts.nunito(color: Colors.black, fontSize: 50);
+
+TextStyle titleAnton =
+    GoogleFonts.hammersmithOne(color: Colors.white, fontSize: 50);
+TextStyle titleAntonblack =
+    GoogleFonts.hammersmithOne(color: Colors.black87, fontSize: 50);
 
 // about
 TextStyle key =

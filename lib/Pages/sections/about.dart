@@ -31,7 +31,7 @@ class About extends StatelessWidget {
                     style: state.secondTitle,
                   ),
                   TextSpan(
-                    text: "M AMYR FEZZENI",
+                    text: "M Amyr Fezzeni",
                     style: state.title,
                   ),
                   TextSpan(

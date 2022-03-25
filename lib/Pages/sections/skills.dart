@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/custom%20widgets/blurry_container.dart';
-import 'package:flutter_portfolio_website/custom%20widgets/progress_bar.dart';
+import 'package:flutter_portfolio_website/custom%20widgets/skill/progress_bar_skill.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/state_provider.dart';
 
 class Skill extends StatelessWidget {
   const Skill({Key? key}) : super(key: key);
@@ -8,23 +11,48 @@ class Skill extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+    var state = context.watch<StateProvider>();
     return BlurryContainer(
         bgColor: Colors.black.withOpacity(0.0),
         blur: 6,
         height: 500,
         width: size.width * 0.9,
         child: Column(
-          children: const [
-            ProgressBarSkill(title: "Python", level: 95),
-            ProgressBarSkill(title: "Flutter", level: 90),
-            ProgressBarSkill(title: "Dart", level: 90),
-            ProgressBarSkill(title: "Java", level: 80),
-            ProgressBarSkill(title: "NodeJS", level: 75),
-            ProgressBarSkill(title: "State Management", level: 90),
-            ProgressBarSkill(title: "Responsive UI", level: 75),
-            ProgressBarSkill(title: "SQL", level: 75),
-            ProgressBarSkill(title: "MongoDB", level: 85),
-            ProgressBarSkill(title: "Firebase", level: 85),
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 1,
+                  width: 50,
+                  color: Colors.grey,
+                ),
+                Text(
+                  "   Skills   ",
+                  style: state.text18,
+                ),
+                Container(
+                  height: 1,
+                  width: 50,
+                  color: Colors.grey,
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            ProgressBarSkill(title: "Python", level: state.skil ? 95 : 0),
+            ProgressBarSkill(title: "Flutter", level: state.skil ? 90 : 0),
+            ProgressBarSkill(title: "Dart", level: state.skil ? 90 : 0),
+            ProgressBarSkill(title: "Java", level: state.skil ? 80 : 0),
+            ProgressBarSkill(title: "NodeJS", level: state.skil ? 75 : 0),
+            ProgressBarSkill(
+                title: "State Management", level: state.skil ? 90 : 0),
+            ProgressBarSkill(
+                title: "Responsive UI", level: state.skil ? 75 : 0),
+            ProgressBarSkill(title: "SQL", level: state.skil ? 75 : 0),
+            ProgressBarSkill(title: "MongoDB", level: state.skil ? 85 : 0),
+            ProgressBarSkill(title: "Firebase", level: state.skil ? 85 : 0),
           ],
         ));
   }
