@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
+import 'package:flutter_portfolio_website/custom%20widgets/about/profile.dart';
 import 'package:flutter_portfolio_website/custom%20widgets/blurry_container.dart';
 import 'package:flutter_portfolio_website/providers/state_provider.dart';
 import 'package:provider/provider.dart';
@@ -78,26 +79,7 @@ class About extends StatelessWidget {
             ],
           ),
         ),
-        Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(200),
-            boxShadow: [
-              BoxShadow(
-                  blurRadius: 12,
-                  color: state.secondColor,
-                  offset: const Offset(0, 0))
-            ],
-          ),
-          child: CircleAvatar(
-            backgroundColor: Colors.white,
-            radius: 150,
-            child: CircleAvatar(
-              radius: 145,
-              backgroundImage: myImage,
-              backgroundColor: state.bgcolor,
-            ),
-          ),
-        ),
+        const Profile(),
       ],
     );
   }
