@@ -8,7 +8,6 @@ import 'package:flutter_portfolio_website/Pages/sections/skills.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
 import 'package:flutter_portfolio_website/custom%20widgets/appbar/appbar.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-
 import 'package:provider/provider.dart';
 import '../../providers/state_provider.dart';
 
@@ -70,6 +69,7 @@ class _IndexState extends State<Index> {
               ),
             ),
           ),
+          // dark & light mode switch
           Positioned(
             top: 20,
             left: 20,
@@ -80,6 +80,7 @@ class _IndexState extends State<Index> {
                   s.changeDarkMode(b);
                 }),
           ),
+          // up button
           Positioned(
               bottom: 20,
               right: 20,
@@ -100,6 +101,7 @@ class _IndexState extends State<Index> {
                   ),
                 ),
               )),
+              // menu button
           Positioned(
               top: 20,
               right: 20,

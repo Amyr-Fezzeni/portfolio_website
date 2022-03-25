@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/custom%20widgets/blurry_container.dart';
 import 'package:flutter_portfolio_website/custom%20widgets/skill/progress_bar_skill.dart';
 import 'package:provider/provider.dart';
-
 import '../../providers/state_provider.dart';
 
 class Skill extends StatelessWidget {

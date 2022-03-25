@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio_website/consts/consts.dart';
 import 'package:flutter_portfolio_website/custom%20widgets/blurry_container.dart';
 import 'package:provider/provider.dart';
 
