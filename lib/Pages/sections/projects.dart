@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/custom%20widgets/blurry_container.dart';
+import 'package:flutter_portfolio_website/custom%20widgets/projects/project_card.dart';
 import 'package:provider/provider.dart';
 
 import '../../providers/state_provider.dart';
@@ -11,10 +12,10 @@ class Projects extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     var state = context.watch<StateProvider>();
-    return BlurryContainer(
+    return Container(
       // bgColor: Colors.blueGrey.withOpacity(0.8),
-      height: 500,
-      width: size.width * 0.9,
+      // height: 500,
+      width: size.width * 0.8,
       child: Column(
         children: [
           Row(
@@ -39,7 +40,11 @@ class Projects extends StatelessWidget {
           const SizedBox(
             height: 40,
           ),
-          
+          Wrap(
+            children: state.projects
+                .map((model) => ProjectCard(model: model))
+                .toList(),
+          )
           // RichText(
           //   text: TextSpan(text: "const", style: key2, children: [
           //     TextSpan(

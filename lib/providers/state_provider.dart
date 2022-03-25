@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
 import 'package:flutter_portfolio_website/custom%20widgets/photography/h_picture.dart';
+import 'package:flutter_portfolio_website/models/project_model.dart';
 
 class StateProvider with ChangeNotifier {
 // dark & light mode
@@ -104,4 +105,13 @@ class StateProvider with ChangeNotifier {
 
     notifyListeners();
   }
+
+  List<ProjectModel> projects = [
+    ProjectModel(name: "XO Game", pic: "xo_game.png", languages: ["Flutter"]),
+    ProjectModel(name: "Truth Or Dare", pic: "truthordare.png", languages: ["Flutter"]),
+    ProjectModel(name: "Aphrodite Academy", pic: "aphrodite.png", languages: ["Flutter", "Python"]),
+    ProjectModel(name: "Gark", pic: "gark.png", languages: ["Flutter"]),
+    ProjectModel(name: "Astro Dating App", pic: "astro_logo.png", languages: ["Flutter", "Python"]),
+    ProjectModel(name: "Jumia clone", pic: "logo_mini.png", languages: ["Flutter", "Python"]),
+  ];
 }
