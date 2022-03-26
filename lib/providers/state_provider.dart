@@ -106,12 +106,61 @@ class StateProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  List<ProjectModel> projects = [
+  List<ProjectModel> allProjects = [
     ProjectModel(name: "XO Game", pic: "xo_game.png", languages: ["Flutter"]),
-    ProjectModel(name: "Truth Or Dare", pic: "truthordare.png", languages: ["Flutter"]),
-    ProjectModel(name: "Aphrodite Academy", pic: "aphrodite.png", languages: ["Flutter", "Python"]),
-    ProjectModel(name: "Gark", pic: "gark.png", languages: ["Flutter"]),
-    ProjectModel(name: "Astro Dating App", pic: "astro_logo.png", languages: ["Flutter", "Python"]),
-    ProjectModel(name: "Jumia clone", pic: "logo_mini.png", languages: ["Flutter", "Python"]),
+    ProjectModel(
+        name: "Truth Or Dare", pic: "truthordare.png", languages: ["Flutter"]),
+    ProjectModel(
+        name: "Aphrodite Academy",
+        pic: "_aphrodite.jpg",
+        languages: ["Flutter", "Python"]),
+    ProjectModel(name: "Jarvis", pic: "jarvis.gif", languages: ["Python"]),
+    ProjectModel(
+        name: "Astro Dating App",
+        pic: "astro_logo.png",
+        languages: ["Flutter", "Python"]),
+    ProjectModel(
+        name: "Jumia clone",
+        pic: "logo_mini.png",
+        languages: ["Flutter", "Python"]),
+    ProjectModel(
+        name: "Bank management", pic: "cptbank.PNG", languages: ["Java"]),
+    ProjectModel(
+        name: "Horoscope",
+        pic: "horoscope.png",
+        languages: ["Flutter", "Python"]),
+    ProjectModel(
+        name: "Facial reconition", pic: "f.PNG", languages: ["Python"]),
+    ProjectModel(name: "Snake Game", pic: "snake_.jpg", languages: ["Python"]),
+    ProjectModel(name: "Text to Speech", pic: "tts.png", languages: ["Python"]),
   ];
+
+  List<ProjectModel> projects = [];
+
+  bool isLanguage(ProjectModel data, String language) {
+    for (var l in data.languages) {
+      if (l == language) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  bool isLoading = false;
+  filterProject(String language) async {
+    if (isLoading) {
+      return;
+    }
+    projects = [];
+    isLoading = true;
+    notifyListeners();
+    for (var model in allProjects) {
+      if (isLanguage(model, language) || language == "all") {
+        await Future.delayed(const Duration(milliseconds: 100));
+        projects.add(model);
+        notifyListeners();
+      }
+    }
+    isLoading = false;
+  }
 }

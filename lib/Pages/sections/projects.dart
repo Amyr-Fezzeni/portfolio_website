@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio_website/consts/consts.dart';
 import 'package:flutter_portfolio_website/custom%20widgets/blurry_container.dart';
 import 'package:flutter_portfolio_website/custom%20widgets/projects/project_card.dart';
+import 'package:flutter_portfolio_website/custom%20widgets/projects/project_card_animated.dart';
 import 'package:provider/provider.dart';
 
 import '../../providers/state_provider.dart';
@@ -14,7 +16,7 @@ class Projects extends StatelessWidget {
     var state = context.watch<StateProvider>();
     return Container(
       // bgColor: Colors.blueGrey.withOpacity(0.8),
-      // height: 500,
+      height: 840,
       width: size.width * 0.8,
       child: Column(
         children: [
@@ -40,9 +42,131 @@ class Projects extends StatelessWidget {
           const SizedBox(
             height: 40,
           ),
+          const SizedBox(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: 60,
+                height: 50,
+                padding: const EdgeInsets.symmetric(vertical: 5),
+                decoration: BoxDecoration(
+                    border: Border.all(width: 1, color: btnColor),
+                    borderRadius: BorderRadius.circular(12)),
+                child: OutlinedButton(
+                  onPressed: () =>
+                      context.read<StateProvider>().filterProject("all"),
+                  child: Text(
+                    "All",
+                    style: state.text18,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                width: 20,
+              ),
+              Container(
+                width: 160,
+                height: 50,
+                padding: const EdgeInsets.symmetric(vertical: 5),
+                decoration: BoxDecoration(
+                    border: Border.all(width: 1, color: btnColor),
+                    borderRadius: BorderRadius.circular(12)),
+                child: OutlinedButton(
+                  onPressed: () =>
+                      context.read<StateProvider>().filterProject("Flutter"),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Image.asset(
+                        "assets/projects/flutter.png",
+                        width: 50,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "Flutter",
+                        style: state.text18,
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(
+                width: 20,
+              ),
+              Container(
+                width: 160,
+                height: 50,
+                padding: const EdgeInsets.symmetric(vertical: 5),
+                decoration: BoxDecoration(
+                    border: Border.all(width: 1, color: btnColor),
+                    borderRadius: BorderRadius.circular(12)),
+                child: OutlinedButton(
+                  onPressed: () =>
+                      context.read<StateProvider>().filterProject("Python"),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Image.asset(
+                        "assets/projects/python.png",
+                        width: 50,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "Python",
+                        style: state.text18,
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(
+                width: 20,
+              ),
+              Container(
+                width: 160,
+                height: 50,
+                padding: const EdgeInsets.symmetric(vertical: 5),
+                decoration: BoxDecoration(
+                    border: Border.all(width: 1, color: btnColor),
+                    borderRadius: BorderRadius.circular(12)),
+                child: OutlinedButton(
+                  onPressed: () =>
+                      context.read<StateProvider>().filterProject("Java"),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Image.asset(
+                        "assets/projects/java.png",
+                        width: 50,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "java",
+                        style: state.text18,
+                      )
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
+          const Divider(
+            color: btnColor,
+            thickness: 1,
+            height: 50,
+          ),
           Wrap(
             children: state.projects
-                .map((model) => ProjectCard(model: model))
+                .map((model) => ProjectCardAnimated(model: model))
                 .toList(),
           )
           // RichText(

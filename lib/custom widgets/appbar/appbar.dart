@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/custom%20widgets/appbar/hover_button.dart';
 
-
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({Key? key}) : super(key: key);
 
@@ -18,15 +17,15 @@ class CustomAppBar extends StatelessWidget {
           ),
           HoverButton(
             name: "Skills",
-            index: 550,
+            index: 680,
           ),
           HoverButton(
             name: "Projects",
-            index: 1150,
+            index: 1350,
           ),
           HoverButton(
             name: "Photography",
-            index: 1850,
+            index: 2350,
           ),
           HoverButton(
             name: "Contact",

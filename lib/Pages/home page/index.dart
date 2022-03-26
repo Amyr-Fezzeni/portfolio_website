@@ -22,8 +22,10 @@ class _IndexState extends State<Index> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(milliseconds: 500))
-        .then((value) => context.read<StateProvider>().initPhotos());
+    Future.delayed(const Duration(milliseconds: 500)).then((value) {
+      context.read<StateProvider>().initPhotos();
+      context.read<StateProvider>().filterProject("all");
+    });
   }
 
   @override
@@ -51,19 +53,19 @@ class _IndexState extends State<Index> {
                   ),
                   const About(),
                   const SizedBox(
-                    height: 100,
+                    height: 150,
                   ),
                   const Skill(),
                   const SizedBox(
-                    height: 100,
+                    height: 150,
                   ),
                   const Projects(),
                   const SizedBox(
-                    height: 100,
+                    height: 150,
                   ),
                   Photography(),
                   const SizedBox(
-                    height: 100,
+                    height: 150,
                   ),
                 ],
               ),
@@ -101,7 +103,7 @@ class _IndexState extends State<Index> {
                   ),
                 ),
               )),
-              // menu button
+          // menu button
           Positioned(
               top: 20,
               right: 20,
@@ -121,23 +123,31 @@ class _IndexState extends State<Index> {
                           backgroundColor: Colors.blueGrey,
                           foregroundColor: Colors.white,
                           child: const Icon(Icons.person),
-                          onTap: () => context.read<StateProvider>().setControllerPosition(0)),
+                          onTap: () => context
+                              .read<StateProvider>()
+                              .setControllerPosition(0)),
                       SpeedDialChild(
                           backgroundColor: Colors.blueGrey,
                           foregroundColor: Colors.white,
                           child: const Icon(Icons.sort_outlined),
-                          onTap: () => context.read<StateProvider>().setControllerPosition(550)),
+                          onTap: () => context
+                              .read<StateProvider>()
+                              .setControllerPosition(680)),
                       SpeedDialChild(
                           backgroundColor: Colors.blueGrey,
                           foregroundColor: Colors.white,
                           child:
                               const Icon(Icons.precision_manufacturing_sharp),
-                          onTap: () => context.read<StateProvider>().setControllerPosition(1150)),
+                          onTap: () => context
+                              .read<StateProvider>()
+                              .setControllerPosition(1350)),
                       SpeedDialChild(
                           backgroundColor: Colors.blueGrey,
                           foregroundColor: Colors.white,
                           child: const Icon(Icons.camera),
-                          onTap: () => context.read<StateProvider>().setControllerPosition(1850)),
+                          onTap: () => context
+                              .read<StateProvider>()
+                              .setControllerPosition(2350)),
                     ]),
               )),
         ],
