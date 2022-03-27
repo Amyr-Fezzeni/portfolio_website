@@ -1,13 +1,7 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_glow/flutter_glow.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
 import 'package:flutter_portfolio_website/custom%20widgets/projects/background_animated_color.dart';
 import 'package:flutter_portfolio_website/models/project_model.dart';
-import 'package:provider/provider.dart';
-
-import '../../providers/state_provider.dart';
 
 class ProjectCard extends StatefulWidget {
   final ProjectModel model;
@@ -21,6 +15,7 @@ class _ProjectCardState extends State<ProjectCard>
     with SingleTickerProviderStateMixin {
   late AnimationController controller;
 
+  // ignore: prefer_typing_uninitialized_variables
   late final _animation;
   @override
   void initState() {
@@ -60,10 +55,10 @@ class _ProjectCardState extends State<ProjectCard>
           width: 400,
           child: Stack(
             children: [
-              BGColors(),
+              const BGColors(),
               Positioned(
                 child: Center(
-                  child: Container(
+                  child: SizedBox(
                     height: 190,
                     width: 190,
                     child: ClipRRect(

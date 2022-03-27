@@ -20,7 +20,7 @@ class HoverButton extends StatefulWidget {
 class _HoverButtonState extends State<HoverButton> {
   bool isSelected = false;
 
- 
+  
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class _HoverButtonState extends State<HoverButton> {
       ),
       child: GestureDetector(
         onTap: () =>
-            context.read<StateProvider>().setControllerPosition(widget.index),
+            context.read<StateProvider>().jumpToSection(widget.index),
         child: MouseRegion(
             onEnter: (event) => setState(() {
                   isSelected = true;

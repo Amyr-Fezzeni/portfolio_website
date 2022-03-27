@@ -1,5 +1,5 @@
 name: flutter_portfolio_website
-description: A new Flutter project.
+description: Amyr Fezzeni Portfolio.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -40,6 +40,8 @@ dependencies:
   card_swiper: ^2.0.1
   flutter_glow: ^0.2.0
   flutter_speed_dial: ^4.6.6
+  url_launcher: ^6.0.9
+  flutter_neumorphic: ^3.2.0
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +71,8 @@ flutter:
     - assets/instagram/vertical/
     - assets/instagram/horizontal/
     - assets/projects/
+    - assets/certifications/
+    - assets/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

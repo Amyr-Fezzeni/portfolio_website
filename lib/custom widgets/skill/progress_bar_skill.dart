@@ -17,7 +17,7 @@ class _SkillState extends State<ProgressBarSkill> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 5),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       child: Row(
         children: [
           SizedBox(
@@ -67,7 +67,7 @@ class FAProgressBar extends StatefulWidget {
     this.changeProgressColor = const Color(0xFF5F4B8B),
     this.displayText,
     this.displayTextStyle =
-        const TextStyle(color: const Color(0xFFFFFFFF), fontSize: 12),
+        const TextStyle(color: Color(0xFFFFFFFF), fontSize: 12),
   })  : _borderRadius = borderRadius ?? BorderRadius.circular(8),
         super(key: key);
   final int currentValue;
@@ -141,11 +141,10 @@ class _FAProgressBarState extends State<FAProgressBar>
     _controller.dispose();
     super.dispose();
   }
-  
 }
 
 class AnimatedProgressBar extends AnimatedWidget {
-  AnimatedProgressBar({
+  const AnimatedProgressBar({
     Key? key,
     required Animation<double> animation,
     required this.widget,
@@ -158,6 +157,7 @@ class AnimatedProgressBar extends AnimatedWidget {
     return y < 0 ? 0 : ((y > 1) ? 1 : y);
   }
 
+  @override
   Widget build(BuildContext context) {
     final animation = listenable as Animation<double>;
     Color progressColor = widget.progressColor;
@@ -189,10 +189,10 @@ class AnimatedProgressBar extends AnimatedWidget {
     if (widget.displayText != null) {
       Widget textProgress = Container(
         alignment: widget.direction == Axis.horizontal
-            ? FractionalOffset(0.95, 0.5)
+            ? const FractionalOffset(0.95, 0.5)
             : (widget.verticalDirection == VerticalDirection.up
-                ? FractionalOffset(0.5, 0.05)
-                : FractionalOffset(0.5, 0.95)),
+                ? const FractionalOffset(0.5, 0.05)
+                : const FractionalOffset(0.5, 0.95)),
         child: Text(
           (animation.value * widget.maxValue).toInt().toString() +
               widget.displayText!,

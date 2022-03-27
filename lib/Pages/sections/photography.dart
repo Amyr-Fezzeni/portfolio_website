@@ -1,20 +1,17 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio_website/custom%20widgets/blurry_container.dart';
 import 'package:provider/provider.dart';
 import '../../providers/state_provider.dart';
 
 class Photography extends StatelessWidget {
-  Photography({Key? key}) : super(key: key);
+  const Photography({Key? key}) : super(key: key);
 
-  final ScrollController _controller = ScrollController();
+ 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     var state = context.watch<StateProvider>();
-    return BlurryContainer(
-        // bgColor: Colors.black.withOpacity(0.7),
-        blur: 6,
+    return SizedBox(
         height: 600,
         width: size.width,
         child: Column(
@@ -29,7 +26,7 @@ class Photography extends StatelessWidget {
                 ),
                 Text(
                   "   Photography   ",
-                  style: state.text18,
+                  style: state.title,
                 ),
                 Container(
                   height: 1,
@@ -41,7 +38,7 @@ class Photography extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
+                SizedBox(
                   height: 500,
                   width: 400,
                   child: Swiper(
@@ -58,7 +55,6 @@ class Photography extends StatelessWidget {
                     curve: Curves.easeInOut,
                     layout: SwiperLayout.TINDER,
                     onIndexChanged: (index) {
-                      // context.read<StateProvider>().changeList(index);
                     },
                   ),
                 ),
@@ -80,7 +76,6 @@ class Photography extends StatelessWidget {
                     curve: Curves.easeInOut,
                     layout: SwiperLayout.TINDER,
                     onIndexChanged: (index) {
-                      // context.read<StateProvider>().changeList(index);
                     },
                   ),
                 ),

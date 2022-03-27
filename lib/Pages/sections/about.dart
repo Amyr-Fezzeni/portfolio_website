@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_glow/flutter_glow.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
 import 'package:flutter_portfolio_website/custom%20widgets/about/profile.dart';
 import 'package:flutter_portfolio_website/custom%20widgets/blurry_container.dart';
@@ -11,13 +12,13 @@ class About extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    // var size = MediaQuery.of(context).size;
     var state = context.watch<StateProvider>();
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         BlurryContainer(
-          height: 400,
+          height: 450,
           bgColor: Colors.black.withOpacity(0.0),
           blur: 6,
           width: 550,
@@ -67,15 +68,35 @@ class About extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 70,
+                height: 45,
               ),
-              Container(
+              SizedBox(
                 width: 450,
                 child: Text(
                   textAbout,
                   style: state.text18,
                 ),
-              )
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Center(
+                  child: GlowButton(
+                      width: 220,
+                      glowColor: btnColor,
+                      color: btnColor,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          const Icon(
+                            Icons.download,
+                            color: Colors.white,
+                          ),
+                          Text("Download Resume", style: text18white),
+                        ],
+                      ),
+                      onPressed: () =>
+                          context.read<StateProvider>().downloadFile()))
             ],
           ),
         ),

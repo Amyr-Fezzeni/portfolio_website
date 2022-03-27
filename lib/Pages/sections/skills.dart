@@ -14,7 +14,7 @@ class Skill extends StatelessWidget {
     return BlurryContainer(
         bgColor: Colors.black.withOpacity(0.0),
         blur: 6,
-        height: 500,
+        height: 650,
         width: size.width * 0.9,
         child: Column(
           children: [
@@ -28,7 +28,7 @@ class Skill extends StatelessWidget {
                 ),
                 Text(
                   "   Skills   ",
-                  style: state.text18,
+                  style: state.title,
                 ),
                 Container(
                   height: 1,

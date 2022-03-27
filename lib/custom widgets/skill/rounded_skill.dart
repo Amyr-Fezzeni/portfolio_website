@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
 import 'package:flutter_portfolio_website/providers/state_provider.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class Skill extends StatefulWidget {
@@ -21,12 +20,11 @@ class _SkillState extends State<Skill> {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
       padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-      // color: Colors.amber,
       child: TweenAnimationBuilder(
         tween: Tween(begin: 0.0, end: widget.level / 100),
         duration: const Duration(seconds: 3),
         builder: (context, double value, child) {
-          int percentage = (100 * value).ceil();
+          // int percentage = (100 * value).ceil();
           return SizedBox(
             width: widget.circleskill,
             height: widget.circleskill,

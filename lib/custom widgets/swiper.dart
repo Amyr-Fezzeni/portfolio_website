@@ -14,8 +14,8 @@ class SwiperInfo extends StatefulWidget {
 class _SwiperInfoState extends State<SwiperInfo> {
   @override
   Widget build(BuildContext context) {
-    final List<Widget> allCards = [About(), Skill(), Projects()];
-    return Container(
+    final List<Widget> allCards = [const About(),const  Skill(), const Projects()];
+    return SizedBox(
       child: Swiper(
         itemBuilder: (BuildContext context, int index) {
           return allCards[index];

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio_website/consts/consts.dart';
-
 class HPicture extends StatelessWidget {
   final String link;
   final double aspect;

@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/Pages/background/bg.dart';
 import 'package:flutter_portfolio_website/Pages/sections/about.dart';
+import 'package:flutter_portfolio_website/Pages/sections/certifications.dart';
+import 'package:flutter_portfolio_website/Pages/sections/contact.dart';
 import 'package:flutter_portfolio_website/Pages/sections/photography.dart';
 import 'package:flutter_portfolio_website/Pages/sections/projects.dart';
 import 'package:flutter_portfolio_website/Pages/sections/skills.dart';
@@ -46,25 +48,33 @@ class _IndexState extends State<Index> {
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
               child: Column(
-                children: [
-                  const CustomAppBar(),
-                  const SizedBox(
+                children: const [
+                  CustomAppBar(),
+                  SizedBox(
                     height: 100,
                   ),
-                  const About(),
-                  const SizedBox(
+                  About(),
+                  SizedBox(
                     height: 150,
                   ),
-                  const Skill(),
-                  const SizedBox(
+                  Skill(),
+                  SizedBox(
                     height: 150,
                   ),
-                  const Projects(),
-                  const SizedBox(
+                  Projects(),
+                  SizedBox(
+                    height: 150,
+                  ),
+                  Certifications(),
+                  SizedBox(
                     height: 150,
                   ),
                   Photography(),
-                  const SizedBox(
+                  SizedBox(
+                    height: 150,
+                  ),
+                  Contact(),
+                  SizedBox(
                     height: 150,
                   ),
                 ],
@@ -123,31 +133,39 @@ class _IndexState extends State<Index> {
                           backgroundColor: Colors.blueGrey,
                           foregroundColor: Colors.white,
                           child: const Icon(Icons.person),
-                          onTap: () => context
-                              .read<StateProvider>()
-                              .setControllerPosition(0)),
+                          onTap: () =>
+                              context.read<StateProvider>().jumpToSection(0)),
                       SpeedDialChild(
                           backgroundColor: Colors.blueGrey,
                           foregroundColor: Colors.white,
                           child: const Icon(Icons.sort_outlined),
-                          onTap: () => context
-                              .read<StateProvider>()
-                              .setControllerPosition(680)),
+                          onTap: () =>
+                              context.read<StateProvider>().jumpToSection(1)),
                       SpeedDialChild(
                           backgroundColor: Colors.blueGrey,
                           foregroundColor: Colors.white,
                           child:
                               const Icon(Icons.precision_manufacturing_sharp),
-                          onTap: () => context
-                              .read<StateProvider>()
-                              .setControllerPosition(1350)),
+                          onTap: () =>
+                              context.read<StateProvider>().jumpToSection(2)),
+                      SpeedDialChild(
+                          backgroundColor: Colors.blueGrey,
+                          foregroundColor: Colors.white,
+                          child: const Icon(Icons.assignment_turned_in_rounded),
+                          onTap: () =>
+                              context.read<StateProvider>().jumpToSection(3)),
                       SpeedDialChild(
                           backgroundColor: Colors.blueGrey,
                           foregroundColor: Colors.white,
                           child: const Icon(Icons.camera),
-                          onTap: () => context
-                              .read<StateProvider>()
-                              .setControllerPosition(2350)),
+                          onTap: () =>
+                              context.read<StateProvider>().jumpToSection(4)),
+                      SpeedDialChild(
+                          backgroundColor: Colors.blueGrey,
+                          foregroundColor: Colors.white,
+                          child: const Icon(Icons.mail),
+                          onTap: () =>
+                              context.read<StateProvider>().jumpToSection(5)),
                     ]),
               )),
         ],

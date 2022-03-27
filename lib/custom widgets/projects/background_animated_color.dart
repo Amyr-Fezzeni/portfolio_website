@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class BGColors extends StatefulWidget {
@@ -13,8 +11,8 @@ class _BGColorsState extends State<BGColors> {
   List<Color> colorList = [
     Colors.red,
     Colors.blue,
-    Color.fromARGB(255, 255, 59, 229),
-    Color.fromARGB(255, 5, 133, 219),
+    const Color.fromARGB(255, 255, 59, 229),
+    const Color.fromARGB(255, 5, 133, 219),
   ];
   List<Alignment> alignmentList = [
     Alignment.bottomLeft,
@@ -24,12 +22,12 @@ class _BGColorsState extends State<BGColors> {
   ];
   int index = 0;
   Color bottomColor = Colors.red;
-  Color topColor = Color.fromARGB(255, 5, 133, 219);
+  Color topColor = const Color.fromARGB(255, 5, 133, 219);
   Alignment begin = Alignment.bottomLeft;
   Alignment end = Alignment.topRight;
   @override
   void initState() {
-    // TODO: implement initState
+
     super.initState();
     Future.delayed(const Duration(milliseconds: 100))
         .then((value) => setState(() {

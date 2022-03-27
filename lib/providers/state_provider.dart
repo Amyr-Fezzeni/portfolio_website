@@ -1,7 +1,11 @@
-import 'package:flutter/cupertino.dart';
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:html';
+
+import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
 import 'package:flutter_portfolio_website/custom%20widgets/photography/h_picture.dart';
 import 'package:flutter_portfolio_website/models/project_model.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class StateProvider with ChangeNotifier {
 // dark & light mode
@@ -10,6 +14,7 @@ class StateProvider with ChangeNotifier {
   var title = titleAnton;
   var bgcolor = darkBgColor;
   var secondColor = btnColor;
+  var invertedColor = Colors.white;
   var secondTitle = titleBlue;
   changeDarkMode(b) {
     if (!b) {
@@ -18,15 +23,16 @@ class StateProvider with ChangeNotifier {
       secondColor = btnColor;
       title = titleAntonblack;
       secondTitle = titleBlue;
+      invertedColor = Colors.black;
     } else {
       text18 = text18white;
+      invertedColor = Colors.white;
       bgcolor = darkBgColor;
       secondColor = btnColor;
       title = titleAnton;
       secondTitle = titleBlue;
     }
     darkMode = b;
-    print(darkMode);
     notifyListeners();
   }
 
@@ -47,6 +53,39 @@ class StateProvider with ChangeNotifier {
   setControllerPosition(int index) {
     controller.animateTo(index.toDouble(),
         duration: const Duration(seconds: 1), curve: Curves.easeInOut);
+  }
+
+  final _about = 50;
+  final _skil = 780;
+  final _project = 1570;
+  final _certification = 2620;
+  final _photography = 3700;
+  final _contact = 4450;
+
+  jumpToSection(int index) {
+    switch (index) {
+      case 0:
+        setControllerPosition(_about);
+        break;
+      case 1:
+        setControllerPosition(_skil);
+        break;
+      case 2:
+        setControllerPosition(_project);
+        break;
+      case 3:
+        setControllerPosition(_certification);
+        break;
+      case 4:
+        setControllerPosition(_photography);
+        break;
+      case 5:
+        setControllerPosition(_contact);
+        break;
+
+      default:
+        break;
+    }
   }
 
   //button up on & off
@@ -101,39 +140,8 @@ class StateProvider with ChangeNotifier {
           link: _verticalPhotos[i],
           aspect: 5.3 / 4,
         ));
-    print(index);
-
     notifyListeners();
   }
-
-  List<ProjectModel> allProjects = [
-    ProjectModel(name: "XO Game", pic: "xo_game.png", languages: ["Flutter"]),
-    ProjectModel(
-        name: "Truth Or Dare", pic: "truthordare.png", languages: ["Flutter"]),
-    ProjectModel(
-        name: "Aphrodite Academy",
-        pic: "_aphrodite.jpg",
-        languages: ["Flutter", "Python"]),
-    ProjectModel(name: "Jarvis", pic: "jarvis.gif", languages: ["Python"]),
-    ProjectModel(
-        name: "Astro Dating App",
-        pic: "astro_logo.png",
-        languages: ["Flutter", "Python"]),
-    ProjectModel(
-        name: "Jumia clone",
-        pic: "logo_mini.png",
-        languages: ["Flutter", "Python"]),
-    ProjectModel(
-        name: "Bank management", pic: "cptbank.PNG", languages: ["Java"]),
-    ProjectModel(
-        name: "Horoscope",
-        pic: "horoscope.png",
-        languages: ["Flutter", "Python"]),
-    ProjectModel(
-        name: "Facial reconition", pic: "f.PNG", languages: ["Python"]),
-    ProjectModel(name: "Snake Game", pic: "snake_.jpg", languages: ["Python"]),
-    ProjectModel(name: "Text to Speech", pic: "tts.png", languages: ["Python"]),
-  ];
 
   List<ProjectModel> projects = [];
 
@@ -162,5 +170,48 @@ class StateProvider with ChangeNotifier {
       }
     }
     isLoading = false;
+  }
+
+  downloadFile() {
+    AnchorElement anchorElement = AnchorElement(href: resumeUrl);
+    anchorElement.download = "Amyr Fezzeni Resume";
+    anchorElement.click();
+  }
+
+  TextEditingController subject = TextEditingController();
+  TextEditingController body = TextEditingController();
+  sendEmail() async {
+    if (subject.text.isEmpty || body.text.isEmpty) {
+      return;
+    } else {
+      final url =
+          "mailto:$email?subject=${Uri.encodeFull(subject.text)}&body=${Uri.encodeFull(body.text)}";
+      await launch(url);
+    }
+  }
+
+  goToWebsite(int index) {
+    switch (index) {
+      case 1:
+        launch(github);
+        break;
+      case 2:
+        launch(linkedin);
+        break;
+      case 3:
+        launch(youtube);
+        break;
+      case 4:
+        launch(facebook);
+        break;
+      case 5:
+        launch(codingame);
+        break;
+      case 6:
+        launch(whatsapp);
+        break;
+      default:
+        break;
+    }
   }
 }

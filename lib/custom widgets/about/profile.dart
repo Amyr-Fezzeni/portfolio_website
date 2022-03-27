@@ -37,7 +37,7 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
       height: 302,
       width: 302,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: state.bgcolor,
         borderRadius: BorderRadius.circular(350),
         boxShadow: [
               BoxShadow(
@@ -75,17 +75,11 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
               ),
             ),
           ),
-          const Positioned(
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child:  Center(
-              child: CircleAvatar(
-                radius: 145,
-                backgroundImage: myImage,
-                backgroundColor: Colors.white,
-              ),
+          Center(
+            child: CircleAvatar(
+              radius: 145,
+              backgroundImage: myImage,
+              backgroundColor: state.bgcolor,
             ),
           ),
         ],

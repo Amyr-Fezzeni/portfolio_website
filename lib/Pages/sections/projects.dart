@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
-import 'package:flutter_portfolio_website/custom%20widgets/blurry_container.dart';
-import 'package:flutter_portfolio_website/custom%20widgets/projects/project_card.dart';
 import 'package:flutter_portfolio_website/custom%20widgets/projects/project_card_animated.dart';
 import 'package:provider/provider.dart';
 
@@ -14,9 +12,8 @@ class Projects extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     var state = context.watch<StateProvider>();
-    return Container(
-      // bgColor: Colors.blueGrey.withOpacity(0.8),
-      height: 840,
+    return SizedBox(
+      height: 900,
       width: size.width * 0.8,
       child: Column(
         children: [
@@ -30,7 +27,7 @@ class Projects extends StatelessWidget {
               ),
               Text(
                 "   Projects   ",
-                style: state.text18,
+                style: state.title,
               ),
               Container(
                 height: 1,
@@ -55,7 +52,7 @@ class Projects extends StatelessWidget {
                 decoration: BoxDecoration(
                     border: Border.all(width: 1, color: btnColor),
                     borderRadius: BorderRadius.circular(12)),
-                child: OutlinedButton(
+                child: TextButton(
                   onPressed: () =>
                       context.read<StateProvider>().filterProject("all"),
                   child: Text(
@@ -74,7 +71,7 @@ class Projects extends StatelessWidget {
                 decoration: BoxDecoration(
                     border: Border.all(width: 1, color: btnColor),
                     borderRadius: BorderRadius.circular(12)),
-                child: OutlinedButton(
+                child: TextButton(
                   onPressed: () =>
                       context.read<StateProvider>().filterProject("Flutter"),
                   child: Row(
@@ -85,7 +82,7 @@ class Projects extends StatelessWidget {
                         width: 50,
                       ),
                       const SizedBox(
-                        width: 10,
+                        width: 15,
                       ),
                       Text(
                         "Flutter",
@@ -105,7 +102,7 @@ class Projects extends StatelessWidget {
                 decoration: BoxDecoration(
                     border: Border.all(width: 1, color: btnColor),
                     borderRadius: BorderRadius.circular(12)),
-                child: OutlinedButton(
+                child: TextButton(
                   onPressed: () =>
                       context.read<StateProvider>().filterProject("Python"),
                   child: Row(
@@ -116,7 +113,7 @@ class Projects extends StatelessWidget {
                         width: 50,
                       ),
                       const SizedBox(
-                        width: 10,
+                        width: 15,
                       ),
                       Text(
                         "Python",
@@ -136,7 +133,7 @@ class Projects extends StatelessWidget {
                 decoration: BoxDecoration(
                     border: Border.all(width: 1, color: btnColor),
                     borderRadius: BorderRadius.circular(12)),
-                child: OutlinedButton(
+                child: TextButton(
                   onPressed: () =>
                       context.read<StateProvider>().filterProject("Java"),
                   child: Row(
@@ -147,7 +144,7 @@ class Projects extends StatelessWidget {
                         width: 50,
                       ),
                       const SizedBox(
-                        width: 10,
+                        width: 15,
                       ),
                       Text(
                         "java",

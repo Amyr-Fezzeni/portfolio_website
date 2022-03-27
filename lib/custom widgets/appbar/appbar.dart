@@ -17,19 +17,23 @@ class CustomAppBar extends StatelessWidget {
           ),
           HoverButton(
             name: "Skills",
-            index: 680,
+            index: 1,
           ),
           HoverButton(
             name: "Projects",
-            index: 1350,
+            index: 2,
+          ),
+          HoverButton(
+            name: "Certifications",
+            index: 3,
           ),
           HoverButton(
             name: "Photography",
-            index: 2350,
+            index: 4,
           ),
           HoverButton(
             name: "Contact",
-            index: 0,
+            index: 5,
           ),
         ],
       ),
