@@ -3,7 +3,7 @@ import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
-import 'package:flutter_portfolio_website/custom%20widgets/photography/h_picture.dart';
+import 'package:flutter_portfolio_website/desktop/custom%20widgets/photography/h_picture.dart';
 import 'package:flutter_portfolio_website/models/project_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
