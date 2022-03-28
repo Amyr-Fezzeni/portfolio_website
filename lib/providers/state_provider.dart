@@ -1,5 +1,5 @@
 // ignore: avoid_web_libraries_in_flutter
-// import 'dart:html';
+import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
@@ -166,9 +166,9 @@ class StateProvider with ChangeNotifier {
   }
 
   downloadFile() {
-    // AnchorElement anchorElement = AnchorElement(href: resumeUrl);
-    // anchorElement.download = "Amyr Fezzeni Resume";
-    // anchorElement.click();
+    AnchorElement anchorElement = AnchorElement(href: resumeUrl);
+    anchorElement.download = "Amyr Fezzeni Resume";
+    anchorElement.click();
   }
 
   TextEditingController subject = TextEditingController();

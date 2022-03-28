@@ -21,7 +21,7 @@ class _IndexState extends State<Index> {
     context.read<StateProvider>().init();
   }
 
-// min 1120 px width for desctop
+// min 1120 px width for desktop
   @override
   Widget build(BuildContext context) {
     return Scaffold(
