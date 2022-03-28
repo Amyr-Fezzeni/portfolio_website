@@ -10,7 +10,8 @@ const btnColor = Color.fromARGB(255, 66, 172, 221);
 
 //personal info
 const myImage = AssetImage("assets/images/profile.jpg");
-const resumeUrl = "assets/amyrfezzeni_resume.pdf";
+const resumeUrl =
+    "https://github.com/Amyr-Fezzeni/portfolio_website/raw/main/assets/amyrfezzeni_resume.pdf";
 const email = "amyrfezzeni@gmail.com";
 const github = "https://www.github.com/amyr-fezzeni";
 const linkedin = "https://www.linkedin.com/in/amyr-fezzeni";
@@ -19,6 +20,7 @@ const facebook = "https://www.facebook.com/amyr.fezzeni";
 const codingame =
     "https://www.codingame.com/profile/31145782893c921e6576e9e0ce05f75c4244244";
 const whatsapp = "tel://+21654230376";
+
 //text styles
 TextStyle text18white =
     GoogleFonts.arimaMadurai(color: Colors.white, fontSize: 18);
@@ -46,6 +48,19 @@ String textAbout =
     """A 2nd-year computer software engineering student at TEK-UP University specializing in Software engineering and Professional Photographer based in Tunisia.
 I'm a self learning person with a good problem solving ability.
 """;
+
+List<dynamic> allSkills = [
+  ["Python", 95],
+  ["Python", 90],
+  ["Dart", 90],
+  ["Java", 80],
+  ["NodeJS", 75],
+  ["State Management", 90],
+  ["Responsive UI", 75],
+  ["SQL", 75],
+  ["MongoDB", 85],
+  ["Firebase", 85]
+];
 
 List<ProjectModel> allProjects = [
   ProjectModel(name: "XO Game", pic: "xo_game.png", languages: ["Flutter"]),
@@ -87,7 +102,7 @@ List<CertificationModel> allCertifications = [
   CertificationModel(
       name: "MTA Database Administration",
       small: "mta_database_small.PNG",
-      original: "mta_database.png"),
+      original: "mta_database.PNG"),
   CertificationModel(
       name: "CodinGame Python Problem Solving",
       small: "python_problem_solving_small.png",

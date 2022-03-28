@@ -1,6 +1,7 @@
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
 import 'package:flutter_portfolio_website/custom%20widgets/contact/social_media.dart';
+import 'package:flutter_portfolio_website/custom%20widgets/home/title_widget.dart';
 import 'package:provider/provider.dart';
 import '../../providers/state_provider.dart';
 
@@ -32,29 +33,14 @@ class Contact extends StatelessWidget {
           ));
     }
 
-    return SizedBox(
+    return Container(
+      margin: const EdgeInsets.only(bottom: 150),
       height: 690,
       width: size.width * 0.95,
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                height: 1,
-                width: 50,
-                color: Colors.grey,
-              ),
-              Text(
-                "   Contact   ",
-                style: state.title,
-              ),
-              Container(
-                height: 1,
-                width: 50,
-                color: Colors.grey,
-              ),
-            ],
+          const TitleWidget(
+            title: "Contact",
           ),
           const SizedBox(
             height: 50,

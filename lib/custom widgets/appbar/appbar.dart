@@ -6,7 +6,8 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      margin: const EdgeInsets.only(bottom: 100),
       height: 80,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,

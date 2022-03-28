@@ -1,5 +1,5 @@
 // ignore: avoid_web_libraries_in_flutter
-import 'dart:html';
+// import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
@@ -8,6 +8,20 @@ import 'package:flutter_portfolio_website/models/project_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class StateProvider with ChangeNotifier {
+  init() async {
+    controller.addListener(() {
+      changeVisivilituSkill();
+      upButton();
+    });
+    await Future.delayed(const Duration(seconds: 1));
+    initPhotos();
+    filterProject("all");
+    
+    isInit = false;
+  }
+
+  bool isInit = true;
+
 // dark & light mode
   bool darkMode = true;
   var text18 = text18white;
@@ -44,7 +58,6 @@ class StateProvider with ChangeNotifier {
     } else {
       skil = false;
     }
-
     notifyListeners();
   }
 
@@ -55,7 +68,7 @@ class StateProvider with ChangeNotifier {
         duration: const Duration(seconds: 1), curve: Curves.easeInOut);
   }
 
-  final _about = 50;
+  final _about = 0;
   final _skil = 780;
   final _project = 1570;
   final _certification = 2620;
@@ -123,24 +136,6 @@ class StateProvider with ChangeNotifier {
                 aspect: 5.3 / 4,
               ));
     }
-    notifyListeners();
-  }
-
-  int i = 0;
-  changeList(index) {
-    if (i == 0) {
-      i = 16;
-    } else {
-      i -= 1;
-    }
-    vPhotos.removeAt(index);
-    vPhotos.insert(
-        1,
-        HPicture(
-          link: _verticalPhotos[i],
-          aspect: 5.3 / 4,
-        ));
-    notifyListeners();
   }
 
   List<ProjectModel> projects = [];
@@ -161,21 +156,19 @@ class StateProvider with ChangeNotifier {
     }
     projects = [];
     isLoading = true;
-    notifyListeners();
     for (var model in allProjects) {
       if (isLanguage(model, language) || language == "all") {
-        await Future.delayed(const Duration(milliseconds: 100));
         projects.add(model);
-        notifyListeners();
       }
     }
     isLoading = false;
+    notifyListeners();
   }
 
   downloadFile() {
-    AnchorElement anchorElement = AnchorElement(href: resumeUrl);
-    anchorElement.download = "Amyr Fezzeni Resume";
-    anchorElement.click();
+    // AnchorElement anchorElement = AnchorElement(href: resumeUrl);
+    // anchorElement.download = "Amyr Fezzeni Resume";
+    // anchorElement.click();
   }
 
   TextEditingController subject = TextEditingController();

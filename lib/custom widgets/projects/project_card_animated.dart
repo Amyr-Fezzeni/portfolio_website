@@ -20,7 +20,7 @@ class _ProjectCardState extends State<ProjectCardAnimated>
   void initState() {
     super.initState();
     controller = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 350));
+        vsync: this, duration: const Duration(milliseconds: 1750));
     _animation = Tween(begin: 0.0, end: 1.0).animate(controller);
     controller.forward();
   }

@@ -1,39 +1,24 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio_website/custom%20widgets/home/title_widget.dart';
 import 'package:provider/provider.dart';
 import '../../providers/state_provider.dart';
 
 class Photography extends StatelessWidget {
   const Photography({Key? key}) : super(key: key);
 
- 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     var state = context.watch<StateProvider>();
-    return SizedBox(
+    return Container(
+        margin: const EdgeInsets.only(bottom: 150),
         height: 600,
-        width: size.width,
+        width: size.width * 0.9,
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  height: 1,
-                  width: 50,
-                  color: Colors.grey,
-                ),
-                Text(
-                  "   Photography   ",
-                  style: state.title,
-                ),
-                Container(
-                  height: 1,
-                  width: 50,
-                  color: Colors.grey,
-                ),
-              ],
+            const TitleWidget(
+              title: "Photography",
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -54,8 +39,7 @@ class Photography extends StatelessWidget {
                     itemWidth: 330,
                     curve: Curves.easeInOut,
                     layout: SwiperLayout.TINDER,
-                    onIndexChanged: (index) {
-                    },
+                    onIndexChanged: (index) {},
                   ),
                 ),
                 Container(
@@ -75,8 +59,7 @@ class Photography extends StatelessWidget {
                     itemWidth: 500,
                     curve: Curves.easeInOut,
                     layout: SwiperLayout.TINDER,
-                    onIndexChanged: (index) {
-                    },
+                    onIndexChanged: (index) {},
                   ),
                 ),
               ],
