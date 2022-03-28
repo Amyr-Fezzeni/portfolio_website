@@ -29,19 +29,16 @@ class _SkillState extends State<ProgressBarSkill> {
             ),
           ),
           const SizedBox(width: 10),
-          Visibility(
-            visible: true,
-            child: SizedBox(
-              height: 20,
-              width: MediaQuery.of(context).size.width * 0.75 - 200,
-              child: FAProgressBar(
-                currentValue: widget.level,
-                displayText: "%",
-                borderRadius: BorderRadius.circular(0),
-                animatedDuration: const Duration(seconds: 1),
-                backgroundColor: Colors.white10,
-                progressColor: btnColor,
-              ),
+          SizedBox(
+            height: 20,
+            width: MediaQuery.of(context).size.width * 0.75 - 200,
+            child: FAProgressBar(
+              currentValue: widget.level,
+              displayText: "%",
+              borderRadius: BorderRadius.circular(0),
+              animatedDuration: const Duration(seconds: 1),
+              backgroundColor: Colors.white10,
+              progressColor: btnColor,
             ),
           ),
         ],

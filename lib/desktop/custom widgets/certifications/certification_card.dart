@@ -80,3 +80,72 @@ class CertificationCard extends StatelessWidget {
     );
   }
 }
+
+
+
+class CertificationCardPhone extends StatelessWidget {
+  final CertificationModel certification;
+  const CertificationCardPhone({Key? key, required this.certification})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var state = context.watch<StateProvider>();
+    return Center(
+      child: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(10),
+            height: 200,
+            width: 300,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.white,
+                boxShadow: const [
+                  BoxShadow(
+                      color: btnColor, offset: Offset(2, 2), blurRadius: 7)
+                ]),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Container(
+                color: Colors.transparent,
+                child: FittedBox(
+                  fit: BoxFit.cover,
+                  child: Hero(
+                    tag: certification.name,
+                    child: Material(
+                      color: Colors.transparent,
+                      child: InkWell(
+                        onTap: () => Navigator.of(context).push(
+                            PageRouteBuilder(
+                                pageBuilder:
+                                    (context, animation, secondaryAnimation) =>
+                                        CertificationDetails(
+                                            certification: certification),
+                                transitionsBuilder: (context, animation,
+                                    secondaryAnimation, child) {
+                                  return child;
+                                })),
+                        child: Image.asset(
+                            "assets/certifications/${certification.small}"),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          SizedBox(
+            child: Text(
+              certification.name,
+              style: state.text18,
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}

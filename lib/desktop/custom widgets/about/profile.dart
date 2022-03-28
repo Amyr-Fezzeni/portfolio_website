@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 
 import '../../../providers/state_provider.dart';
 
-
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
 
@@ -41,11 +40,11 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
         color: state.bgcolor,
         borderRadius: BorderRadius.circular(350),
         boxShadow: [
-              BoxShadow(
-                  blurRadius: 12,
-                  color: state.secondColor,
-                  offset: const Offset(0, 0))
-            ],
+          BoxShadow(
+              blurRadius: 12,
+              color: state.secondColor,
+              offset: const Offset(0, 0))
+        ],
       ),
       child: Stack(
         children: [

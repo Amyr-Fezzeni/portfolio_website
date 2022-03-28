@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio_website/desktop/Pages/sections/about.dart';
+import 'package:flutter_portfolio_website/desktop/Pages/sections/certifications.dart';
+import 'package:flutter_portfolio_website/desktop/Pages/sections/contact.dart';
+import 'package:flutter_portfolio_website/desktop/Pages/sections/photography.dart';
+import 'package:flutter_portfolio_website/desktop/Pages/sections/projects.dart';
+import 'package:flutter_portfolio_website/desktop/custom%20widgets/appbar/appbar.dart';
 import 'package:flutter_portfolio_website/models/certification_model.dart';
 import 'package:flutter_portfolio_website/models/project_model.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_portfolio_website/desktop/Pages/sections/skills.dart';
 
 const bgColor = Color.fromARGB(255, 193, 207, 2013);
 const darkBgColor = Color.fromARGB(255, 24, 34, 44);
@@ -36,6 +43,17 @@ TextStyle titleAnton =
     GoogleFonts.hammersmithOne(color: Colors.white, fontSize: 50);
 TextStyle titleAntonblack =
     GoogleFonts.hammersmithOne(color: Colors.black87, fontSize: 50);
+// phone
+TextStyle titleBluePhone = GoogleFonts.nunito(color: btnColor, fontSize: 30);
+TextStyle titleWhitePhone =
+    GoogleFonts.nunito(color: Colors.white, fontSize: 30);
+TextStyle titleblackPhone =
+    GoogleFonts.nunito(color: Colors.black, fontSize: 30);
+
+TextStyle titleAntonPhone =
+    GoogleFonts.hammersmithOne(color: Colors.white, fontSize: 30);
+TextStyle titleAntonblackPhone =
+    GoogleFonts.hammersmithOne(color: Colors.black87, fontSize: 30);
 
 // about
 TextStyle key = GoogleFonts.caveat(
@@ -92,7 +110,7 @@ List<ProjectModel> allProjects = [
 
 List<CertificationModel> allCertifications = [
   CertificationModel(
-      name: "Certified Associate in Python Programming (PCAP)",
+      name: "Certified Associate in Python Programming",
       small: "pcap_small.png",
       original: "pcap.png"),
   CertificationModel(
@@ -127,4 +145,24 @@ List<CertificationModel> allCertifications = [
       name: "CodinGame Algorithms Bronze",
       small: "algorithms_small.png",
       original: "algorithms.png"),
+];
+
+// sections
+
+const desktopSections = [
+  CustomAppBar(),
+  About(),
+  Skill(),
+  Projects(),
+  Certifications(),
+  Photography(),
+  Contact(),
+];
+const phoneSections = [
+  AboutPhone(),
+  SkillPhone(),
+  ProjectsPhone(),
+  CertificationsPhone(),
+  PhotographyPhone(),
+  ContactPhone(),
 ];

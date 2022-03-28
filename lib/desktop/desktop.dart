@@ -7,7 +7,6 @@ import 'package:flutter_portfolio_website/desktop/custom%20widgets/home/up_butto
 import 'package:provider/provider.dart';
 import '../providers/state_provider.dart';
 
-
 class Desktop extends StatefulWidget {
   const Desktop({Key? key}) : super(key: key);
 
@@ -26,17 +25,19 @@ class _DesktopState extends State<Desktop> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          const Opacity(opacity: 1, child: BG()),
-          SingleChildScrollView(
-            controller: context.watch<StateProvider>().controller,
-            child: const Sections(),
-          ),
-          const DarkModeSwitch(),
-          const UpButton(),
-          const MenuIcon(),
-        ],
+      body: SafeArea(
+        child: Stack(
+          children: [
+            const Opacity(opacity: 1, child: BG()),
+            SingleChildScrollView(
+              controller: context.watch<StateProvider>().controller,
+              child: const Sections(),
+            ),
+            const DarkModeSwitch(),
+            const UpButton(),
+            const MenuIcon(),
+          ],
+        ),
       ),
     );
   }

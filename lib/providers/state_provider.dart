@@ -1,5 +1,5 @@
 // ignore: avoid_web_libraries_in_flutter
-import 'dart:html';
+// import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
@@ -9,14 +9,20 @@ import 'package:url_launcher/url_launcher.dart';
 
 class StateProvider with ChangeNotifier {
   init() async {
+    if (!isInit) {
+      return;
+    }
+
     controller.addListener(() {
       changeVisivilituSkill();
       upButton();
     });
-    await Future.delayed(const Duration(seconds: 1));
+
+    await Future.delayed(const Duration(milliseconds: 10));
+
     initPhotos();
     filterProject("all");
-    
+
     isInit = false;
   }
 
@@ -30,6 +36,20 @@ class StateProvider with ChangeNotifier {
   var secondColor = btnColor;
   var invertedColor = Colors.white;
   var secondTitle = titleBlue;
+  //for phones
+  var titlePhone = titleAntonPhone;
+  var secondTitlePhone = titleBluePhone;
+
+  bool isPhone = true;
+
+  changeDisplay(b) {
+    if (b == isPhone) {
+      return;
+    }
+    isPhone = b;
+    notifyListeners();
+  }
+
   changeDarkMode(b) {
     if (!b) {
       text18 = text18black;
@@ -38,6 +58,8 @@ class StateProvider with ChangeNotifier {
       title = titleAntonblack;
       secondTitle = titleBlue;
       invertedColor = Colors.black;
+      titlePhone = titleAntonblackPhone;
+      secondTitlePhone = titleBluePhone;
     } else {
       text18 = text18white;
       invertedColor = Colors.white;
@@ -45,6 +67,8 @@ class StateProvider with ChangeNotifier {
       secondColor = btnColor;
       title = titleAnton;
       secondTitle = titleBlue;
+      titlePhone = titleAntonPhone;
+      secondTitlePhone = titleBluePhone;
     }
     darkMode = b;
     notifyListeners();
@@ -166,9 +190,9 @@ class StateProvider with ChangeNotifier {
   }
 
   downloadFile() {
-    AnchorElement anchorElement = AnchorElement(href: resumeUrl);
-    anchorElement.download = "Amyr Fezzeni Resume";
-    anchorElement.click();
+    // AnchorElement anchorElement = AnchorElement(href: resumeUrl);
+    // anchorElement.download = "Amyr Fezzeni Resume";
+    // anchorElement.click();
   }
 
   TextEditingController subject = TextEditingController();

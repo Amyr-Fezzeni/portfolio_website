@@ -46,3 +46,32 @@ class FilterProjectButton extends StatelessWidget {
     );
   }
 }
+
+class FilterProjectButtonPhone extends StatelessWidget {
+  final String name;
+  final String image;
+  const FilterProjectButtonPhone({
+    Key? key,
+    required this.name,
+    required this.image,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 60,
+      height: 50,
+      padding: const EdgeInsets.symmetric(vertical: 5),
+      decoration: BoxDecoration(
+          border: Border.all(width: 1, color: btnColor),
+          borderRadius: BorderRadius.circular(12)),
+      child: TextButton(
+        onPressed: () => context.read<StateProvider>().filterProject(name),
+        child: Image.asset(
+          image,
+          width: 50,
+        ),
+      ),
+    );
+  }
+}

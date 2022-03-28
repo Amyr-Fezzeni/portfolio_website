@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio_website/index.dart';
+import 'package:flutter_portfolio_website/desktop/desktop.dart';
 import 'package:flutter_portfolio_website/providers/state_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blueGrey,
       ),
       debugShowCheckedModeBanner: false,
-      home: const Index(),
+      home: const Desktop(),
     );
   }
 }

@@ -29,3 +29,33 @@ class TitleWidget extends StatelessWidget {
     );
   }
 }
+
+
+
+class TitleWidgetPhone extends StatelessWidget {
+  final String title;
+  const TitleWidgetPhone({Key? key, required this.title}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          height: 1,
+          width: 50,
+          color: Colors.grey,
+        ),
+        Text(
+          "  $title  ",
+          style: context.watch<StateProvider>().titlePhone,
+        ),
+        Container(
+          height: 1,
+          width: 50,
+          color: Colors.grey,
+        ),
+      ],
+    );
+  }
+}
