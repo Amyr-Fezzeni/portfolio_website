@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
 import 'package:flutter_portfolio_website/desktop/Pages/project%20details/project_details.dart';
-import 'package:flutter_portfolio_website/desktop/custom%20widgets/projects/background_animated_color.dart';
 import 'package:flutter_portfolio_website/models/project_model.dart';
 
 class ProjectCard extends StatefulWidget {
@@ -28,8 +27,9 @@ class _ProjectCardState extends State<ProjectCard>
 
   @override
   void dispose() {
+      controller.dispose();
     super.dispose();
-    controller.dispose();
+  
   }
 
   @override
@@ -48,7 +48,7 @@ class _ProjectCardState extends State<ProjectCard>
         margin: const EdgeInsets.all(10),
         // padding: const EdgeInsets.all(4),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: btnColor.withAlpha(150),
           borderRadius: BorderRadius.circular(20),
         ),
         child: SizedBox(
@@ -56,7 +56,7 @@ class _ProjectCardState extends State<ProjectCard>
           width: 400,
           child: Stack(
             children: [
-              const BGColors(),
+              // const BGColors(),
               Positioned(
                 child: Center(
                   child: SizedBox(
@@ -78,56 +78,54 @@ class _ProjectCardState extends State<ProjectCard>
                   ),
                 ),
               ),
-              Positioned(
-                left: 0,
-                top: 0,
-                bottom: 0,
-                right: 0,
-                child: Center(
-                  child: FadeTransition(
-                      opacity: _animation,
-                      child: Container(
-                        height: 310,
-                        width: 310,
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              widget.model.name,
-                              style: text18black,
-                            ),
-                            const Divider(
-                              thickness: 1,
-                              color: Colors.grey,
-                              indent: 20,
-                              endIndent: 20,
-                            ),
-                            Text(
-                              widget.model.getLanguages(),
-                              style: text18black,
-                            ),
-                            const SizedBox(
-                              height: 30,
-                            ),
-                            TextButton(
-                                style: TextButton.styleFrom(
-                                  primary: Colors.white,
-                                  backgroundColor: btnColor,
-                                ),
-                                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>ProjectDetails(project: widget.model))),
-                                child: Text(
-                                  " More details ",
-                                  style: text18white,
-                                ))
-                          ],
-                        ),
-                      )),
-                ),
+              Center(
+                child: FadeTransition(
+                    opacity: _animation,
+                    child: Container(
+                      height: 310,
+                      width: 310,
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            widget.model.name,
+                            style: text18black,
+                          ),
+                          const Divider(
+                            thickness: 1,
+                            color: Colors.grey,
+                            indent: 20,
+                            endIndent: 20,
+                          ),
+                          Text(
+                            widget.model.getLanguages(),
+                            style: text18black,
+                          ),
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          TextButton(
+                              style: TextButton.styleFrom(
+                                primary: Colors.white,
+                                backgroundColor: btnColor,
+                              ),
+                              onPressed: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ProjectDetails(
+                                          project: widget.model))),
+                              child: Text(
+                                " More details ",
+                                style: text18white,
+                              ))
+                        ],
+                      ),
+                    )),
               )
             ],
           ),

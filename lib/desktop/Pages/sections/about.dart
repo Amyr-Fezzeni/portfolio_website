@@ -106,7 +106,6 @@ class About extends StatelessWidget {
   }
 }
 
-
 class AboutPhone extends StatelessWidget {
   const AboutPhone({Key? key}) : super(key: key);
 
@@ -114,6 +113,7 @@ class AboutPhone extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     var state = context.watch<StateProvider>();
+    // context.read<StateProvider>().changeDisplayMode(true);
     return Container(
       margin: const EdgeInsets.only(bottom: 100, top: 100),
       child: Column(

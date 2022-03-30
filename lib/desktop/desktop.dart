@@ -18,7 +18,8 @@ class _DesktopState extends State<Desktop> {
   @override
   void initState() {
     super.initState();
-    context.read<StateProvider>().init();
+    context.read<StateProvider>().init(context);
+   
   }
 
 // min 1120 px width for desktop

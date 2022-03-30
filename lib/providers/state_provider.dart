@@ -1,5 +1,5 @@
 // ignore: avoid_web_libraries_in_flutter
-// import 'dart:html';
+import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
@@ -8,7 +8,7 @@ import 'package:flutter_portfolio_website/models/project_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class StateProvider with ChangeNotifier {
-  init() async {
+  init(context) async {
     if (!isInit) {
       return;
     }
@@ -19,7 +19,7 @@ class StateProvider with ChangeNotifier {
     });
 
     await Future.delayed(const Duration(milliseconds: 10));
-
+    changeDisplayMode(context);
     initPhotos();
     filterProject("all");
 
@@ -42,12 +42,12 @@ class StateProvider with ChangeNotifier {
 
   bool isPhone = true;
 
-  changeDisplay(b) {
-    if (b == isPhone) {
+  changeDisplayMode(context) {
+    final width = MediaQuery.of(context).size.width < 1120;
+    if (width == isPhone) {
       return;
     }
-    isPhone = b;
-    notifyListeners();
+    isPhone = width;
   }
 
   changeDarkMode(b) {
@@ -97,27 +97,33 @@ class StateProvider with ChangeNotifier {
   final _project = 1570;
   final _certification = 2620;
   final _photography = 3700;
-  final _contact = 4450;
+  final _contact = 4490;
+  final _aboutP = 0;
+  final _skilP = 930;
+  final _projectP = 1510;
+  final _certificationP = 2065;
+  final _photographyP = 2585;
+  final _contactP = 3520;
 
   jumpToSection(int index) {
     switch (index) {
       case 0:
-        setControllerPosition(_about);
+        setControllerPosition(isPhone ? _aboutP : _about);
         break;
       case 1:
-        setControllerPosition(_skil);
+        setControllerPosition(isPhone ? _skilP : _skil);
         break;
       case 2:
-        setControllerPosition(_project);
+        setControllerPosition(isPhone ? _projectP : _project);
         break;
       case 3:
-        setControllerPosition(_certification);
+        setControllerPosition(isPhone ? _certificationP : _certification);
         break;
       case 4:
-        setControllerPosition(_photography);
+        setControllerPosition(isPhone ? _photographyP : _photography);
         break;
       case 5:
-        setControllerPosition(_contact);
+        setControllerPosition(isPhone ? _contactP : _contact);
         break;
 
       default:
@@ -190,9 +196,9 @@ class StateProvider with ChangeNotifier {
   }
 
   downloadFile() {
-    // AnchorElement anchorElement = AnchorElement(href: resumeUrl);
-    // anchorElement.download = "Amyr Fezzeni Resume";
-    // anchorElement.click();
+    AnchorElement anchorElement = AnchorElement(href: resumeUrl);
+    anchorElement.download = "Amyr Fezzeni Resume";
+    anchorElement.click();
   }
 
   TextEditingController subject = TextEditingController();

@@ -5,7 +5,6 @@ import 'package:flutter_portfolio_website/desktop/custom%20widgets/home/title_wi
 import 'package:provider/provider.dart';
 import '../../../providers/state_provider.dart';
 
-
 class Contact extends StatelessWidget {
   const Contact({Key? key}) : super(key: key);
 
@@ -104,22 +103,25 @@ class Contact extends StatelessWidget {
                           boxShape: NeumorphicBoxShape.roundRect(
                               BorderRadius.circular(10)),
                         ),
-                        child: SizedBox(
-                          width: 150,
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.mail_rounded,
-                                color: state.invertedColor,
-                              ),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              Text(
-                                "Send Email",
-                                style: state.text18,
-                              ),
-                            ],
+                        child: InkWell(
+                          onTap: () {},
+                          child: SizedBox(
+                            width: 150,
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.mail_rounded,
+                                  color: state.invertedColor,
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  "Send Email",
+                                  style: state.text18,
+                                ),
+                              ],
+                            ),
                           ),
                         )),
                   ],
@@ -157,33 +159,19 @@ class Contact extends StatelessWidget {
                     ),
                     const SocialMedia(
                       title: "GitHub",
-                      link: "",
                       image: "github.png",
                       index: 1,
                     ),
                     const SocialMedia(
-                        title: "Linkedin",
-                        link: "",
-                        image: "linkedin.png",
-                        index: 2),
+                        title: "Linkedin", image: "linkedin.png", index: 2),
                     const SocialMedia(
-                        title: "Youtube",
-                        link: "",
-                        image: "youtube.png",
-                        index: 3),
+                        title: "Youtube", image: "youtube.png", index: 3),
                     const SocialMedia(
-                        title: "Facebook",
-                        link: "",
-                        image: "facebook.png",
-                        index: 4),
+                        title: "Facebook", image: "facebook.png", index: 4),
                     const SocialMedia(
-                        title: "CodinGame",
-                        link: "",
-                        image: "codingame.png",
-                        index: 5),
+                        title: "CodinGame", image: "codingame.png", index: 5),
                     const SocialMedia(
                         title: "+216 54 230 376",
-                        link: "",
                         image: "whatsapp.png",
                         index: 6),
                   ],
@@ -196,6 +184,7 @@ class Contact extends StatelessWidget {
     );
   }
 }
+
 class ContactPhone extends StatelessWidget {
   const ContactPhone({Key? key}) : super(key: key);
 
@@ -205,7 +194,6 @@ class ContactPhone extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     OutlineInputBorder myinputborder() {
       return OutlineInputBorder(
-          //Outline border type for TextFeild
           borderRadius: const BorderRadius.all(Radius.circular(10)),
           borderSide: BorderSide(
             color: state.darkMode
@@ -237,141 +225,137 @@ class ContactPhone extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
-          Container(
-            decoration: BoxDecoration(
-                color: state.bgcolor,
-                borderRadius: BorderRadius.circular(25),
-                boxShadow: const [
-                  BoxShadow(
-                    offset: Offset(-10, -10),
-                    blurRadius: 15,
-                    color: Colors.white24,
-                  ),
-                  BoxShadow(
-                      offset: Offset(18, 18),
+          ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 400),
+            child: Container(
+              decoration: BoxDecoration(
+                  color: state.bgcolor,
+                  borderRadius: BorderRadius.circular(25),
+                  boxShadow: const [
+                    BoxShadow(
+                      offset: Offset(-10, -10),
                       blurRadius: 15,
-                      color: Colors.black26),
-                ]),
-            padding: const EdgeInsets.only(
-              top: 20,
-            ),
-            width: size.width * 0.8,
-            height: 550,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(
-                  "Social Media",
-                  style: state.title,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const SocialMedia(
-                  title: "GitHub",
-                  link: "",
-                  image: "github.png",
-                  index: 1,
-                ),
-                const SocialMedia(
-                    title: "Linkedin",
-                    link: "",
-                    image: "linkedin.png",
-                    index: 2),
-                const SocialMedia(
-                    title: "Youtube", link: "", image: "youtube.png", index: 3),
-                const SocialMedia(
-                    title: "Facebook",
-                    link: "",
-                    image: "facebook.png",
-                    index: 4),
-                const SocialMedia(
-                    title: "CodinGame",
-                    link: "",
-                    image: "codingame.png",
-                    index: 5),
-                const SocialMedia(
-                    title: "+216 54 230 376",
-                    link: "",
-                    image: "whatsapp.png",
-                    index: 6),
-              ],
+                      color: Colors.white24,
+                    ),
+                    BoxShadow(
+                        offset: Offset(18, 18),
+                        blurRadius: 15,
+                        color: Colors.black26),
+                  ]),
+              padding: const EdgeInsets.only(
+                top: 20,
+              ),
+              width: size.width * 0.8,
+              height: 550,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    "Social Media",
+                    style: state.title,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const SocialMedia(
+                    title: "GitHub",
+                    image: "github.png",
+                    index: 1,
+                  ),
+                  const SocialMedia(
+                      title: "Linkedin", image: "linkedin.png", index: 2),
+                  const SocialMedia(
+                      title: "Youtube", image: "youtube.png", index: 3),
+                  const SocialMedia(
+                      title: "Facebook", image: "facebook.png", index: 4),
+                  const SocialMedia(
+                      title: "CodinGame", image: "codingame.png", index: 5),
+                  const SocialMedia(
+                      title: "+216 54 230 376",
+                      image: "whatsapp.png",
+                      index: 6),
+                ],
+              ),
             ),
           ),
           const SizedBox(
             height: 40,
           ),
-          Container(
-            // height: 500,
-            width: size.width * 0.8,
-            decoration: BoxDecoration(
-                color: state.bgcolor,
-                borderRadius: BorderRadius.circular(25),
-                boxShadow: const [
-                  BoxShadow(
-                    offset: Offset(-10, -10),
-                    blurRadius: 15,
-                    color: Colors.white24,
-                  ),
-                  BoxShadow(
-                      offset: Offset(18, 18),
+          ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 400),
+            child: Container(
+              // height: 500,
+              width: size.width * 0.8,
+              decoration: BoxDecoration(
+                  color: state.bgcolor,
+                  borderRadius: BorderRadius.circular(25),
+                  boxShadow: const [
+                    BoxShadow(
+                      offset: Offset(-10, -10),
                       blurRadius: 15,
-                      color: Colors.black26),
-                ]),
-            padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
-            child: Column(
-              children: [
-                TextField(
-                  style: state.text18,
-                  decoration: InputDecoration(
-                      border: myinputborder(),
-                      enabledBorder: myinputborder(),
-                      focusedBorder: myfocusborder()),
-                  controller: state.subject,
-                ),
-                const SizedBox(
-                  height: 40,
-                ),
-                TextField(
-                  style: state.text18,
-                  decoration: InputDecoration(
-                      border: myinputborder(),
-                      enabledBorder: myinputborder(),
-                      focusedBorder: myfocusborder()),
-                  controller: state.body,
-                  maxLines: 8,
-                ),
-                const SizedBox(
-                  height: 50,
-                ),
-                NeumorphicButton(
-                    onPressed: () => context.read<StateProvider>().sendEmail(),
-                    style: NeumorphicStyle(
-                      color: state.bgcolor,
-                      shape: NeumorphicShape.flat,
-                      intensity: 0.5,
-                      boxShape: NeumorphicBoxShape.roundRect(
-                          BorderRadius.circular(10)),
+                      color: Colors.white24,
                     ),
-                    child: SizedBox(
-                      width: 150,
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.mail_rounded,
-                            color: state.invertedColor,
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            "Send Email",
-                            style: state.text18,
-                          ),
-                        ],
+                    BoxShadow(
+                        offset: Offset(18, 18),
+                        blurRadius: 15,
+                        color: Colors.black26),
+                  ]),
+              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
+              child: Column(
+                children: [
+                  TextField(
+                    style: state.text18,
+                    decoration: InputDecoration(
+                        border: myinputborder(),
+                        enabledBorder: myinputborder(),
+                        focusedBorder: myfocusborder()),
+                    controller: state.subject,
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  TextField(
+                    style: state.text18,
+                    decoration: InputDecoration(
+                        border: myinputborder(),
+                        enabledBorder: myinputborder(),
+                        focusedBorder: myfocusborder()),
+                    controller: state.body,
+                    maxLines: 8,
+                  ),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  NeumorphicButton(
+                      onPressed: () =>
+                          context.read<StateProvider>().sendEmail(),
+                      style: NeumorphicStyle(
+                        color: state.bgcolor,
+                        shape: NeumorphicShape.flat,
+                        intensity: 0.5,
+                        boxShape: NeumorphicBoxShape.roundRect(
+                            BorderRadius.circular(10)),
                       ),
-                    )),
-              ],
+                      child: SizedBox(
+                        width: 150,
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.mail_rounded,
+                              color: state.invertedColor,
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "Send Email",
+                              style: state.text18,
+                            ),
+                          ],
+                        ),
+                      )),
+                ],
+              ),
             ),
           ),
         ],

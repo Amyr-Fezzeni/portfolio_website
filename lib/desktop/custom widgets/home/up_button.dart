@@ -15,13 +15,17 @@ class UpButton extends StatelessWidget {
           child: SizedBox(
             height: 40,
             width: 40,
-            child: IconButton(
-              color: Colors.blueGrey,
-              onPressed: () => context.read<StateProvider>().jumpToSection(0),
-              icon: const Icon(
-                Icons.keyboard_arrow_up,
-                color: Colors.white,
-                size: 35,
+            child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.blueGrey.withOpacity(0.2)),
+              child: InkWell(
+                onTap: () => context.read<StateProvider>().jumpToSection(0),
+                child: const Icon(
+                  Icons.keyboard_arrow_up,
+                  color: Colors.white,
+                  size: 35,
+                ),
               ),
             ),
           ),
