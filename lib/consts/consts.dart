@@ -20,6 +20,7 @@ const btnColor = Color.fromARGB(255, 66, 172, 221);
 const myImage = AssetImage("assets/images/profile.jpg");
 const resumeUrl =
     "https://github.com/Amyr-Fezzeni/portfolio_website/raw/main/assets/amyrfezzeni_resume.pdf";
+const resumeName = "Amyr Fezzeni Resume";
 const email = "amyrfezzeni@gmail.com";
 const github = "https://www.github.com/amyr-fezzeni";
 const linkedin = "https://www.linkedin.com/in/amyr-fezzeni";
@@ -86,16 +87,18 @@ List<ProjectModel> allProjects = [
     name: "XO Game",
     pic: "xo_game.png",
     languages: ["Flutter"],
-    keyWords: [
-      "Responsive UI",
-      "Provider",
-      "AI"
+    keyWords: ["Responsive UI", "Provider", "AI"],
+    images: [
+      ImageModel(link: "assets/projects/xo/xo1.jpg", type: "image"),
+      ImageModel(link: "assets/projects/xo/xo2.jpg", type: "image"),
+      ImageModel(link: "assets/projects/xo/xo3.jpg", type: "image"),
+      ImageModel(link: "assets/projects/xo/xo4.jpg", type: "image"),
     ],
-    images: [ImageModel(link: "assets/projects/xo/xo1.jpg", type: "image"),
-    ImageModel(link: "assets/projects/xo/xo2.jpg", type: "image"),
-    ImageModel(link: "assets/projects/xo/xo3.jpg", type: "image"),
-    ImageModel(link: "assets/projects/xo/xo4.jpg", type: "image"),],
-    description: """""",
+    description:
+        """Tic Tac Toe is a free classic puzzle game also known as X and O game.
+ •  Multi player mode
+ •  VS AI mode
+ •  Dark & light mode""",
   ),
   ProjectModel(
     name: "Truth Or Dare",
@@ -107,14 +110,15 @@ List<ProjectModel> allProjects = [
       "State Management",
       "Firebase",
     ],
-    images: [ImageModel(link: "assets/projects/truth or dare/t1.jpg", type: "image"),
-    ImageModel(link: "assets/projects/truth or dare/t2.jpg", type: "image"),
-    ImageModel(link: "assets/projects/truth or dare/t3.jpg", type: "image"),
-    ImageModel(link: "assets/projects/truth or dare/t4.jpg", type: "image"),
-    ImageModel(link: "assets/projects/truth or dare/t5.jpg", type: "image"),
-    ImageModel(link: "assets/projects/truth or dare/t6.jpg", type: "image"),
-    ImageModel(link: "assets/projects/truth or dare/t7.jpg", type: "image"),
-    ImageModel(link: "assets/projects/truth or dare/t8.jpg", type: "image"),
+    images: [
+      ImageModel(link: "assets/projects/truth or dare/t1.jpg", type: "image"),
+      ImageModel(link: "assets/projects/truth or dare/t2.jpg", type: "image"),
+      ImageModel(link: "assets/projects/truth or dare/t3.jpg", type: "image"),
+      ImageModel(link: "assets/projects/truth or dare/t4.jpg", type: "image"),
+      ImageModel(link: "assets/projects/truth or dare/t5.jpg", type: "image"),
+      ImageModel(link: "assets/projects/truth or dare/t6.jpg", type: "image"),
+      ImageModel(link: "assets/projects/truth or dare/t7.jpg", type: "image"),
+      ImageModel(link: "assets/projects/truth or dare/t8.jpg", type: "image"),
     ],
     description: """""",
   ),
@@ -204,11 +208,13 @@ The application works same like Siri/ Google Assistant etc. But the application 
       "Crypting data",
       "Web Scrapping"
     ],
-    images: [ImageModel(link: "assets/projects/astro/as1.jpg", type: "image"),
-    ImageModel(link: "assets/projects/astro/as2.jpg", type: "image"),
-    ImageModel(link: "assets/projects/astro/as3.jpg", type: "image"),
-    ImageModel(link: "assets/projects/astro/as4.jpg", type: "image"),
-    ImageModel(link: "assets/projects/astro/as5.jpg", type: "image"),],
+    images: [
+      ImageModel(link: "assets/projects/astro/as1.jpg", type: "image"),
+      ImageModel(link: "assets/projects/astro/as2.jpg", type: "image"),
+      ImageModel(link: "assets/projects/astro/as3.jpg", type: "image"),
+      ImageModel(link: "assets/projects/astro/as4.jpg", type: "image"),
+      ImageModel(link: "assets/projects/astro/as5.jpg", type: "image"),
+    ],
     description: """""",
   ),
   ProjectModel(
@@ -223,10 +229,12 @@ The application works same like Siri/ Google Assistant etc. But the application 
       "MongoDB",
       "Web Scrapping"
     ],
-    images: [ImageModel(link: "assets/projects/jumia clone/jumia1.PNG", type: "image"),
-    ImageModel(link: "assets/projects/jumia clone/jumia2.PNG", type: "image"),
-    ImageModel(link: "assets/projects/jumia clone/jumia3.PNG", type: "image"),
-    ImageModel(link: "assets/projects/jumia clone/jumia4.PNG", type: "image"),],
+    images: [
+      ImageModel(link: "assets/projects/jumia clone/jumia1.PNG", type: "image"),
+      ImageModel(link: "assets/projects/jumia clone/jumia2.PNG", type: "image"),
+      ImageModel(link: "assets/projects/jumia clone/jumia3.PNG", type: "image"),
+      ImageModel(link: "assets/projects/jumia clone/jumia4.PNG", type: "image"),
+    ],
     description: """""",
   ),
   ProjectModel(
@@ -251,10 +259,11 @@ The application works same like Siri/ Google Assistant etc. But the application 
     "Multi Language Support",
     "Rest Api",
     "Web Scrapping"
-  ], images: [ImageModel(link: "assets/projects/horoscope/h1.jpg", type: "image"),
-  ImageModel(link: "assets/projects/horoscope/h2.jpg", type: "image"),
-  ImageModel(link: "assets/projects/horoscope/h3.jpg", type: "image"),
-  ImageModel(link: "assets/projects/horoscope/h4.jpg", type: "image"),
+  ], images: [
+    ImageModel(link: "assets/projects/horoscope/h1.jpg", type: "image"),
+    ImageModel(link: "assets/projects/horoscope/h2.jpg", type: "image"),
+    ImageModel(link: "assets/projects/horoscope/h3.jpg", type: "image"),
+    ImageModel(link: "assets/projects/horoscope/h4.jpg", type: "image"),
   ], description: """""", languages: [
     "Flutter",
     "Python"
@@ -267,7 +276,9 @@ The application works same like Siri/ Google Assistant etc. But the application 
       "Face Detection",
       "Face reconition",
     ],
-    images: [ImageModel(link: "assets/projects/face_detection/f1.PNG", type: "image"),],
+    images: [
+      ImageModel(link: "assets/projects/face_detection/f1.PNG", type: "image"),
+    ],
     description: """""",
   ),
   ProjectModel(
@@ -278,18 +289,19 @@ The application works same like Siri/ Google Assistant etc. But the application 
       "PyGame",
       "AI",
     ],
-    images: [ImageModel(link: "assets/projects/snake/snake.PNG", type: "image"),],
+    images: [
+      ImageModel(link: "assets/projects/snake/snake.PNG", type: "image"),
+    ],
     description: """""",
   ),
   ProjectModel(
     name: "Text to Speech",
     pic: "tts.png",
     languages: ["Python"],
-    keyWords: [
-      "Tkinter",
-      "Pyttsx"
+    keyWords: ["Tkinter", "Pyttsx"],
+    images: [
+      ImageModel(link: "assets/projects/text to speach/tts.PNG", type: "image"),
     ],
-    images: [ImageModel(link: "assets/projects/text to speach/tts.PNG", type: "image"),],
     description: """""",
   ),
 ];
