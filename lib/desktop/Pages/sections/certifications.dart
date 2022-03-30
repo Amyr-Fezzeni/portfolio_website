@@ -10,7 +10,7 @@ class Certifications extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Container(
       margin: const EdgeInsets.only(bottom: 150),
-      height: 950,
+      height: 960,
       width: size.width * 0.9,
       child: Column(
         children: [

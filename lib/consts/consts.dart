@@ -6,6 +6,7 @@ import 'package:flutter_portfolio_website/desktop/Pages/sections/photography.dar
 import 'package:flutter_portfolio_website/desktop/Pages/sections/projects.dart';
 import 'package:flutter_portfolio_website/desktop/custom%20widgets/appbar/appbar.dart';
 import 'package:flutter_portfolio_website/models/certification_model.dart';
+import 'package:flutter_portfolio_website/models/image_model.dart';
 import 'package:flutter_portfolio_website/models/project_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_portfolio_website/desktop/Pages/sections/skills.dart';
@@ -81,31 +82,216 @@ List<dynamic> allSkills = [
 ];
 
 List<ProjectModel> allProjects = [
-  ProjectModel(name: "XO Game", pic: "xo_game.png", languages: ["Flutter"]),
   ProjectModel(
-      name: "Truth Or Dare", pic: "truthordare.png", languages: ["Flutter"]),
+    name: "XO Game",
+    pic: "xo_game.png",
+    languages: ["Flutter"],
+    keyWords: [
+      "Responsive UI",
+      "Provider",
+      "AI"
+    ],
+    images: [ImageModel(link: "assets/projects/xo/xo1.jpg", type: "image"),
+    ImageModel(link: "assets/projects/xo/xo2.jpg", type: "image"),
+    ImageModel(link: "assets/projects/xo/xo3.jpg", type: "image"),
+    ImageModel(link: "assets/projects/xo/xo4.jpg", type: "image"),],
+    description: """""",
+  ),
+  ProjectModel(
+    name: "Truth Or Dare",
+    pic: "truthordare.png",
+    languages: ["Flutter"],
+    keyWords: [
+      "Responsive UI",
+      "Provider",
+      "State Management",
+      "Firebase",
+    ],
+    images: [ImageModel(link: "assets/projects/truth or dare/t1.jpg", type: "image"),
+    ImageModel(link: "assets/projects/truth or dare/t2.jpg", type: "image"),
+    ImageModel(link: "assets/projects/truth or dare/t3.jpg", type: "image"),
+    ImageModel(link: "assets/projects/truth or dare/t4.jpg", type: "image"),
+    ImageModel(link: "assets/projects/truth or dare/t5.jpg", type: "image"),
+    ImageModel(link: "assets/projects/truth or dare/t6.jpg", type: "image"),
+    ImageModel(link: "assets/projects/truth or dare/t7.jpg", type: "image"),
+    ImageModel(link: "assets/projects/truth or dare/t8.jpg", type: "image"),
+    ],
+    description: """""",
+  ),
   ProjectModel(
       name: "Aphrodite Academy",
       pic: "_aphrodite.jpg",
-      languages: ["Flutter", "Python"]),
-  ProjectModel(name: "Jarvis", pic: "jarvis.gif", languages: ["Python"]),
+      languages: [
+        "Flutter",
+        "Python"
+      ],
+      keyWords: [
+        "Provider",
+        "responsive UI",
+        "Firebase",
+        "Google Sin In",
+        "Image manipulation",
+        "Rest API",
+        "PIL"
+      ],
+      images: [
+        ImageModel(link: "assets/projects/aphrodite/a1.jpg", type: "image"),
+        ImageModel(link: "assets/projects/aphrodite/a2.jpg", type: "image"),
+        ImageModel(link: "assets/projects/aphrodite/a3.jpg", type: "image"),
+        ImageModel(link: "assets/projects/aphrodite/a4.jpg", type: "image"),
+      ],
+      description:
+          """mobile application for the management of an aesthetic training school with Flutter and google sheet.
+ •  adding new students
+ •  calculate the amount of money for registration
+ •  remove and modify students informations
+ •  payment option with history
+ •  generate and download diplomes  
+ """),
   ProjectModel(
-      name: "Astro Dating App",
-      pic: "astro_logo.png",
-      languages: ["Flutter", "Python"]),
+      name: "Jarvis",
+      pic: "jarvis.gif",
+      languages: [
+        "Python"
+      ],
+      keyWords: [
+        'Arduino',
+        'Speech recognition',
+        'OpenCV',
+        'Pickle',
+        'Face recognition',
+        'Face Detection',
+        'Numpy'
+      ],
+      images: [
+        ImageModel(link: "assets/projects/jarvis/giphy.gif", type: "image"),
+        ImageModel(
+            link: "assets/projects/jarvis/jarvis-iron-man.gif", type: "image")
+      ],
+      description:
+          """J.A.R.V.I.S. is a multi-functional AI software program capable of managing the local environment, able to interact with human beings just as a living person.
+The basic idea behind this project is to create a simple stand-alone application that allow the user to control his computer and the local environment like light switch, door lock... 
+The application works same like Siri/ Google Assistant etc. But the application deals with the computer itself.
+ - The system provides all the below stated functions:
+
+ •  opening or close applications.
+ •  browsing the internet.
+ •  Searching command in google, Wikipedia or YouTube.
+ •  Getting simple information about the local time and the weather.
+ •  Control the light switch (environment).
+ •  Control the door lock (environment).
+ •  Create and remind notes.
+ •  Read any selected text.
+ •  controlling system brightness, volume.
+ •  Control the webcam
+ •  Face detection and facial recognition 
+ •  Telling jokes
+ •  Read last notification (Emails, Instagram messages, Devices state…)
+"""),
   ProjectModel(
-      name: "Jumia clone",
-      pic: "logo_mini.png",
-      languages: ["Flutter", "Python"]),
+    name: "Astro Dating App",
+    pic: "astro_logo.png",
+    languages: ["Flutter", "Python"],
+    keyWords: [
+      "Responsive UI",
+      "Provider",
+      "Stream",
+      "Real-time Database",
+      "State Management",
+      "Multi Language Support",
+      "Flask",
+      "Rest Api",
+      "Crypting data",
+      "Web Scrapping"
+    ],
+    images: [ImageModel(link: "assets/projects/astro/as1.jpg", type: "image"),
+    ImageModel(link: "assets/projects/astro/as2.jpg", type: "image"),
+    ImageModel(link: "assets/projects/astro/as3.jpg", type: "image"),
+    ImageModel(link: "assets/projects/astro/as4.jpg", type: "image"),
+    ImageModel(link: "assets/projects/astro/as5.jpg", type: "image"),],
+    description: """""",
+  ),
   ProjectModel(
-      name: "Bank management", pic: "cptbank.PNG", languages: ["Java"]),
+    name: "Jumia clone",
+    pic: "logo_mini.png",
+    languages: ["Flutter", "Python"],
+    keyWords: [
+      "Provider",
+      "State Management",
+      "Flask",
+      "Rest Api",
+      "MongoDB",
+      "Web Scrapping"
+    ],
+    images: [ImageModel(link: "assets/projects/jumia clone/jumia1.PNG", type: "image"),
+    ImageModel(link: "assets/projects/jumia clone/jumia2.PNG", type: "image"),
+    ImageModel(link: "assets/projects/jumia clone/jumia3.PNG", type: "image"),
+    ImageModel(link: "assets/projects/jumia clone/jumia4.PNG", type: "image"),],
+    description: """""",
+  ),
   ProjectModel(
-      name: "Horoscope",
-      pic: "horoscope.png",
-      languages: ["Flutter", "Python"]),
-  ProjectModel(name: "Facial reconition", pic: "f.PNG", languages: ["Python"]),
-  ProjectModel(name: "Snake Game", pic: "snake_.jpg", languages: ["Python"]),
-  ProjectModel(name: "Text to Speech", pic: "tts.png", languages: ["Python"]),
+    name: "Bank management",
+    pic: "cptbank.PNG",
+    languages: ["Java"],
+    keyWords: [
+      "Responsive UI",
+      "Provider",
+      "State Management",
+      "Multi Language Support",
+      "Rest Api",
+      "Web Scrapping"
+    ],
+    images: [],
+    description: """""",
+  ),
+  ProjectModel(name: "Horoscope", pic: "horoscope.png", keyWords: [
+    "Responsive UI",
+    "Provider",
+    "State Management",
+    "Multi Language Support",
+    "Rest Api",
+    "Web Scrapping"
+  ], images: [ImageModel(link: "assets/projects/horoscope/h1.jpg", type: "image"),
+  ImageModel(link: "assets/projects/horoscope/h2.jpg", type: "image"),
+  ImageModel(link: "assets/projects/horoscope/h3.jpg", type: "image"),
+  ImageModel(link: "assets/projects/horoscope/h4.jpg", type: "image"),
+  ], description: """""", languages: [
+    "Flutter",
+    "Python"
+  ]),
+  ProjectModel(
+    name: "Facial reconition",
+    pic: "f.PNG",
+    languages: ["Python"],
+    keyWords: [
+      "Face Detection",
+      "Face reconition",
+    ],
+    images: [ImageModel(link: "assets/projects/face_detection/f1.PNG", type: "image"),],
+    description: """""",
+  ),
+  ProjectModel(
+    name: "Snake Game",
+    pic: "snake_.jpg",
+    languages: ["Python"],
+    keyWords: [
+      "PyGame",
+      "AI",
+    ],
+    images: [ImageModel(link: "assets/projects/snake/snake.PNG", type: "image"),],
+    description: """""",
+  ),
+  ProjectModel(
+    name: "Text to Speech",
+    pic: "tts.png",
+    languages: ["Python"],
+    keyWords: [
+      "Tkinter",
+      "Pyttsx"
+    ],
+    images: [ImageModel(link: "assets/projects/text to speach/tts.PNG", type: "image"),],
+    description: """""",
+  ),
 ];
 
 List<CertificationModel> allCertifications = [

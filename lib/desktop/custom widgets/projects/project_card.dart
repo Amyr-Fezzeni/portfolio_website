@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
+import 'package:flutter_portfolio_website/desktop/Pages/project%20details/project_details.dart';
 import 'package:flutter_portfolio_website/desktop/custom%20widgets/projects/background_animated_color.dart';
 import 'package:flutter_portfolio_website/models/project_model.dart';
 
@@ -118,7 +119,7 @@ class _ProjectCardState extends State<ProjectCard>
                                   primary: Colors.white,
                                   backgroundColor: btnColor,
                                 ),
-                                onPressed: () {},
+                                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>ProjectDetails(project: widget.model))),
                                 child: Text(
                                   " More details ",
                                   style: text18white,
