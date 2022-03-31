@@ -2,6 +2,7 @@ import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
 import 'package:flutter_portfolio_website/desktop/custom%20widgets/photography/h_picture.dart';
+import 'package:flutter_portfolio_website/desktop/custom%20widgets/video%20player/youtube_player.dart';
 import 'package:flutter_portfolio_website/models/project_model.dart';
 import 'package:provider/provider.dart';
 
@@ -24,39 +25,51 @@ class DesktopProjectDetails extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                height: size.height * 0.6,
-                width: size.width * 0.4,
-                child: Swiper(
-                  itemBuilder: (BuildContext context, int index) {
-                    return project.images.isEmpty
-                        ? Container()
-                        : ProjectPicture(
-                            link: project.images[index].link, aspect: 7 / 5.3);
-                  },
-                  itemCount: project.images.length,
-                  duration: 500,
-                  loop: true,
-                  itemHeight: size.height * 0.6,
-                  itemWidth: size.width * 0.4,
-                  curve: Curves.easeInOut,
-                  layout: SwiperLayout.TINDER,
-                  onIndexChanged: (index) {},
+          SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                project.images.isNotEmpty
+                    ? Container(
+                        margin: const EdgeInsets.only(bottom: 20),
+                        height: size.height * 0.6,
+                        width: size.width * 0.4,
+                        child: Swiper(
+                          itemBuilder: (BuildContext context, int index) {
+                            return ProjectPicture(
+                                link: project.images[index].link,
+                                aspect: 7 / 5.3);
+                          },
+                          itemCount: project.images.length,
+                          duration: 500,
+                          loop: false,
+                          itemHeight: size.height * 0.6,
+                          itemWidth: size.width * 0.4,
+                          curve: Curves.easeInOut,
+                          layout: SwiperLayout.TINDER,
+                          onIndexChanged: (index) {},
+                          autoplay: true,
+                          autoplayDelay: 1000,
+                          autoplayDisableOnInteraction: true,
+                        ),
+                      )
+                    : const SizedBox(),
+                project.videos.isNotEmpty
+                    ? Container(
+                        margin: const EdgeInsets.only(bottom: 20),
+                        height: size.height * 0.6,
+                        width: size.width * 0.4,
+                        child: YoutubePlayerWidget(links: project.videos))
+                    : const SizedBox(),
+                project.getLanguagesWithIcons(state.text18),
+                const SizedBox(
+                  height: 20,
                 ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              project.getLanguagesWithIcons(state.text18),
-              const SizedBox(
-                height: 20,
-              ),
-            ],
+              ],
+            ),
           ),
           Container(
+            margin: const EdgeInsets.symmetric(horizontal: 20),
             height: size.height * 0.8,
             width: 1,
             color: btnColor,

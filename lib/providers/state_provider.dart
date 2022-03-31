@@ -100,9 +100,9 @@ class StateProvider with ChangeNotifier {
   final _aboutP = 0;
   final _skilP = 930;
   final _projectP = 1510;
-  final _certificationP = 2065;
-  final _photographyP = 2585;
-  final _contactP = 3520;
+  final _certificationP = 2115;
+  final _photographyP = 2635;
+  final _contactP = 3570;
 
   jumpToSection(int index) {
     switch (index) {

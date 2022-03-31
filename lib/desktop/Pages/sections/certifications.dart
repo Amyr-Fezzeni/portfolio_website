@@ -44,7 +44,7 @@ class CertificationsPhone extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 150),
 
-      width: width * 0.8,
+      width: width * 0.99,
       child: Column(
         children: [
           const TitleWidgetPhone(

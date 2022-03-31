@@ -8,6 +8,7 @@ class ProjectModel {
   final String pic;
   final List<String> languages;
   final List<ImageModel> images;
+  final List<String> videos;
   final String description;
   final List<String> keyWords;
 
@@ -17,6 +18,7 @@ class ProjectModel {
       required this.description,
       required this.images,
       required this.keyWords,
+      required this.videos,
       required this.languages});
 
   String getLanguages() {

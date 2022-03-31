@@ -5,6 +5,7 @@ import 'package:flutter_portfolio_website/desktop/Pages/sections/contact.dart';
 import 'package:flutter_portfolio_website/desktop/Pages/sections/photography.dart';
 import 'package:flutter_portfolio_website/desktop/Pages/sections/projects.dart';
 import 'package:flutter_portfolio_website/desktop/custom%20widgets/appbar/appbar.dart';
+import 'package:flutter_portfolio_website/desktop/custom%20widgets/video%20player/youtube_player.dart';
 import 'package:flutter_portfolio_website/models/certification_model.dart';
 import 'package:flutter_portfolio_website/models/image_model.dart';
 import 'package:flutter_portfolio_website/models/project_model.dart';
@@ -88,6 +89,7 @@ List<ProjectModel> allProjects = [
     pic: "xo_game.png",
     languages: ["Flutter"],
     keyWords: ["Responsive UI", "Provider", "AI"],
+    videos: [],
     images: [
       ImageModel(link: "assets/projects/xo/xo1.jpg", type: "image"),
       ImageModel(link: "assets/projects/xo/xo2.jpg", type: "image"),
@@ -110,6 +112,7 @@ List<ProjectModel> allProjects = [
       "State Management",
       "Firebase",
     ],
+    videos: [],
     images: [
       ImageModel(link: "assets/projects/truth or dare/t1.jpg", type: "image"),
       ImageModel(link: "assets/projects/truth or dare/t2.jpg", type: "image"),
@@ -120,7 +123,11 @@ List<ProjectModel> allProjects = [
       ImageModel(link: "assets/projects/truth or dare/t7.jpg", type: "image"),
       ImageModel(link: "assets/projects/truth or dare/t8.jpg", type: "image"),
     ],
-    description: """""",
+    description: """What is Truth or Dare game?
+A game in which each player in turn must either truthfully answer a question, or perform a dare.
+ •  There are two modes in this game (for couple & for friends), and for each mode there are four levels (Soft, Hot, Hard and Extreme).
+ •  All data are stored in firebase
+ •  Smart system that gives truth or dare according the game mode and the player who choose to play (a guy or a girl)""",
   ),
   ProjectModel(
       name: "Aphrodite Academy",
@@ -138,6 +145,7 @@ List<ProjectModel> allProjects = [
         "Rest API",
         "PIL"
       ],
+      videos: [],
       images: [
         ImageModel(link: "assets/projects/aphrodite/a1.jpg", type: "image"),
         ImageModel(link: "assets/projects/aphrodite/a2.jpg", type: "image"),
@@ -167,6 +175,7 @@ List<ProjectModel> allProjects = [
         'Face Detection',
         'Numpy'
       ],
+      videos: [],
       images: [
         ImageModel(link: "assets/projects/jarvis/giphy.gif", type: "image"),
         ImageModel(
@@ -208,6 +217,7 @@ The application works same like Siri/ Google Assistant etc. But the application 
       "Crypting data",
       "Web Scrapping"
     ],
+    videos: [],
     images: [
       ImageModel(link: "assets/projects/astro/as1.jpg", type: "image"),
       ImageModel(link: "assets/projects/astro/as2.jpg", type: "image"),
@@ -215,7 +225,16 @@ The application works same like Siri/ Google Assistant etc. But the application 
       ImageModel(link: "assets/projects/astro/as4.jpg", type: "image"),
       ImageModel(link: "assets/projects/astro/as5.jpg", type: "image"),
     ],
-    description: """""",
+    description: """Astro Dating App
+    •  A dating app where users cand find there soul mates by switching and matching each other
+    •  The app provide all these feature :
+      -  Create account
+      -  Google sin in
+      -  Firebase Authentication
+      -  Firebase Storage
+      -  Real-time Database
+      -  Messages
+      -  Sharing pictures and stories""",
   ),
   ProjectModel(
     name: "Jumia clone",
@@ -227,59 +246,73 @@ The application works same like Siri/ Google Assistant etc. But the application 
       "Flask",
       "Rest Api",
       "MongoDB",
-      "Web Scrapping"
+      "Web Scrapping",
+      "BeatifulSoup"
     ],
+    videos: [],
     images: [
       ImageModel(link: "assets/projects/jumia clone/jumia1.PNG", type: "image"),
       ImageModel(link: "assets/projects/jumia clone/jumia2.PNG", type: "image"),
       ImageModel(link: "assets/projects/jumia clone/jumia3.PNG", type: "image"),
       ImageModel(link: "assets/projects/jumia clone/jumia4.PNG", type: "image"),
     ],
-    description: """""",
+    description: """Jumia Tunisie website clone
+  •  In this project I tried to copy jumia UI
+  •  Web scraping to get some data from the official website
+  •  storing and managing data from MongoDB""",
   ),
   ProjectModel(
     name: "Bank management",
     pic: "cptbank.PNG",
     languages: ["Java"],
     keyWords: [
-      "Responsive UI",
-      "Provider",
-      "State Management",
-      "Multi Language Support",
-      "Rest Api",
-      "Web Scrapping"
+      "Java",
+      "Mysql",
     ],
+    videos: ["ZQMlZmmDYTs"],
     images: [],
-    description: """""",
+    description: """Bank account Management
+    •  Desktop application for bank account management, client and administrator interface using Java and Mysql.""",
   ),
-  ProjectModel(name: "Horoscope", pic: "horoscope.png", keyWords: [
-    "Responsive UI",
-    "Provider",
-    "State Management",
-    "Multi Language Support",
-    "Rest Api",
-    "Web Scrapping"
-  ], images: [
-    ImageModel(link: "assets/projects/horoscope/h1.jpg", type: "image"),
-    ImageModel(link: "assets/projects/horoscope/h2.jpg", type: "image"),
-    ImageModel(link: "assets/projects/horoscope/h3.jpg", type: "image"),
-    ImageModel(link: "assets/projects/horoscope/h4.jpg", type: "image"),
-  ], description: """""", languages: [
-    "Flutter",
-    "Python"
-  ]),
+  ProjectModel(
+      name: "Horoscope",
+      pic: "horoscope.png",
+      keyWords: [
+        "Responsive UI",
+        "Provider",
+        "State Management",
+        "Multi Language Support",
+        "Rest Api",
+        "Web Scrapping"
+      ],
+      videos: [],
+      images: [
+        ImageModel(link: "assets/projects/horoscope/h1.jpg", type: "image"),
+        ImageModel(link: "assets/projects/horoscope/h2.jpg", type: "image"),
+        ImageModel(link: "assets/projects/horoscope/h3.jpg", type: "image"),
+        ImageModel(link: "assets/projects/horoscope/h4.jpg", type: "image"),
+      ],
+      description:
+          """Astrology mobile app that allow the user to see his horoscope data daily
+   •  Data for today, yesterday, tomorrow and for this week
+   •  Multi language support
+   •  Web scraping the data from different websites""",
+      languages: [
+        "Flutter",
+        "Python"
+      ]),
   ProjectModel(
     name: "Facial reconition",
     pic: "f.PNG",
     languages: ["Python"],
-    keyWords: [
-      "Face Detection",
-      "Face reconition",
-    ],
+    keyWords: ["Face Detection", "Face reconition", "OpenCV", "Numpy"],
+    videos: [],
     images: [
       ImageModel(link: "assets/projects/face_detection/f1.PNG", type: "image"),
     ],
-    description: """""",
+    description: """ •  The application use the pc camera as source.
+ •  Detect faces in real time and try to figure out the name of the person by comparing the real time data with the trained one.
+ •  I only used few pictures for training so the accuracy not perfect, in good light condition will recognize my face instantly even if I show him new picture that I didn't used it for the training.""",
   ),
   ProjectModel(
     name: "Snake Game",
@@ -289,10 +322,12 @@ The application works same like Siri/ Google Assistant etc. But the application 
       "PyGame",
       "AI",
     ],
+    videos: [],
     images: [
       ImageModel(link: "assets/projects/snake/snake.PNG", type: "image"),
     ],
-    description: """""",
+    description: """Snake Game desktop application with python
+    •  AI auto play mode""",
   ),
   ProjectModel(
     name: "Text to Speech",
@@ -302,7 +337,10 @@ The application works same like Siri/ Google Assistant etc. But the application 
     images: [
       ImageModel(link: "assets/projects/text to speach/tts.PNG", type: "image"),
     ],
-    description: """""",
+    videos: [],
+    description: """Text to speech desktop application with python
+    •  Copy & paste your text, press the Speak button and the application will start speaking
+    •  Save to mp3 file Option""",
   ),
 ];
 

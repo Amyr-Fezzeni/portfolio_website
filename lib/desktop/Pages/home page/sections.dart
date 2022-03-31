@@ -15,7 +15,7 @@ class Sections extends StatelessWidget {
       context.read<StateProvider>().changeDisplayMode(context);
     }
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 5),
       child: Column(
         children: size ? desktopSections : phoneSections,
       ),

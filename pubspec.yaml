@@ -42,7 +42,7 @@ dependencies:
   flutter_speed_dial: ^4.6.6
   url_launcher: ^6.0.9
   flutter_neumorphic: ^3.2.0
-  blurrycontainer: ^0.1.0
+  youtube_player_iframe: ^2.2.2
 
 dev_dependencies:
   flutter_test:

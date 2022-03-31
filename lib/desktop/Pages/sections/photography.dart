@@ -79,7 +79,7 @@ class PhotographyPhone extends StatelessWidget {
     return Container(
         margin: const EdgeInsets.only(bottom: 100),
         // height: 600,
-        width: size.width * 0.9,
+        width: size.width * 0.99,
         child: Column(
           children: [
             const TitleWidgetPhone(

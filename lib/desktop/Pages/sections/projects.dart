@@ -90,7 +90,7 @@ class ProjectsPhone extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 150),
       // height: 900,
-      width: size.width * 0.9,
+      width: size.width * 0.99,
       child: Column(
         children: [
           const TitleWidgetPhone(
