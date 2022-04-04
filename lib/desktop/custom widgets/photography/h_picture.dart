@@ -38,7 +38,7 @@ class ProjectPicture extends StatelessWidget {
         child: Container(
           width: double.infinity,
           decoration: BoxDecoration(
-              color: Colors.black54,
+              color: Colors.black.withOpacity(0.9),
               borderRadius: BorderRadius.circular(12),
               image: DecorationImage(
                   fit: BoxFit.contain, image: AssetImage(link))),

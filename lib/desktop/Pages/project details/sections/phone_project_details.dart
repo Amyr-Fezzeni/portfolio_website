@@ -29,7 +29,7 @@ class PhoneProjectDetails extends StatelessWidget {
                     ? Container(
                         margin: const EdgeInsets.only(bottom: 20),
                         height: size.height * 0.6,
-                        width: size.width * 0.4,
+                        width: size.width * 0.9,
                         child: Swiper(
                           itemBuilder: (BuildContext context, int index) {
                             return ProjectPicture(
@@ -40,7 +40,7 @@ class PhoneProjectDetails extends StatelessWidget {
                           duration: 500,
                           loop: true,
                           itemHeight: size.height * 0.6,
-                          itemWidth: size.width * 0.4,
+                          itemWidth: size.width * 0.9,
                           curve: Curves.easeInOut,
                           layout: SwiperLayout.TINDER,
                           onIndexChanged: (index) {},
@@ -55,10 +55,7 @@ class PhoneProjectDetails extends StatelessWidget {
                       width: size.width * 0.9,
                       child: YoutubePlayerWidget(links: project.videos))
                   : const SizedBox(),
-            project.getLanguagesWithIcons(state.text18),
-            const SizedBox(
-              height: 20,
-            ),
+            
             Container(
               height: 1,
               width: size.width * 0.8,
@@ -72,6 +69,10 @@ class PhoneProjectDetails extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
+                  project.getLanguagesWithIcons(state.text18),
+            const SizedBox(
+              height: 20,
+            ),
                   SizedBox(
                     width: size.width,
                     child: Wrap(

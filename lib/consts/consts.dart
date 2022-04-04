@@ -269,7 +269,11 @@ The application works same like Siri/ Google Assistant etc. But the application 
       "Mysql",
     ],
     videos: ["ZQMlZmmDYTs"],
-    images: [],
+    images: [
+      ImageModel(link: "assets/projects/cptbank/c1.PNG", type: "image"),
+      ImageModel(link: "assets/projects/cptbank/c2.PNG", type: "image"),
+      ImageModel(link: "assets/projects/cptbank/c3.PNG", type: "image"),
+    ],
     description: """Bank account Management
     •  Desktop application for bank account management, client and administrator interface using Java and Mysql.""",
   ),

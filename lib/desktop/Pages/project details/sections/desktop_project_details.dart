@@ -17,6 +17,9 @@ class DesktopProjectDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     var state = context.watch<StateProvider>();
     var size = MediaQuery.of(context).size;
+    ScrollController c1 = ScrollController();
+
+    ScrollController c2 = ScrollController();
     return Container(
       width: size.width,
       height: size.height,
@@ -26,6 +29,8 @@ class DesktopProjectDetails extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            controller: c1,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -48,7 +53,6 @@ class DesktopProjectDetails extends StatelessWidget {
                           curve: Curves.easeInOut,
                           layout: SwiperLayout.TINDER,
                           onIndexChanged: (index) {},
-                         
                         ),
                       )
                     : const SizedBox(),
@@ -59,7 +63,7 @@ class DesktopProjectDetails extends StatelessWidget {
                         width: size.width * 0.4,
                         child: YoutubePlayerWidget(links: project.videos))
                     : const SizedBox(),
-                project.getLanguagesWithIcons(state.text18),
+                
                 const SizedBox(
                   height: 20,
                 ),
@@ -73,16 +77,22 @@ class DesktopProjectDetails extends StatelessWidget {
             color: btnColor,
           ),
           SingleChildScrollView(
+            controller: c2,
             physics: const BouncingScrollPhysics(),
             child: Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: 20.0, vertical: 30),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(
                     height: 20,
                   ),
+                  project.getLanguagesWithIcons(state.text18),
+                const SizedBox(
+                  height: 20,
+                ),
                   SizedBox(
                     width: size.width * 0.5,
                     child: Wrap(

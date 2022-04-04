@@ -56,7 +56,7 @@ class ProjectModel {
         ),
       ));
     }
-    return Row(mainAxisAlignment: MainAxisAlignment.center, children: widgets);
+    return Row( children: widgets);
   }
 
   String getIcon(String language) {
