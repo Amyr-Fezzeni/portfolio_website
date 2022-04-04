@@ -42,15 +42,13 @@ class DesktopProjectDetails extends StatelessWidget {
                           },
                           itemCount: project.images.length,
                           duration: 500,
-                          loop: false,
+                          loop: true,
                           itemHeight: size.height * 0.6,
                           itemWidth: size.width * 0.4,
                           curve: Curves.easeInOut,
                           layout: SwiperLayout.TINDER,
                           onIndexChanged: (index) {},
-                          autoplay: true,
-                          autoplayDelay: 1000,
-                          autoplayDisableOnInteraction: true,
+                         
                         ),
                       )
                     : const SizedBox(),

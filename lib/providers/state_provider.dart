@@ -77,11 +77,15 @@ class StateProvider with ChangeNotifier {
   bool skil = false;
   changeVisivilituSkill() {
     if (controller.offset > 200 && controller.offset < 1000) {
+      if (skil == true) return;
       skil = true;
+      notifyListeners();
     } else {
+      if (skil == false) return;
       skil = false;
+      notifyListeners();
     }
-    notifyListeners();
+ 
   }
 
 //scroll controller
@@ -134,8 +138,10 @@ class StateProvider with ChangeNotifier {
   bool isUp = false;
   upButton() {
     if (controller.offset > 200) {
+      if (isUp == true) return;
       isUp = true;
     } else {
+      if (isUp == false) return;
       isUp = false;
     }
     notifyListeners();

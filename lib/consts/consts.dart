@@ -5,7 +5,6 @@ import 'package:flutter_portfolio_website/desktop/Pages/sections/contact.dart';
 import 'package:flutter_portfolio_website/desktop/Pages/sections/photography.dart';
 import 'package:flutter_portfolio_website/desktop/Pages/sections/projects.dart';
 import 'package:flutter_portfolio_website/desktop/custom%20widgets/appbar/appbar.dart';
-import 'package:flutter_portfolio_website/desktop/custom%20widgets/video%20player/youtube_player.dart';
 import 'package:flutter_portfolio_website/models/certification_model.dart';
 import 'package:flutter_portfolio_website/models/image_model.dart';
 import 'package:flutter_portfolio_website/models/project_model.dart';

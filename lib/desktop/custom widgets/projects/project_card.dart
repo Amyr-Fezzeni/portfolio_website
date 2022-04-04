@@ -13,7 +13,8 @@ class ProjectCard extends StatefulWidget {
 
 class _ProjectCardState extends State<ProjectCard>
     with SingleTickerProviderStateMixin {
-  late AnimationController controller;
+    late AnimationController controller;
+
 
   // ignore: prefer_typing_uninitialized_variables
   late final _animation;
@@ -34,7 +35,7 @@ class _ProjectCardState extends State<ProjectCard>
 
   @override
   Widget build(BuildContext context) {
-    // var provider = context.watch<StateProvider>();
+ 
     return MouseRegion(
       onEnter: (event) {
         controller.forward();
@@ -46,7 +47,7 @@ class _ProjectCardState extends State<ProjectCard>
         height: 200,
         width: 200,
         margin: const EdgeInsets.all(10),
-        // padding: const EdgeInsets.all(4),
+
         decoration: BoxDecoration(
           color: btnColor.withAlpha(150),
           borderRadius: BorderRadius.circular(20),
@@ -56,7 +57,7 @@ class _ProjectCardState extends State<ProjectCard>
           width: 400,
           child: Stack(
             children: [
-              // const BGColors(),
+             
               Positioned(
                 child: Center(
                   child: SizedBox(

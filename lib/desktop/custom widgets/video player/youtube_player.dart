@@ -17,9 +17,7 @@ class _YoutubePlayerWidgetState extends State<YoutubePlayerWidget> {
     super.initState();
     _controller = YoutubePlayerController(
       initialVideoId: widget.links[0],
-
       params: YoutubePlayerParams(
-        
         playlist: widget.links.length > 1
             ? widget.links
             : [], // Defining custom playlist
@@ -51,7 +49,6 @@ class _YoutubePlayerWidgetState extends State<YoutubePlayerWidget> {
       // height: 200,
       child: Center(
         child: YoutubePlayerIFrame(
-          
           controller: _controller,
           aspectRatio: 16 / 9,
         ),

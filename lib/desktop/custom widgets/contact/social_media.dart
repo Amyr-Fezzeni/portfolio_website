@@ -15,41 +15,34 @@ class SocialMedia extends StatelessWidget {
     var state = context.watch<StateProvider>();
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10),
-      child: NeumorphicButton(
-          onPressed: () => context.read<StateProvider>().goToWebsite(index),
-          style: NeumorphicStyle(
-            color: state.bgcolor,
-            shape: NeumorphicShape.flat,
-            intensity: 0.4,
-            boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(10)),
-          ),
-          child: InkWell(
-            onTap: () {},
-            child: SizedBox(
-              width: 200,
-              child: Row(
-                children: [
-                  Container(
-                      decoration: BoxDecoration(
-                          color: index == 1 ? Colors.white : Colors.transparent,
-                          borderRadius: BorderRadius.circular(10)),
-                      height: 30,
-                      child: Image(
-                        image: AssetImage(
-                          "assets/icons/$image",
-                        ),
-                      )),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    title,
-                    style: state.text18,
-                  ),
-                ],
+      child: InkWell(
+        onTap: () => context.read<StateProvider>().goToWebsite(index),
+        child: SizedBox(
+          width: 200,
+          height: 50,
+          child: Row(
+            children: [
+              Container(
+                  decoration: BoxDecoration(
+                      color: index == 1 ? Colors.white : Colors.transparent,
+                      borderRadius: BorderRadius.circular(10)),
+                  height: 30,
+                  child: Image(
+                    image: AssetImage(
+                      "assets/icons/$image",
+                    ),
+                  )),
+              const SizedBox(
+                width: 10,
               ),
-            ),
-          )),
+              Text(
+                title,
+                style: state.text18,
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
