@@ -38,6 +38,9 @@ class Photography extends StatelessWidget {
                     itemHeight: 500,
                     itemWidth: 330,
                     curve: Curves.easeInOut,
+                    // autoplay: true,
+                    // autoplayDelay: 3000,
+
                     layout: SwiperLayout.TINDER,
                     onIndexChanged: (index) {},
                   ),
@@ -102,6 +105,8 @@ class PhotographyPhone extends StatelessWidget {
                     loop: true,
                     itemHeight: 500,
                     itemWidth: 330,
+                    // autoplay: true,
+                    // autoplayDelay: 3000,
                     curve: Curves.easeInOut,
                     layout: SwiperLayout.TINDER,
                     onIndexChanged: (index) {},

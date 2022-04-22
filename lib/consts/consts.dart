@@ -71,7 +71,7 @@ I'm a self learning person with a good problem solving ability.
 
 List<dynamic> allSkills = [
   ["Python", 95],
-  ["Python", 90],
+  ["Flutter", 90],
   ["Dart", 90],
   ["Java", 80],
   ["NodeJS", 75],
@@ -225,7 +225,7 @@ The application works same like Siri/ Google Assistant etc. But the application 
       ImageModel(link: "assets/projects/astro/as5.jpg", type: "image"),
     ],
     description: """Astro Dating App
-    •  A dating app where users cand find there soul mates by switching and matching each other
+    •  A dating app where users can find there soul mates by switching and matching each other
     •  The app provide all these feature :
       -  Create account
       -  Google sin in

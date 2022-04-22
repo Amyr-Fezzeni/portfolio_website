@@ -85,7 +85,6 @@ class StateProvider with ChangeNotifier {
       skil = false;
       notifyListeners();
     }
- 
   }
 
 //scroll controller
@@ -242,4 +241,8 @@ class StateProvider with ChangeNotifier {
         break;
     }
   }
+
+
+
+
 }
