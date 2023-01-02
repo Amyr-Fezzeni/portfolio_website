@@ -7,7 +7,8 @@ import 'package:provider/provider.dart';
 import '../../../providers/state_provider.dart';
 
 class Profile extends StatefulWidget {
-  const Profile({Key? key}) : super(key: key);
+  final double size;
+  const Profile({Key? key, this.size = 302}) : super(key: key);
 
   @override
   State<Profile> createState() => _ProfileState();
@@ -34,10 +35,10 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     var state = context.watch<StateProvider>();
     return Container(
-      height: 302,
-      width: 302,
+      height: widget.size,
+      width: widget.size,
       decoration: BoxDecoration(
-        color: state.bgcolor,
+        // color: state.bgcolor,
         borderRadius: BorderRadius.circular(350),
         boxShadow: [
           BoxShadow(
@@ -58,8 +59,8 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                 );
               },
               child: Container(
-                height: 302,
-                width: 302,
+                height: widget.size,
+                width: widget.size,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(350),
                     gradient: const LinearGradient(
@@ -77,7 +78,7 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
           ),
           Center(
             child: CircleAvatar(
-              radius: 145,
+              radius: widget.size / 2.1,
               backgroundImage: myImage,
               backgroundColor: state.bgcolor,
             ),

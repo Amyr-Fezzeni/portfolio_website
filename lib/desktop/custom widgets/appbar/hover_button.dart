@@ -70,6 +70,7 @@ class _HoverButtonMenuState extends State<HoverButtonMenu> {
   @override
   Widget build(BuildContext context) {
     var state = context.read<StateProvider>();
+    // var style = context.read<StateProvider>();
     return Container(
       margin: const EdgeInsets.all(10),
       height: 35,
@@ -98,7 +99,7 @@ class _HoverButtonMenuState extends State<HoverButtonMenu> {
                       offset: const Offset(1, 2),
                       glowColor: btnColor,
                       style: GoogleFonts.nunito(color: btnColor, fontSize: 18))
-                  : Text(widget.name, style: text18white),
+                  : Text(widget.name, style: state.text18),
             )),
       ),
     );

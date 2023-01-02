@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio_website/desktop/custom%20widgets/appbar/hover_button.dart';
 
 class MenuIcon extends StatelessWidget {
   const MenuIcon({Key? key}) : super(key: key);
@@ -23,46 +22,47 @@ class MenuIcon extends StatelessWidget {
               size: 20,
             ),
             onTap: () async {
-              await showModalBottomSheet(
-                  isScrollControlled: true,
-                  backgroundColor: Colors.black54,
-                  context: context,
-                  builder: (context) => DraggableScrollableSheet(
-                      initialChildSize: 1,
-                      builder: (_, controller) => SizedBox(
-                            width: size.width,
-                            height: size.height,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: const [
-                                HoverButtonMenu(
-                                  name: "About",
-                                  index: 0,
-                                ),
-                                HoverButtonMenu(
-                                  name: "Skills",
-                                  index: 1,
-                                ),
-                                HoverButtonMenu(
-                                  name: "Projects",
-                                  index: 2,
-                                ),
-                                HoverButtonMenu(
-                                  name: "Certifications",
-                                  index: 3,
-                                ),
-                                HoverButtonMenu(
-                                  name: "Photography",
-                                  index: 4,
-                                ),
-                                HoverButtonMenu(
-                                  name: "Contact",
-                                  index: 5,
-                                ),
-                              ],
-                            ),
-                          )));
+              Scaffold.of(context).openDrawer();
+              // await showModalBottomSheet(
+              //     isScrollControlled: true,
+              //     backgroundColor: Colors.black54,
+              //     context: context,
+              //     builder: (context) => DraggableScrollableSheet(
+              //         initialChildSize: 1,
+              //         builder: (_, controller) => SizedBox(
+              //               width: size.width,
+              //               height: size.height,
+              //               child: Column(
+              //                 mainAxisAlignment: MainAxisAlignment.center,
+              //                 crossAxisAlignment: CrossAxisAlignment.center,
+              //                 children: const [
+              //                   HoverButtonMenu(
+              //                     name: "About",
+              //                     index: 0,
+              //                   ),
+              //                   HoverButtonMenu(
+              //                     name: "Skills",
+              //                     index: 1,
+              //                   ),
+              //                   HoverButtonMenu(
+              //                     name: "Projects",
+              //                     index: 2,
+              //                   ),
+              //                   HoverButtonMenu(
+              //                     name: "Certifications",
+              //                     index: 3,
+              //                   ),
+              //                   HoverButtonMenu(
+              //                     name: "Photography",
+              //                     index: 4,
+              //                   ),
+              //                   HoverButtonMenu(
+              //                     name: "Contact",
+              //                     index: 5,
+              //                   ),
+              //                 ],
+              //               ),
+              //             )));
             }),
       ),
     );

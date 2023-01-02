@@ -12,9 +12,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_portfolio_website/desktop/Pages/sections/skills.dart';
 
 const bgColor = Color.fromARGB(255, 193, 207, 2013);
-const darkBgColor = Color.fromARGB(255, 24, 34, 44);
+const darkBgColor = Color(0xFF1E1E28); // Color.fromARGB(255, 24, 34, 44);
 
 const btnColor = Color.fromARGB(255, 66, 172, 221);
+const panelColor = Color.fromARGB(255, 9, 39, 53);
+
+const defaultPadding = 20.0;
+const defaultDuration = Duration(seconds: 1);
 
 //personal info
 const myImage = AssetImage("assets/images/profile.jpg");
@@ -32,10 +36,10 @@ const whatsapp = "tel://+21654230376";
 
 //text styles
 TextStyle text18white =
-    GoogleFonts.arimaMadurai(color: Colors.white, fontSize: 18);
+    GoogleFonts.arimaMadurai(color: Colors.white, fontSize: 16);
 TextStyle text18black =
-    GoogleFonts.arimaMadurai(color: Colors.black87, fontSize: 18);
-TextStyle text18blue = GoogleFonts.arimaMadurai(color: btnColor, fontSize: 18);
+    GoogleFonts.arimaMadurai(color: Colors.black87, fontSize: 16);
+TextStyle text18blue = GoogleFonts.arimaMadurai(color: btnColor, fontSize: 16);
 
 TextStyle titleBlue = GoogleFonts.nunito(color: btnColor, fontSize: 50);
 TextStyle titleWhite = GoogleFonts.nunito(color: Colors.white, fontSize: 50);

@@ -1,5 +1,5 @@
 // ignore: avoid_web_libraries_in_flutter
-import 'dart:html';
+// import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
 import 'package:flutter_portfolio_website/desktop/custom%20widgets/photography/h_picture.dart';
@@ -30,6 +30,7 @@ class StateProvider with ChangeNotifier {
 // dark & light mode
   bool darkMode = true;
   var text18 = text18white;
+  var text14 = text18white.copyWith(fontSize: 14);
   var title = titleAnton;
   var bgcolor = darkBgColor;
   var secondColor = btnColor;
@@ -52,6 +53,7 @@ class StateProvider with ChangeNotifier {
   changeDarkMode(b) {
     if (!b) {
       text18 = text18black;
+      text14 = text18black.copyWith(fontSize: 14);
       bgcolor = bgColor;
       secondColor = btnColor;
       title = titleAntonblack;
@@ -61,6 +63,7 @@ class StateProvider with ChangeNotifier {
       secondTitlePhone = titleBluePhone;
     } else {
       text18 = text18white;
+      text14 = text18white.copyWith(fontSize: 14);
       invertedColor = Colors.white;
       bgcolor = darkBgColor;
       secondColor = btnColor;
@@ -200,9 +203,9 @@ class StateProvider with ChangeNotifier {
   }
 
   downloadFile() {
-    AnchorElement anchorElement = AnchorElement(href: resumeUrl);
-    anchorElement.download = resumeName;
-    anchorElement.click();
+    // AnchorElement anchorElement = AnchorElement(href: resumeUrl);
+    // anchorElement.download = resumeName;
+    // anchorElement.click();
   }
 
   TextEditingController subject = TextEditingController();
@@ -241,8 +244,4 @@ class StateProvider with ChangeNotifier {
         break;
     }
   }
-
-
-
-
 }
