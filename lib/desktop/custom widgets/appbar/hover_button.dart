@@ -23,9 +23,10 @@ class _HoverButtonState extends State<HoverButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(10),
+      margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
       height: 35,
-      width: 120,
+      // width: 120,
+
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
       ),

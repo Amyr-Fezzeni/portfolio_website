@@ -110,31 +110,38 @@ class StateProvider with ChangeNotifier {
   final _photographyP = 2635;
   final _contactP = 3570;
 
+  int curresntIndex = 0;
   jumpToSection(int index) {
-    switch (index) {
-      case 0:
-        setControllerPosition(isPhone ? _aboutP : _about);
-        break;
-      case 1:
-        setControllerPosition(isPhone ? _skilP : _skil);
-        break;
-      case 2:
-        setControllerPosition(isPhone ? _projectP : _project);
-        break;
-      case 3:
-        setControllerPosition(isPhone ? _certificationP : _certification);
-        break;
-      case 4:
-        setControllerPosition(isPhone ? _photographyP : _photography);
-        break;
-      case 5:
-        setControllerPosition(isPhone ? _contactP : _contact);
-        break;
-
-      default:
-        break;
-    }
+    if (curresntIndex == index) return;
+    curresntIndex = index;
+    notifyListeners();
   }
+
+  // jumpToSection(int index) {
+  //   switch (index) {
+  //     case 0:
+  //       setControllerPosition(isPhone ? _aboutP : _about);
+  //       break;
+  //     case 1:
+  //       setControllerPosition(isPhone ? _skilP : _skil);
+  //       break;
+  //     case 2:
+  //       setControllerPosition(isPhone ? _projectP : _project);
+  //       break;
+  //     case 3:
+  //       setControllerPosition(isPhone ? _certificationP : _certification);
+  //       break;
+  //     case 4:
+  //       setControllerPosition(isPhone ? _photographyP : _photography);
+  //       break;
+  //     case 5:
+  //       setControllerPosition(isPhone ? _contactP : _contact);
+  //       break;
+
+  //     default:
+  //       break;
+  //   }
+  // }
 
   //button up on & off
   bool isUp = false;
@@ -150,9 +157,9 @@ class StateProvider with ChangeNotifier {
   }
 
 // photography section
-  final List<String> _verticalPhotos =
+  final List<String> verticalPhotos =
       List.generate(17, (index) => "assets/instagram/vertical/_$index.jpg");
-  final List<String> _horizontalPhotos =
+  final List<String> horizontalPhotos =
       List.generate(10, (index) => "assets/instagram/horizontal/_$index.jpg");
   List<Widget> vPhotos = [];
   List<Widget> hPhotos = [];
@@ -161,7 +168,7 @@ class StateProvider with ChangeNotifier {
       vPhotos = List.generate(
           17,
           (index) => HPicture(
-                link: _verticalPhotos[index],
+                link: verticalPhotos[index],
                 aspect: 4 / 5.3,
               ));
     }
@@ -169,7 +176,7 @@ class StateProvider with ChangeNotifier {
       hPhotos = List.generate(
           9,
           (index) => HPicture(
-                link: _horizontalPhotos[index],
+                link: horizontalPhotos[index],
                 aspect: 5.3 / 4,
               ));
     }

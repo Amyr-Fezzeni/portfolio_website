@@ -18,8 +18,15 @@ class SideMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var state = context.watch<StateProvider>();
+    double width() {
+      double w = MediaQuery.of(context).size.width;
+      if (w > 400) return 300;
+      return 280;
+    }
+
     return Drawer(
       backgroundColor: state.bgcolor,
+      width: width(),
       child: SafeArea(
         child: Column(
           children: [
@@ -29,6 +36,7 @@ class SideMenu extends StatelessWidget {
             ),
             Expanded(
               child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
                 padding: const EdgeInsets.all(defaultPadding),
                 child: Column(
                   children: [

@@ -11,13 +11,13 @@ import 'package:flutter_portfolio_website/models/project_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_portfolio_website/desktop/Pages/sections/skills.dart';
 
-const bgColor = Color.fromARGB(255, 193, 207, 2013);
+const bgColor = Color.fromARGB(255, 255, 255, 255);
 const darkBgColor = Color(0xFF1E1E28); // Color.fromARGB(255, 24, 34, 44);
 
 const btnColor = Color.fromARGB(255, 66, 172, 221);
 const panelColor = Color.fromARGB(255, 9, 39, 53);
 
-const defaultPadding = 20.0;
+const defaultPadding = 30.0;
 const defaultDuration = Duration(seconds: 1);
 
 //personal info
@@ -69,23 +69,30 @@ TextStyle key2 = GoogleFonts.nunito(
 TextStyle value = GoogleFonts.caveat(color: Colors.white, fontSize: 30);
 
 String textAbout =
-    """A 2nd-year computer software engineering student at TEK-UP University specializing in Software engineering and Professional Photographer based in Tunisia.
-I'm a self learning person with a good problem solving ability.
+    """Full-Stack mobile Developer & mobile apartment manager at LE TAFF company,
+Last year computer software engineering student at TEK-UP University specializing in Software engineering
+and Professional Photographer based in Tunisia.
 """;
-
-List<dynamic> allSkills = [
+//I'm a self learning person with a good problem solving ability.
+List<dynamic> topSkills = [
   ["Python", 95],
-  ["Flutter", 90],
+  ["Flutter", 95],
+  ["Firebase", 92]
+];
+List<dynamic> allSkills = [
+  ["Flutter", 95],
   ["Dart", 90],
+  ["State Management", 90],
+  ["Responsive UI", 85],
+  ["Firebase", 92],
+  ["Python", 95],
+  ["Flask", 88],
+  ["Django", 85],
   ["Java", 80],
   ["NodeJS", 75],
-  ["State Management", 90],
-  ["Responsive UI", 75],
   ["SQL", 75],
   ["MongoDB", 85],
-  ["Firebase", 85]
 ];
-
 List<ProjectModel> allProjects = [
   ProjectModel(
     name: "XO Game",

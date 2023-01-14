@@ -22,32 +22,20 @@ class Skills extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: defaultPadding),
           child: Text(
-            "Skills",
+            "Top Skills",
             style: state.text18,
           ),
         ),
         Row(
-          children: const [
-            Expanded(
-              child: AnimatedSkill(
-                percentage: 80,
-                label: "Flutter",
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            for (var skill in topSkills)
+              Expanded(
+                child: AnimatedSkill(
+                  percentage: skill.last,
+                  label: skill.first,
+                ),
               ),
-            ),
-            SizedBox(width: defaultPadding),
-            Expanded(
-              child: AnimatedSkill(
-                percentage: 72,
-                label: "Django",
-              ),
-            ),
-            SizedBox(width: defaultPadding),
-            Expanded(
-              child: AnimatedSkill(
-                percentage: 65,
-                label: "Firebase",
-              ),
-            ),
           ],
         ),
       ],

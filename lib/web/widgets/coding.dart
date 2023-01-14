@@ -22,30 +22,15 @@ class Coding extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: defaultPadding),
           child: Text(
-            "Coding",
+            "All Skills",
             style: state.text18,
           ),
         ),
-        const AnimatedLinearProgressIndicator(
-          percentage: 0.7,
-          label: "Dart",
-        ),
-        const AnimatedLinearProgressIndicator(
-          percentage: 0.68,
-          label: "Python",
-        ),
-        const AnimatedLinearProgressIndicator(
-          percentage: 0.9,
-          label: "HTML",
-        ),
-        const AnimatedLinearProgressIndicator(
-          percentage: 0.75,
-          label: "CSS",
-        ),
-        const AnimatedLinearProgressIndicator(
-          percentage: 0.58,
-          label: "JavaScript",
-        ),
+        for (var skill in allSkills)
+          AnimatedLinearProgressIndicator(
+            percentage: (skill.last as int) * 0.01,
+            label: skill.first,
+          ),
       ],
     );
   }
