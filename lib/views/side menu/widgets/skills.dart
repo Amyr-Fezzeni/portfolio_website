@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
-import 'package:flutter_portfolio_website/desktop/custom%20widgets/skill/widgets/animated_progress_indicator.dart';
 import 'package:provider/provider.dart';
 
-import '../../providers/state_provider.dart';
+import '../../../desktop/custom widgets/skill/widgets/animated_progress_indicator.dart';
+import '../../../providers/state_provider.dart';
 
-class Coding extends StatelessWidget {
-  const Coding({
+class Skills extends StatelessWidget {
+  const Skills({
     Key? key,
   }) : super(key: key);
 
@@ -22,15 +22,22 @@ class Coding extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: defaultPadding),
           child: Text(
-            "All Skills",
+            "Top Skills",
             style: state.text18,
           ),
         ),
-        for (var skill in allSkills)
-          AnimatedLinearProgressIndicator(
-            percentage: (skill.last as int) * 0.01,
-            label: skill.first,
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            for (var skill in topSkills)
+              Expanded(
+                child: AnimatedSkill(
+                  percentage: skill.last,
+                  label: skill.first,
+                ),
+              ),
+          ],
+        ),
       ],
     );
   }

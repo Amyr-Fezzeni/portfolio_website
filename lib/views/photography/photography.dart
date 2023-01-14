@@ -1,6 +1,5 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio_website/consts/consts.dart';
 import 'package:flutter_portfolio_website/desktop/custom%20widgets/home/title_widget.dart';
 import 'package:provider/provider.dart';
 import '../../../providers/state_provider.dart';
@@ -115,15 +114,20 @@ class PhotographyWeb extends StatelessWidget {
                                   child: Material(
                                     color: Colors.transparent,
                                     child: InkWell(
-                                      onTap: () => showModalBottomSheet(
-                                          isScrollControlled: true,
-                                          clipBehavior:
-                                              Clip.antiAliasWithSaveLayer,
-                                          backgroundColor: Colors.transparent,
-                                          context: context,
-                                          builder: (context) => PhotoDetail(
-                                                url: e,
-                                              )),
+                                      onTap: () => Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  PhotoDetailScreen(url: e))),
+                                      // onTap: () => showModalBottomSheet(
+                                      //     isScrollControlled: true,
+                                      //     clipBehavior:
+                                      //         Clip.antiAliasWithSaveLayer,
+                                      //     backgroundColor: Colors.transparent,
+                                      //     context: context,
+                                      //     builder: (context) => PhotoDetail(
+                                      //           url: e,
+                                      //         )),
                                       child: Image.asset(e),
                                     ),
                                   ),
@@ -222,8 +226,8 @@ class PhotoDetail extends StatelessWidget {
         expand: false,
         builder: (_, controller) => Container(
               height: size.height,
-              margin: const EdgeInsets.all(50),
-              padding: const EdgeInsets.all(10),
+              // margin: const EdgeInsets.all(50),
+              // padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.transparent,
@@ -237,7 +241,9 @@ class PhotoDetail extends StatelessWidget {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(4),
                           color: style.bgcolor,
-                          border: Border.all(color: btnColor, width: 3)),
+                          border: Border.all(
+                              color: style.invertedColor.withOpacity(.2),
+                              width: 3)),
                       child: Image.asset(
                         url,
                         fit: BoxFit.contain,
@@ -247,5 +253,43 @@ class PhotoDetail extends StatelessWidget {
                 ),
               ),
             ));
+  }
+}
+
+class PhotoDetailScreen extends StatelessWidget {
+  final String url;
+  const PhotoDetailScreen({Key? key, required this.url}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var style = context.watch<StateProvider>();
+    return Scaffold(
+        backgroundColor: style.bgcolor,
+        body: GestureDetector(
+          onTap: () => Navigator.pop(context),
+          child: Container(
+            color: Colors.transparent,
+            height: size.height,
+            width: size.width,
+            child: Center(
+              child: Hero(
+                tag: url,
+                child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      color: style.bgcolor,
+                      border: Border.all(
+                          color: style.invertedColor.withOpacity(.2),
+                          width: 3)),
+                  child: Image.asset(
+                    url,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ));
   }
 }

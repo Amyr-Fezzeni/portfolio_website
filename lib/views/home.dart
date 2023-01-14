@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio_website/desktop/custom%20widgets/appbar/appbar.dart';
-import 'package:flutter_portfolio_website/web/widgets/photography/photography.dart';
-import 'package:flutter_portfolio_website/web/widgets/progects/projects.dart';
-import 'package:flutter_portfolio_website/web/widgets/side_menu.dart';
+import 'package:flutter_portfolio_website/views/photography/photography.dart';
+import 'package:flutter_portfolio_website/views/programming/projects.dart';
+import 'package:flutter_portfolio_website/views/robotics/robotics.dart';
+import 'package:flutter_portfolio_website/views/side%20menu/side_menu.dart';
 import 'package:provider/provider.dart';
 
-import '../desktop/Pages/sections/certifications.dart';
-import '../desktop/Pages/sections/contact.dart';
 import '../providers/state_provider.dart';
-import 'widgets/progects/banner.dart';
+import '../widgets/appbar/appbar.dart';
+import 'banner.dart';
+import 'certifications/certifications.dart';
+import 'contact/contact.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -54,6 +55,7 @@ class _HomePageState extends State<HomePage> {
                         ProjectsGridView(),
                         Certifications(),
                         PhotographyWeb(),
+                        Robotics(),
                         Contact(),
                       ][state.curresntIndex]
                     ],

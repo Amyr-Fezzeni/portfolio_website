@@ -357,7 +357,13 @@ The application works same like Siri/ Google Assistant etc. But the application 
     •  Save to mp3 file Option""",
   ),
 ];
-
+List<String> knowledges = [
+  "Provider",
+  "Stripe",
+  "Google map",
+  "Language support",
+  "App theme",
+];
 List<CertificationModel> allCertifications = [
   CertificationModel(
       name: "Certified Associate in Python Programming",

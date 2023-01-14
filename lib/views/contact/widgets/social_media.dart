@@ -14,13 +14,25 @@ class SocialMedia extends StatelessWidget {
   Widget build(BuildContext context) {
     var state = context.watch<StateProvider>();
     return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       margin: const EdgeInsets.symmetric(vertical: 10),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: const [
+            BoxShadow(
+                color: Colors.black26, blurRadius: 5, offset: Offset(3, 3))
+          ],
+          border: Border.all(
+              color: state.invertedColor.withOpacity(.4), width: 1.5),
+          color: state.bgcolor),
       child: InkWell(
         onTap: () => context.read<StateProvider>().goToWebsite(index),
         child: SizedBox(
+          // color: Colors.amber,
           width: 200,
           height: 50,
           child: Row(
+            mainAxisSize: MainAxisSize.min,
             children: [
               Container(
                   decoration: BoxDecoration(

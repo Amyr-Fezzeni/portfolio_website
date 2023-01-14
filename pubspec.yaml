@@ -43,6 +43,7 @@ dependencies:
   url_launcher: ^6.0.9
   flutter_neumorphic: ^3.2.0
   youtube_player_iframe: ^2.2.2
+  video_player: ^2.4.10
 
 dev_dependencies:
   flutter_test:

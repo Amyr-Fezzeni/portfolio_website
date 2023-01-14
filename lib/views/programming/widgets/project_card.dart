@@ -1,42 +1,12 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio_website/consts/consts.dart';
 import 'package:flutter_portfolio_website/models/project_model.dart';
-import 'package:flutter_portfolio_website/providers/state_provider.dart';
-import 'package:flutter_portfolio_website/web/widgets/bottons.dart';
 import 'package:provider/provider.dart';
 
-class ProjectsGridView extends StatelessWidget {
-  const ProjectsGridView({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-    return Container(
-        width: double.infinity,
-        // height: 700,
-        padding: const EdgeInsets.symmetric(horizontal: defaultPadding / 2),
-        child: Wrap(
-            alignment: WrapAlignment.start,
-            runSpacing: 10,
-            spacing: 10,
-            children: [
-              ...allProjects.map((e) => ProjectCard(project: e)).toList()
-            ]
-            // List.generate(
-            //   allProjects.length,
-            //   (index) => index == allProjects.length
-            //       ? const SeeMoreProjects()
-            //       : ProjectCard(
-            //           project: allProjects[index],
-            //         ),
-            // ),
-            ));
-  }
-}
+import '../../../providers/state_provider.dart';
+import '../../../widgets/bottons.dart';
+import '../project details/project_details.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({
@@ -50,12 +20,13 @@ class ProjectCard extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     var state = context.watch<StateProvider>();
-    log(size.width.toString());
+
     final w = size.width > 1120
         ? (size.width - 344) * .33
-        : size.width > 400
+        : size.width > 720
             ? (size.width - 44) * .33
-            : (size.width - 44) * .49;
+            : (size.width - 44) * .5;
+    log(size.width.toString());
     return Container(
       width: w,
       // height: 300,
@@ -111,33 +82,16 @@ class ProjectCard extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          gradientButton(function: () {}, text: "Read more", style: state),
+          gradientButton(
+              function: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ProjectDetails(
+                            project: project,
+                          ))),
+              text: "Read more",
+              style: state),
         ],
-      ),
-    );
-  }
-}
-
-class SeeMoreProjects extends StatelessWidget {
-  const SeeMoreProjects({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-    var state = context.watch<StateProvider>();
-    return InkWell(
-      onTap: () {},
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-        color: state.invertedColor.withOpacity(.1),
-        child: Center(
-          child: Text(
-            "See More >>",
-            style: state.text18.copyWith(color: state.secondColor),
-          ),
-        ),
       ),
     );
   }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
 import 'package:provider/provider.dart';
 
-import '../../providers/state_provider.dart';
+import '../../../providers/state_provider.dart';
 
 class AreaInfoText extends StatelessWidget {
   const AreaInfoText({

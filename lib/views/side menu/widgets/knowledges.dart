@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
 import 'package:provider/provider.dart';
 
-import '../../providers/state_provider.dart';
+import '../../../providers/state_provider.dart';
 
 class Knowledges extends StatelessWidget {
   const Knowledges({
@@ -12,6 +12,7 @@ class Knowledges extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var state = context.watch<StateProvider>();
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -19,16 +20,13 @@ class Knowledges extends StatelessWidget {
           color: state.invertedColor.withOpacity(.2),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: defaultPadding),
+          padding: const EdgeInsets.symmetric(vertical: defaultPadding / 2),
           child: Text(
             "Knowledges",
             style: state.text18,
           ),
         ),
-        const KnowledgeText(text: "Flutter, Dart"),
-        const KnowledgeText(text: "Stylus, Sass, Less"),
-        const KnowledgeText(text: "Gulp, Webpack, Grunt"),
-        const KnowledgeText(text: "GIT Knowledge"),
+        for (var knowledge in knowledges) KnowledgeText(text: knowledge),
       ],
     );
   }
@@ -54,9 +52,11 @@ class KnowledgeText extends StatelessWidget {
             color: state.secondColor,
           ),
           const SizedBox(width: defaultPadding / 2),
-          Text(
-            text,
-            style: state.text14,
+          Expanded(
+            child: Text(
+              text,
+              style: state.text14,
+            ),
           ),
         ],
       ),

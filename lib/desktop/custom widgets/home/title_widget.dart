@@ -8,29 +8,30 @@ class TitleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          height: 1,
-          width: 50,
-          color: Colors.grey,
-        ),
-        Text(
-          "   $title   ",
-          style: context.watch<StateProvider>().title,
-        ),
-        Container(
-          height: 1,
-          width: 50,
-          color: Colors.grey,
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            height: 1,
+            width: 50,
+            color: Colors.grey,
+          ),
+          Text(
+            "   $title   ",
+            style: context.watch<StateProvider>().title.copyWith(fontSize: 30),
+          ),
+          Container(
+            height: 1,
+            width: 50,
+            color: Colors.grey,
+          ),
+        ],
+      ),
     );
   }
 }
-
-
 
 class TitleWidgetPhone extends StatelessWidget {
   final String title;
