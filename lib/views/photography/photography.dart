@@ -4,18 +4,30 @@ import 'package:flutter_portfolio_website/desktop/custom%20widgets/home/title_wi
 import 'package:provider/provider.dart';
 import '../../../providers/state_provider.dart';
 
-class PhotographyWeb extends StatelessWidget {
+class PhotographyWeb extends StatefulWidget {
   const PhotographyWeb({Key? key}) : super(key: key);
+
+  @override
+  State<PhotographyWeb> createState() => _PhotographyWebState();
+}
+
+class _PhotographyWebState extends State<PhotographyWeb> {
+  List<String> allPhotos = [];
+
+  @override
+  void initState() {
+    super.initState();
+    var state = context.read<StateProvider>();
+    allPhotos = [...state.verticalPhotos, ...state.horizontalPhotos];
+    allPhotos.shuffle();
+  }
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     var state = context.watch<StateProvider>();
     double w = size.width > 1120 ? size.width * .72 : size.width * .95;
-    List<String> allPhotos = [
-      ...state.verticalPhotos,
-      ...state.horizontalPhotos
-    ];
+
     // allPhotos.shuffle();
     return Container(
         margin: const EdgeInsets.only(bottom: 150),
@@ -93,9 +105,8 @@ class PhotographyWeb extends StatelessWidget {
                           return Container(
                             margin: const EdgeInsets.all(5),
                             padding: const EdgeInsets.all(5),
-                            constraints: BoxConstraints(
-                                maxWidth: vertical ? w * .28 : w * .35,
-                                maxHeight: vertical ? w * .4 : w * .3),
+                            width: vertical ? w * .28 : w * .35,
+                            height: vertical ? w * .4 : w * .3,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
                                 color: const Color.fromARGB(255, 193, 193, 193),
@@ -128,7 +139,10 @@ class PhotographyWeb extends StatelessWidget {
                                       //     builder: (context) => PhotoDetail(
                                       //           url: e,
                                       //         )),
-                                      child: Image.asset(e),
+                                      child: Image.asset(
+                                        e,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),

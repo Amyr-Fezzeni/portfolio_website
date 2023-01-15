@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
-import 'package:flutter_portfolio_website/desktop/custom%20widgets/certifications/certification_card.dart';
+import 'package:flutter_portfolio_website/desktop/Pages/certification%20details/certification_details.dart';
 import 'package:flutter_portfolio_website/desktop/custom%20widgets/home/title_widget.dart';
+import 'package:flutter_portfolio_website/providers/state_provider.dart';
+import 'package:provider/provider.dart';
 
 class Certifications extends StatelessWidget {
   const Certifications({Key? key}) : super(key: key);
@@ -20,13 +22,93 @@ class Certifications extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
-          Wrap(
-            children: allCertifications
-                .map((certification) => CertificationCard(
-                      certification: certification,
-                    ))
-                .toList(),
-          )
+          SizedBox(
+            // color: Colors.red,
+            // width: 500,
+            child: Wrap(
+              children: [
+                ...allCertifications
+                    .map(
+                      (e) => Builder(builder: (context) {
+                        // bool vertical = e.contains("vertical");
+
+                        return Column(
+                          children: [
+                            Container(
+                              margin:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              padding: const EdgeInsets.all(5),
+                              height: size.width * .15,
+                              width: size.width * .2,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color:
+                                      const Color.fromARGB(255, 193, 193, 193),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                        color: Colors.black54,
+                                        offset: Offset(2, 2),
+                                        blurRadius: 7)
+                                  ]),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: Container(
+                                  color: Colors.transparent,
+                                  child: Hero(
+                                    tag: e.name,
+                                    child: Material(
+                                      color: Colors.transparent,
+                                      child: InkWell(
+                                        onTap: () => Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    CertificationDetails(
+                                                        certification: e))),
+                                        child: Image.asset(
+                                          "assets/certifications/${e.small}",
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            SizedBox(
+                              width: size.width * .2,
+                              child: Text(
+                                e.name,
+                                textAlign: TextAlign.center,
+                                style: context
+                                    .watch<StateProvider>()
+                                    .text18
+                                    .copyWith(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w300),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                          ],
+                        );
+                      }),
+                    )
+                    .toList()
+              ],
+            ),
+          ),
+          // Wrap(
+          //   children: allCertifications
+          //       .map((certification) => CertificationCard(
+          //             certification: certification,
+          //           ))
+          //       .toList(),
+          // )
         ],
       ),
     );

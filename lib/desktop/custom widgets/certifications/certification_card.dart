@@ -34,27 +34,20 @@ class CertificationCard extends StatelessWidget {
                 aspectRatio: 16 / 12,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                  child: Container(
-                    color: Colors.transparent,
-                    child: FittedBox(
-                      fit: BoxFit.cover,
-                      child: Hero(
-                        tag: certification.name,
-                        child: Material(
+                  child: Hero(
+                    tag: certification.name,
+                    child: Container(
+                      color: Colors.transparent,
+                      child: FittedBox(
+                        fit: BoxFit.cover,
+                        child: Container(
                           color: Colors.transparent,
                           child: InkWell(
-                            onTap: () => Navigator.of(context).push(
-                                PageRouteBuilder(
-                                    pageBuilder: (context, animation,
-                                            secondaryAnimation) =>
-                                        CertificationDetails(
-                                            certification: certification),
-                                    transitionsBuilder: (context, animation,
-                                        secondaryAnimation, child) {
-                                      return child;
-                                    })),
-                      
-
+                            onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => CertificationDetails(
+                                        certification: certification))),
                             child: Image.asset(
                                 "assets/certifications/${certification.small}"),
                           ),
@@ -80,8 +73,6 @@ class CertificationCard extends StatelessWidget {
     );
   }
 }
-
-
 
 class CertificationCardPhone extends StatelessWidget {
   final CertificationModel certification;

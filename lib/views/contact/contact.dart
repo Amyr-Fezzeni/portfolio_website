@@ -170,6 +170,8 @@ class Contact extends StatelessWidget {
                     ),
                     Wrap(
                       spacing: 10,
+                      runAlignment: WrapAlignment.center,
+                      alignment: WrapAlignment.center,
                       children: const [
                         SocialMedia(
                           title: "GitHub",
