@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
-import 'package:flutter_portfolio_website/desktop/Pages/certification%20details/certification_details.dart';
-import 'package:flutter_portfolio_website/desktop/custom%20widgets/home/title_widget.dart';
+import '../../widgets/title_widget.dart';
+import 'certification_details.dart';
+
 import 'package:flutter_portfolio_website/providers/state_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -35,8 +36,7 @@ class Certifications extends StatelessWidget {
                         return Column(
                           children: [
                             Container(
-                              margin:
-                                  const EdgeInsets.symmetric(horizontal: 10),
+                              margin: const EdgeInsets.symmetric(horizontal: 5),
                               padding: const EdgeInsets.all(5),
                               height: size.width * .15,
                               width: size.width * .2,

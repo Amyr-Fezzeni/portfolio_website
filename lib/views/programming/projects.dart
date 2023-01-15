@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
-import 'package:flutter_portfolio_website/desktop/custom%20widgets/home/title_widget.dart';
+import '../../widgets/title_widget.dart';
 import 'widgets/project_card.dart';
 
 

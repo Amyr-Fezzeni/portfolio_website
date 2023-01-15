@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/models/project_model.dart';
 import 'package:provider/provider.dart';
@@ -22,11 +20,13 @@ class ProjectCard extends StatelessWidget {
     var state = context.watch<StateProvider>();
 
     final w = size.width > 1120
-        ? (size.width - 344) * .33
+        ? size.width > 1300
+            ? (size.width - 344) * .245
+            : (size.width - 344) * .33
         : size.width > 720
             ? (size.width - 44) * .33
             : (size.width - 44) * .5;
-    log(size.width.toString());
+    // log(size.width.toString());
     return Container(
       width: w,
       // height: 300,

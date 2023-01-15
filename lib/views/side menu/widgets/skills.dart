@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
 import 'package:provider/provider.dart';
-
-import '../../../desktop/custom widgets/skill/widgets/animated_progress_indicator.dart';
 import '../../../providers/state_provider.dart';
+import '../../../widgets/animated_progress_indicator.dart';
 
 class Skills extends StatelessWidget {
   const Skills({

@@ -1,8 +1,8 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio_website/desktop/custom%20widgets/home/title_widget.dart';
 import 'package:provider/provider.dart';
 import '../../../providers/state_provider.dart';
+import '../../widgets/title_widget.dart';
 
 class PhotographyWeb extends StatefulWidget {
   const PhotographyWeb({Key? key}) : super(key: key);

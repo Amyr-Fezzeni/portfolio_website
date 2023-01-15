@@ -1,9 +1,9 @@
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
 import 'package:flutter_portfolio_website/views/contact/widgets/social_media.dart';
-import 'package:flutter_portfolio_website/desktop/custom%20widgets/home/title_widget.dart';
 import 'package:provider/provider.dart';
 import '../../../providers/state_provider.dart';
+import '../../widgets/title_widget.dart';
 
 class Contact extends StatelessWidget {
   const Contact({Key? key}) : super(key: key);

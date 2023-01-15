@@ -1,20 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio_website/desktop/Pages/sections/about.dart';
-import 'package:flutter_portfolio_website/desktop/Pages/sections/certifications.dart';
-import 'package:flutter_portfolio_website/desktop/Pages/sections/contact.dart';
-import 'package:flutter_portfolio_website/desktop/Pages/sections/photography.dart';
-import 'package:flutter_portfolio_website/desktop/Pages/sections/projects.dart';
-import 'package:flutter_portfolio_website/desktop/custom%20widgets/appbar/appbar.dart';
 import 'package:flutter_portfolio_website/models/certification_model.dart';
 import 'package:flutter_portfolio_website/models/image_model.dart';
 import 'package:flutter_portfolio_website/models/project_model.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_portfolio_website/desktop/Pages/sections/skills.dart';
 
 const bgColor = Color.fromARGB(255, 255, 255, 255);
 const darkBgColor = Color(0xFF1E1E28); // Color.fromARGB(255, 24, 34, 44);
 
-const btnColor = Color.fromARGB(255, 66, 172, 221);
+const btnColor = Colors.orange; //  Color.fromARGB(255, 66, 172, 221);
 const panelColor = Color.fromARGB(255, 9, 39, 53);
 
 const defaultPadding = 30.0;
@@ -77,13 +70,11 @@ and Professional Photographer based in Tunisia.
 List<dynamic> topSkills = [
   ["Python", 95],
   ["Flutter", 95],
-  ["Firebase", 92]
+  ["NodeJS", 92]
 ];
 List<dynamic> allSkills = [
   ["Flutter", 95],
   ["Dart", 90],
-  ["State Management", 90],
-  ["Responsive UI", 85],
   ["Firebase", 92],
   ["Python", 95],
   ["Flask", 88],
@@ -358,7 +349,8 @@ The application works same like Siri/ Google Assistant etc. But the application 
   ),
 ];
 List<String> knowledges = [
-  "Provider",
+  "Responsive UI",
+  "State Management, Provider",
   "Stripe",
   "Google map",
   "Language support",
@@ -403,22 +395,3 @@ List<CertificationModel> allCertifications = [
       original: "algorithms.png"),
 ];
 
-// sections
-
-const desktopSections = [
-  CustomAppBar(),
-  About(),
-  Skill(),
-  Projects(),
-  Certifications(),
-  Photography(),
-  Contact(),
-];
-const phoneSections = [
-  AboutPhone(),
-  SkillPhone(),
-  ProjectsPhone(),
-  CertificationsPhone(),
-  PhotographyPhone(),
-  ContactPhone(),
-];

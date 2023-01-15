@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
-import 'package:flutter_portfolio_website/desktop/custom%20widgets/skill/widgets/animated_progress_indicator.dart';
 import 'package:provider/provider.dart';
 
 import '../../../providers/state_provider.dart';
+import '../../../widgets/animated_progress_indicator.dart';
 
 class Coding extends StatelessWidget {
   const Coding({
@@ -22,7 +22,7 @@ class Coding extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: defaultPadding),
           child: Text(
-            "All Skills",
+            "Coding",
             style: state.text18,
           ),
         ),

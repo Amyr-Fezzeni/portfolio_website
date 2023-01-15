@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio_website/desktop/custom%20widgets/about/profile.dart';
 import 'package:provider/provider.dart';
 
 import '../../../providers/state_provider.dart';
+import '../../../widgets/profile.dart';
 
 class MyInfo extends StatelessWidget {
   const MyInfo({

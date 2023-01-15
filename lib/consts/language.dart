@@ -1,0 +1,2 @@
+const en = {};
+const fr = {};

@@ -2,32 +2,12 @@
 // import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
-import 'package:flutter_portfolio_website/desktop/custom%20widgets/photography/h_picture.dart';
 import 'package:flutter_portfolio_website/models/project_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../views/programming/project details/h_picture.dart';
+
 class StateProvider with ChangeNotifier {
-  init(context) async {
-    if (!isInit) {
-      return;
-    }
-
-    controller.addListener(() {
-      changeVisivilituSkill();
-      upButton();
-    });
-
-    await Future.delayed(const Duration(milliseconds: 10));
-    changeDisplayMode(context);
-    initPhotos();
-    filterProject("all");
-
-    isInit = false;
-  }
-
-  bool isInit = true;
-
-// dark & light mode
   bool darkMode = true;
   var text18 = text18white;
   var text14 = text18white.copyWith(fontSize: 14);
@@ -39,16 +19,6 @@ class StateProvider with ChangeNotifier {
   //for phones
   var titlePhone = titleAntonPhone;
   var secondTitlePhone = titleBluePhone;
-
-  bool isPhone = true;
-
-  changeDisplayMode(context) {
-    final width = MediaQuery.of(context).size.width < 1120;
-    if (width == isPhone) {
-      return;
-    }
-    isPhone = width;
-  }
 
   changeDarkMode(b) {
     if (!b) {
@@ -76,83 +46,10 @@ class StateProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  // refresh skills
-  bool skil = false;
-  changeVisivilituSkill() {
-    if (controller.offset > 200 && controller.offset < 1000) {
-      if (skil == true) return;
-      skil = true;
-      notifyListeners();
-    } else {
-      if (skil == false) return;
-      skil = false;
-      notifyListeners();
-    }
-  }
-
-//scroll controller
-  final ScrollController controller = ScrollController();
-  setControllerPosition(int index) {
-    controller.animateTo(index.toDouble(),
-        duration: const Duration(seconds: 1), curve: Curves.easeInOut);
-  }
-
-  final _about = 0;
-  final _skil = 780;
-  final _project = 1570;
-  final _certification = 2620;
-  final _photography = 3700;
-  final _contact = 4490;
-  final _aboutP = 0;
-  final _skilP = 930;
-  final _projectP = 1510;
-  final _certificationP = 2115;
-  final _photographyP = 2635;
-  final _contactP = 3570;
-
   int curresntIndex = 0;
   jumpToSection(int index) {
     if (curresntIndex == index) return;
     curresntIndex = index;
-    notifyListeners();
-  }
-
-  // jumpToSection(int index) {
-  //   switch (index) {
-  //     case 0:
-  //       setControllerPosition(isPhone ? _aboutP : _about);
-  //       break;
-  //     case 1:
-  //       setControllerPosition(isPhone ? _skilP : _skil);
-  //       break;
-  //     case 2:
-  //       setControllerPosition(isPhone ? _projectP : _project);
-  //       break;
-  //     case 3:
-  //       setControllerPosition(isPhone ? _certificationP : _certification);
-  //       break;
-  //     case 4:
-  //       setControllerPosition(isPhone ? _photographyP : _photography);
-  //       break;
-  //     case 5:
-  //       setControllerPosition(isPhone ? _contactP : _contact);
-  //       break;
-
-  //     default:
-  //       break;
-  //   }
-  // }
-
-  //button up on & off
-  bool isUp = false;
-  upButton() {
-    if (controller.offset > 200) {
-      if (isUp == true) return;
-      isUp = true;
-    } else {
-      if (isUp == false) return;
-      isUp = false;
-    }
     notifyListeners();
   }
 
@@ -191,22 +88,6 @@ class StateProvider with ChangeNotifier {
       }
     }
     return false;
-  }
-
-  bool isLoading = false;
-  filterProject(String language) async {
-    if (isLoading) {
-      return;
-    }
-    projects = [];
-    isLoading = true;
-    for (var model in allProjects) {
-      if (isLanguage(model, language) || language == "all") {
-        projects.add(model);
-      }
-    }
-    isLoading = false;
-    notifyListeners();
   }
 
   downloadFile() {
