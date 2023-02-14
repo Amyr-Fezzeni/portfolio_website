@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_glow/flutter_glow.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
+import 'package:flutter_portfolio_website/providers/language_provider.dart';
+import 'package:flutter_portfolio_website/services/language_service.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -21,10 +23,11 @@ class _HoverButtonState extends State<HoverButton> {
 
   @override
   Widget build(BuildContext context) {
+    var lan = context.watch<LanguageProvider>().currentLanguage;
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
       // height: 35,
-      constraints: const BoxConstraints(minWidth: 50, maxWidth: 120),
+      constraints: const BoxConstraints(minWidth: 50, maxWidth: 130),
       padding: const EdgeInsets.symmetric(horizontal: 5),
       decoration: BoxDecoration(
         // color: Colors.red,
@@ -41,7 +44,7 @@ class _HoverButtonState extends State<HoverButton> {
                 }),
             onHover: (event) => setState(() {}),
             child: isSelected
-                ? GlowText(widget.name,
+                ? GlowText(txt(widget.name),
                     blurRadius: 2,
                     offset: const Offset(1, 2),
                     glowColor: btnColor,
@@ -49,7 +52,7 @@ class _HoverButtonState extends State<HoverButton> {
                         .watch<StateProvider>()
                         .text18
                         .copyWith(color: Colors.lightBlue))
-                : Text(widget.name,
+                : Text(txt(widget.name),
                     style: context.watch<StateProvider>().text18)),
       ),
     );

@@ -1,10 +1,16 @@
 // ignore: avoid_web_libraries_in_flutter
 // import 'dart:html';
+import 'dart:developer';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
 import 'package:flutter_portfolio_website/models/project_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../models/message.dart';
+import '../services/navigation_service.dart';
+import '../services/shared_data.dart';
 import '../views/programming/project details/h_picture.dart';
 
 class StateProvider with ChangeNotifier {
@@ -16,7 +22,7 @@ class StateProvider with ChangeNotifier {
   var secondColor = btnColor;
   var invertedColor = Colors.white;
   var secondTitle = titleBlue;
-  //for phones
+
   var titlePhone = titleAntonPhone;
   var secondTitlePhone = titleBluePhone;
 
@@ -96,15 +102,34 @@ class StateProvider with ChangeNotifier {
     // anchorElement.click();
   }
 
-  TextEditingController subject = TextEditingController();
-  TextEditingController body = TextEditingController();
-  sendEmail() async {
-    if (subject.text.isEmpty || body.text.isEmpty) {
+  sendEmail({required String subject, required String message}) async {
+    if (subject.isEmpty || message.isEmpty) {
+      popup(
+        NavigationService.navigatorKey.currentContext!,
+        "OK",
+        cancel: false,
+        description: "subject or message empty",
+      );
       return;
     } else {
-      final url =
-          "mailto:$email?subject=${Uri.encodeFull(subject.text)}&body=${Uri.encodeFull(body.text)}";
-      await launch(url);
+      final id = generateId();
+      Message _message = Message(
+          id: id, message: message, subject: subject, created: DateTime.now());
+      log(_message.toString());
+      try {
+        FirebaseFirestore.instance
+            .collection("messages")
+            .doc(_message.id)
+            .set(_message.toMap())
+            .then((value) => popup(
+                  NavigationService.navigatorKey.currentContext!,
+                  "OK",
+                  cancel: false,
+                  description: "your message has been sent\nThank you",
+                ));
+      } on Exception catch (e) {
+        log("error: _" + e.toString());
+      }
     }
   }
 

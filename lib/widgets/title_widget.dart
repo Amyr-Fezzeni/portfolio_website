@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio_website/providers/language_provider.dart';
 import 'package:provider/provider.dart';
 import '../../../providers/state_provider.dart';
+import '../services/language_service.dart';
 
 class TitleWidget extends StatelessWidget {
   final String title;
@@ -8,6 +10,7 @@ class TitleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var lan = context.watch<LanguageProvider>().currentLanguage;
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
       child: Row(
@@ -19,7 +22,7 @@ class TitleWidget extends StatelessWidget {
             color: Colors.grey,
           ),
           Text(
-            "   $title   ",
+            "   ${txt(title)}   ",
             style: context.watch<StateProvider>().title.copyWith(fontSize: 30),
           ),
           Container(

@@ -1,17 +1,27 @@
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
+import 'package:flutter_portfolio_website/providers/language_provider.dart';
+import 'package:flutter_portfolio_website/services/language_service.dart';
 import 'package:flutter_portfolio_website/views/contact/widgets/social_media.dart';
 import 'package:provider/provider.dart';
 import '../../../providers/state_provider.dart';
 import '../../widgets/title_widget.dart';
 
-class Contact extends StatelessWidget {
+class Contact extends StatefulWidget {
   const Contact({Key? key}) : super(key: key);
 
+  @override
+  State<Contact> createState() => _ContactState();
+}
+
+class _ContactState extends State<Contact> {
+  TextEditingController subject = TextEditingController(text: "");
+  TextEditingController message = TextEditingController(text: "");
   @override
   Widget build(BuildContext context) {
     var state = context.watch<StateProvider>();
     var size = MediaQuery.of(context).size;
+    context.watch<LanguageProvider>();
     OutlineInputBorder myinputborder() {
       return OutlineInputBorder(
           //Outline border type for TextFeild
@@ -50,6 +60,7 @@ class Contact extends StatelessWidget {
               Container(
                 // height: 550,
                 // width: 500,
+                constraints: const BoxConstraints(maxWidth: 400),
                 decoration: BoxDecoration(
                     color: state.bgcolor,
                     borderRadius: BorderRadius.circular(25),
@@ -75,12 +86,12 @@ class Contact extends StatelessWidget {
                       style: state.text18,
                       decoration: InputDecoration(
                           border: myinputborder(),
-                          hintText: "Subject",
+                          hintText: txt("Subject"),
                           hintStyle: state.text18.copyWith(
                               color: state.invertedColor.withOpacity(.7)),
                           enabledBorder: myinputborder(),
                           focusedBorder: myfocusborder()),
-                      controller: state.subject,
+                      controller: subject,
                     ),
                     const SizedBox(
                       height: 40,
@@ -89,20 +100,19 @@ class Contact extends StatelessWidget {
                       style: state.text18,
                       decoration: InputDecoration(
                           border: myinputborder(),
-                          hintText: "Message",
+                          hintText: txt("Message"),
                           hintStyle: state.text18.copyWith(
                               color: state.invertedColor.withOpacity(.7)),
                           enabledBorder: myinputborder(),
                           focusedBorder: myfocusborder()),
-                      controller: state.body,
+                      controller: message,
                       maxLines: 8,
                     ),
                     const SizedBox(
                       height: 50,
                     ),
                     NeumorphicButton(
-                        onPressed: () =>
-                            context.read<StateProvider>().sendEmail(),
+                        onPressed: () {},
                         style: NeumorphicStyle(
                           color: state.bgcolor,
                           shape: NeumorphicShape.flat,
@@ -111,7 +121,10 @@ class Contact extends StatelessWidget {
                               BorderRadius.circular(8)),
                         ),
                         child: InkWell(
-                          onTap: () {},
+                          onTap: () => context.read<StateProvider>().sendEmail(
+                                subject: subject.text,
+                                message: message.text,
+                              ),
                           child: SizedBox(
                             // width: 150,
                             child: Row(
@@ -125,7 +138,7 @@ class Contact extends StatelessWidget {
                                   width: 10,
                                 ),
                                 Text(
-                                  "Send Message",
+                                  txt("Send Message"),
                                   style: state.text18,
                                 ),
                               ],
@@ -158,11 +171,12 @@ class Contact extends StatelessWidget {
                 ),
                 width: double.infinity,
                 // height: 550,
+                constraints: const BoxConstraints(maxWidth: 400),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      "Contact me",
+                      txt("Contact me"),
                       style: state.title.copyWith(fontSize: 25),
                     ),
                     const SizedBox(

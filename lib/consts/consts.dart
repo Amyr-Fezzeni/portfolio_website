@@ -61,6 +61,7 @@ TextStyle key2 = GoogleFonts.nunito(
     color: const Color.fromARGB(255, 41, 245, 235), fontSize: 30);
 TextStyle value = GoogleFonts.caveat(color: Colors.white, fontSize: 30);
 
+String fullName = "Amyr Fezzeni";
 String textAbout =
     """Full-Stack mobile Developer & mobile apartment manager at LE TAFF company,
 Last year computer software engineering student at TEK-UP University specializing in Software engineering
@@ -394,4 +395,3 @@ List<CertificationModel> allCertifications = [
       small: "algorithms_small.png",
       original: "algorithms.png"),
 ];
-
