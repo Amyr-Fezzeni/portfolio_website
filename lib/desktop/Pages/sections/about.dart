@@ -54,7 +54,7 @@ class About extends StatelessWidget {
                           pause: const Duration(seconds: 3),
                           animatedTexts: [
                             TypewriterAnimatedText(
-                                "I'm a software engineering Student"),
+                                "I'm a Software engineering"),
                             TypewriterAnimatedText(
                                 "I'm Flutter & Python Developer"),
                             TypewriterAnimatedText(
@@ -157,7 +157,7 @@ class AboutPhone extends StatelessWidget {
                           pause: const Duration(seconds: 3),
                           animatedTexts: [
                             TypewriterAnimatedText(
-                                "I'm a software engineering Student"),
+                                "I'm a software engineering"),
                             TypewriterAnimatedText(
                                 "I'm Flutter & Python Developer"),
                             TypewriterAnimatedText(

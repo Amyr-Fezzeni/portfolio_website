@@ -10,7 +10,7 @@ class Certifications extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Container(
       margin: const EdgeInsets.only(bottom: 150),
-      height: 960,
+      height: 1170,
       width: size.width * 0.9,
       child: Column(
         children: [
@@ -33,8 +33,6 @@ class Certifications extends StatelessWidget {
   }
 }
 
-
-
 class CertificationsPhone extends StatelessWidget {
   const CertificationsPhone({Key? key}) : super(key: key);
   @override
@@ -43,7 +41,6 @@ class CertificationsPhone extends StatelessWidget {
     ScrollController _controller = ScrollController();
     return Container(
       margin: const EdgeInsets.only(bottom: 150),
-
       width: width * 0.99,
       child: Column(
         children: [
@@ -57,12 +54,11 @@ class CertificationsPhone extends StatelessWidget {
             height: 280,
             child: Scrollbar(
               controller: _controller,
-              isAlwaysShown: true,
-              showTrackOnHover: true,
+              thumbVisibility: true,
+              trackVisibility: true,
               child: ListView.builder(
                   controller: _controller,
                   scrollDirection: Axis.horizontal,
-             
                   itemCount: allCertifications.length,
                   itemBuilder: (context, i) {
                     return Container(
@@ -73,7 +69,6 @@ class CertificationsPhone extends StatelessWidget {
                   }),
             ),
           )
-    
         ],
       ),
     );

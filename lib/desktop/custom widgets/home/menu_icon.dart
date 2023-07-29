@@ -8,7 +8,7 @@ class MenuIcon extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Positioned(
       top: 20,
-      right: 20,
+      left: 20,
       child: Container(
         height: 40,
         width: 40,

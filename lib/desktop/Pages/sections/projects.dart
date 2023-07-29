@@ -17,7 +17,7 @@ class Projects extends StatelessWidget {
     var state = context.watch<StateProvider>();
     return Container(
       margin: const EdgeInsets.only(bottom: 150),
-      height: 900,
+      height: 1100,
       width: size.width * 0.8,
       child: Column(
         children: [
@@ -144,8 +144,8 @@ class ProjectsPhone extends StatelessWidget {
             height: 270,
             child: Scrollbar(
               controller: _controller,
-              isAlwaysShown: true,
-              showTrackOnHover: true,
+              thumbVisibility: true,
+              trackVisibility: true,
               child: ListView.builder(
                   controller: _controller,
                   scrollDirection: Axis.horizontal,

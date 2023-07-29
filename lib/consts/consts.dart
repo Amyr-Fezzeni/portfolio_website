@@ -4,7 +4,6 @@ import 'package:flutter_portfolio_website/desktop/Pages/sections/certifications.
 import 'package:flutter_portfolio_website/desktop/Pages/sections/contact.dart';
 import 'package:flutter_portfolio_website/desktop/Pages/sections/photography.dart';
 import 'package:flutter_portfolio_website/desktop/Pages/sections/projects.dart';
-import 'package:flutter_portfolio_website/desktop/Pages/services/service_section.dart';
 import 'package:flutter_portfolio_website/desktop/custom%20widgets/appbar/appbar.dart';
 import 'package:flutter_portfolio_website/models/certification_model.dart';
 import 'package:flutter_portfolio_website/models/image_model.dart';
@@ -24,7 +23,7 @@ const defaultPadding = 20.0;
 const defaultDuration = Duration(seconds: 1);
 
 //personal info
-const myImage = AssetImage("assets/images/profile.jpg");
+const myImage = AssetImage("assets/images/amyr.jpg");
 const resumeUrl =
     "https://github.com/Amyr-Fezzeni/portfolio_website/raw/main/assets/amyrfezzeni_resume.pdf";
 const resumeName = "Amyr Fezzeni Resume";
@@ -71,14 +70,14 @@ TextStyle key2 = GoogleFonts.nunito(
     color: const Color.fromARGB(255, 41, 245, 235), fontSize: 30);
 TextStyle value = GoogleFonts.caveat(color: Colors.white, fontSize: 30);
 
-String textAbout =
-    """A 2nd-year computer software engineering student at TEK-UP University specializing in Software engineering and Professional Photographer based in Tunisia.
-I'm a self learning person with a good problem solving ability.
+String textAbout = """Welcome to my world of innovation and creativity!
+I am a software engineer, specialized in Flutter and Python development. With a lead role in the mobile department at Letaff company, I create seamless cross-platform apps.
+Beyond coding, I find artistic expression through photography.
 """;
 
 List<dynamic> allSkills = [
-  ["Python", 95],
-  ["Flutter", 90],
+  ["Python", 90],
+  ["Flutter", 95],
   ["Dart", 90],
   ["Java", 80],
   ["NodeJS", 75],
@@ -90,6 +89,116 @@ List<dynamic> allSkills = [
 ];
 
 List<ProjectModel> allProjects = [
+  ProjectModel(
+    name: "Sounsoun",
+    pic: "sounsoun.png",
+    languages: ["Flutter"],
+    keyWords: [
+      "Responsive UI",
+      "Provider",
+      "Payment",
+      "Google Map",
+      'real-time location tracking'
+    ],
+    videos: [],
+    images: [
+      ImageModel(link: "projects/sounsoun/1.jpg", type: "image"),
+      ImageModel(link: "projects/sounsoun/2.jpg", type: "image"),
+      ImageModel(link: "projects/sounsoun/3.jpg", type: "image"),
+      ImageModel(link: "projects/sounsoun/4.jpg", type: "image"),
+      ImageModel(link: "projects/sounsoun/5.jpg", type: "image"),
+      ImageModel(link: "projects/sounsoun/6.jpg", type: "image"),
+      ImageModel(link: "projects/sounsoun/7.jpg", type: "image"),
+      ImageModel(link: "projects/sounsoun/8.jpg", type: "image"),
+      ImageModel(link: "projects/sounsoun/9.jpg", type: "image"),
+      ImageModel(link: "projects/sounsoun/10.jpg", type: "image"),
+      ImageModel(link: "projects/sounsoun/11.jpg", type: "image"),
+      ImageModel(link: "projects/sounsoun/12.jpg", type: "image"),
+      ImageModel(link: "projects/sounsoun/13.jpg", type: "image"),
+      ImageModel(link: "projects/sounsoun/14.jpg", type: "image"),
+      ImageModel(link: "projects/sounsoun/15.jpg", type: "image"),
+      ImageModel(link: "projects/sounsoun/16.jpg", type: "image"),
+    ],
+    description: """""",
+  ),
+  ProjectModel(
+    name: "Delivery App",
+    pic: "delivery.png",
+    languages: ["Flutter"],
+    keyWords: [
+      "Responsive UI",
+      "Provider",
+      "Google Map",
+      'real-time location tracking'
+    ],
+    videos: [],
+    images: [
+      ImageModel(link: "projects/Delivery/1.jpg", type: "image"),
+      ImageModel(link: "projects/Delivery/2.jpg", type: "image"),
+      ImageModel(link: "projects/Delivery/3.jpg", type: "image"),
+      ImageModel(link: "projects/Delivery/4.jpg", type: "image"),
+      ImageModel(link: "projects/Delivery/5.jpg", type: "image"),
+      ImageModel(link: "projects/Delivery/6.jpg", type: "image"),
+      ImageModel(link: "projects/Delivery/7.jpg", type: "image"),
+      ImageModel(link: "projects/Delivery/8.jpg", type: "image"),
+      ImageModel(link: "projects/Delivery/9.jpg", type: "image"),
+    ],
+    description: """""",
+  ),
+  ProjectModel(
+    name: "Trading Bot",
+    pic: "trading.png",
+    languages: ["Python"],
+    keyWords: ["Trading", "Binary-option", "Auto-Trade"],
+    videos: [],
+    images: [
+      ImageModel(link: "projects/trading/1.png", type: "image"),
+      ImageModel(link: "projects/trading/2.png", type: "image"),
+      ImageModel(link: "projects/trading/3.png", type: "image"),
+    ],
+    description: """""",
+  ),
+  ProjectModel(
+    name: "GSA App",
+    pic: "gsa.jpg",
+    languages: ["Flutter"],
+    keyWords: [
+      "Responsive UI",
+      "Provider",
+      "Real-time messaging",
+      'Schedule tracking'
+    ],
+    videos: [],
+    images: [
+      ImageModel(link: "projects/GSA/1.jpg", type: "image"),
+      ImageModel(link: "projects/GSA/2.jpg", type: "image"),
+      ImageModel(link: "projects/GSA/3.jpg", type: "image"),
+      ImageModel(link: "projects/GSA/4.jpg", type: "image"),
+    ],
+    description: """""",
+  ),
+  ProjectModel(
+    name: "Tabaani App",
+    pic: "tabaani.png",
+    languages: ["Flutter"],
+    keyWords: [
+      "Responsive UI",
+      "Provider",
+      "Google Map",
+      'real-time location tracking'
+    ],
+    videos: [],
+    images: [
+      ImageModel(link: "projects/Tabaani/1.jpg", type: "image"),
+      ImageModel(link: "projects/Tabaani/2.jpg", type: "image"),
+      ImageModel(link: "projects/Tabaani/3.jpg", type: "image"),
+      ImageModel(link: "projects/Tabaani/4.jpg", type: "image"),
+      ImageModel(link: "projects/Tabaani/5.jpg", type: "image"),
+      ImageModel(link: "projects/Tabaani/6.jpg", type: "image"),
+    ],
+    description: """""",
+  ),
+  //*********************************** */
   ProjectModel(
     name: "XO Game",
     pic: "xo_game.png",
@@ -360,13 +469,13 @@ List<CertificationModel> allCertifications = [
       small: "pcap_small.png",
       original: "pcap.png"),
   CertificationModel(
-      name: "MTA Python",
-      small: "mta_python_small.PNG",
-      original: "mta_python.PNG"),
+      name: "HackerRank Problem Solving",
+      small: "ps_small.jpg",
+      original: "ps.jpg"),
   CertificationModel(
-      name: "MTA Database Administration",
-      small: "mta_database_small.PNG",
-      original: "mta_database.PNG"),
+      name: "TCPC Problem Solving",
+      small: "tcpc_small.jpg",
+      original: "tcpc.png"),
   CertificationModel(
       name: "CodinGame Python Problem Solving",
       small: "python_problem_solving_small.png",
@@ -379,6 +488,14 @@ List<CertificationModel> allCertifications = [
       name: "CodinGame Java Problem Solving",
       small: "java_problem_solving_small.png",
       original: "java_problem_solving.png"),
+  CertificationModel(
+      name: "MTA Python",
+      small: "mta_python_small.PNG",
+      original: "mta_python.PNG"),
+  CertificationModel(
+      name: "MTA Database Administration",
+      small: "mta_database_small.PNG",
+      original: "mta_database.PNG"),
   CertificationModel(
       name: "CodinGame Coding Speed Legend",
       small: "codingspeed_legend_small.png",
@@ -425,7 +542,7 @@ const desktopSections = [
   CustomAppBar(),
   About(),
   Skill(),
-  ServiceSection(),
+  // ServiceSection(),
   Projects(),
   Certifications(),
   Photography(),

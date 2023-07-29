@@ -100,9 +100,9 @@ class StateProvider with ChangeNotifier {
   final _about = 0;
   final _skil = 780;
   final _project = 1570;
-  final _certification = 2620;
-  final _photography = 3700;
-  final _contact = 4490;
+  final _certification = 2820;
+  final _photography = 4100;
+  final _contact = 4890;
   final _aboutP = 0;
   final _skilP = 930;
   final _projectP = 1510;

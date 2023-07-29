@@ -13,7 +13,7 @@ class DarkModeSwitch extends StatelessWidget {
     var s = context.read<StateProvider>();
     return Positioned(
       top: 20,
-      left: 20,
+      right: 20,
       child: CupertinoSwitch(
           value: state.darkMode,
           activeColor: btnColor,
