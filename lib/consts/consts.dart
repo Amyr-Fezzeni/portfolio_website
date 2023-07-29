@@ -4,12 +4,15 @@ import 'package:flutter_portfolio_website/desktop/Pages/sections/certifications.
 import 'package:flutter_portfolio_website/desktop/Pages/sections/contact.dart';
 import 'package:flutter_portfolio_website/desktop/Pages/sections/photography.dart';
 import 'package:flutter_portfolio_website/desktop/Pages/sections/projects.dart';
+import 'package:flutter_portfolio_website/desktop/Pages/services/service_section.dart';
 import 'package:flutter_portfolio_website/desktop/custom%20widgets/appbar/appbar.dart';
 import 'package:flutter_portfolio_website/models/certification_model.dart';
 import 'package:flutter_portfolio_website/models/image_model.dart';
 import 'package:flutter_portfolio_website/models/project_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_portfolio_website/desktop/Pages/sections/skills.dart';
+
+import '../models/service.dart';
 
 const bgColor = Color.fromARGB(255, 193, 207, 2013);
 const darkBgColor = Color(0xFF1E1E28); // Color.fromARGB(255, 24, 34, 44);
@@ -389,6 +392,32 @@ List<CertificationModel> allCertifications = [
       small: "algorithms_small.png",
       original: "algorithms.png"),
 ];
+List<Service> services = [
+  Service(
+    id: 1,
+    title: "Graphic Design",
+    image: "assets/images/launcher_icon.png",
+    color: const Color(0xFFD9FFFC),
+  ),
+  Service(
+    id: 2,
+    title: "Web Design",
+    image: "assets/images/launcher_icon.png",
+    color: const Color(0xFFE4FFC7),
+  ),
+  Service(
+    id: 3,
+    title: "UI Design",
+    image: "assets/images/launcher_icon.png",
+    color: const Color(0xFFFFF3DD),
+  ),
+  Service(
+    id: 4,
+    title: "Interaction Design",
+    image: "assets/images/launcher_icon.png",
+    color: const Color(0xFFFFE0E0),
+  ),
+];
 
 // sections
 
@@ -396,6 +425,7 @@ const desktopSections = [
   CustomAppBar(),
   About(),
   Skill(),
+  ServiceSection(),
   Projects(),
   Certifications(),
   Photography(),
