@@ -6,10 +6,10 @@ import 'package:provider/provider.dart';
 
 class ProjectsGridView extends StatelessWidget {
   const ProjectsGridView({
-    Key? key,
+    super.key,
     this.crossAxisCount = 3,
     this.childAspectRatio = 1.3,
-  }) : super(key: key);
+  });
 
   final int crossAxisCount;
   final double childAspectRatio;
@@ -38,9 +38,9 @@ class ProjectsGridView extends StatelessWidget {
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({
-    Key? key,
+    super.key,
     required this.project,
-  }) : super(key: key);
+  });
 
   final ProjectModel project;
 
@@ -50,7 +50,10 @@ class ProjectCard extends StatelessWidget {
     var state = context.watch<StateProvider>();
     return Container(
       padding: const EdgeInsets.all(defaultPadding),
-      color: state.invertedColor.withOpacity(.1),
+      decoration: BoxDecoration(
+          color: state.invertedColor.withOpacity(.1),
+          image: DecorationImage(
+              image: AssetImage("assets/projects/${project.pic}"))),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

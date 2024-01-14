@@ -35,7 +35,7 @@ class _DesktopState extends State<Desktop> {
             const Opacity(opacity: 1, child: BG()),
             SingleChildScrollView(
               controller: context.watch<StateProvider>().controller,
-              child: const Sections(),
+              child: const Sections()
             ),
             const DarkModeSwitch(),
             const UpButton(),

@@ -16,12 +16,12 @@ class _YoutubePlayerWidgetState extends State<YoutubePlayerWidget> {
   void initState() {
     super.initState();
     _controller = YoutubePlayerController(
-      initialVideoId: widget.links[0],
-      params: YoutubePlayerParams(
-        playlist: widget.links.length > 1
-            ? widget.links
-            : [], // Defining custom playlist
-        startAt: const Duration(seconds: 30),
+      // initialVideoId: widget.links[0],
+      params: const YoutubePlayerParams(
+        // playlist: widget.links.length > 1
+        //     ? widget.links
+        //     : [], // Defining custom playlist
+        // startAt: const Duration(seconds: 30),
         showControls: true,
         showFullscreenButton: true,
 
@@ -44,15 +44,15 @@ class _YoutubePlayerWidgetState extends State<YoutubePlayerWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return const SizedBox(
       // width: 300,
       // height: 200,
       child: Center(
-        child: YoutubePlayerIFrame(
-          controller: _controller,
-          aspectRatio: 16 / 9,
-        ),
-      ),
+          // child: YoutubePlayerController.fromVideoId(
+          //   controller: _controller,
+          //   aspectRatio: 16 / 9,
+          // ),
+          ),
     );
   }
 }

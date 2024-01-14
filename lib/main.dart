@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/desktop/desktop.dart';
 import 'package:flutter_portfolio_website/providers/state_provider.dart';
+import 'package:flutter_portfolio_website/web/home.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -13,17 +14,18 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Amyr Fezzeni',
-        theme: ThemeData(
-          primarySwatch: Colors.blueGrey,
-        ),
         debugShowCheckedModeBanner: false,
-        home: const Desktop() //const Desktop(),
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          useMaterial3: true,
+        ),
+        home: const HomePage() //const Desktop(),
         );
   }
 }

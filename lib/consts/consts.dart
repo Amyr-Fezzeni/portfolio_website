@@ -8,7 +8,7 @@ import 'package:flutter_portfolio_website/desktop/custom%20widgets/appbar/appbar
 import 'package:flutter_portfolio_website/models/certification_model.dart';
 import 'package:flutter_portfolio_website/models/image_model.dart';
 import 'package:flutter_portfolio_website/models/project_model.dart';
-import 'package:google_fonts/google_fonts.dart';
+// import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_portfolio_website/desktop/Pages/sections/skills.dart';
 
 import '../models/service.dart';
@@ -37,38 +37,65 @@ const codingame =
 const whatsapp = "tel://+21654230376";
 
 //text styles
-TextStyle text18white =
-    GoogleFonts.arimaMadurai(color: Colors.white, fontSize: 16);
-TextStyle text18black =
-    GoogleFonts.arimaMadurai(color: Colors.black87, fontSize: 16);
-TextStyle text18blue = GoogleFonts.arimaMadurai(color: btnColor, fontSize: 16);
+// TextStyle text18white =
+//     GoogleFonts.arimaMadurai(color: Colors.white, fontSize: 16);
+// TextStyle text18black =
+//     GoogleFonts.arimaMadurai(color: Colors.black87, fontSize: 16);
+// TextStyle text18blue = GoogleFonts.arimaMadurai(color: btnColor, fontSize: 16);
 
-TextStyle titleBlue = GoogleFonts.nunito(color: btnColor, fontSize: 50);
-TextStyle titleWhite = GoogleFonts.nunito(color: Colors.white, fontSize: 50);
-TextStyle titleblack = GoogleFonts.nunito(color: Colors.black, fontSize: 50);
+// TextStyle titleBlue = GoogleFonts.nunito(color: btnColor, fontSize: 50);
+// TextStyle titleWhite = GoogleFonts.nunito(color: Colors.white, fontSize: 50);
+// TextStyle titleblack = GoogleFonts.nunito(color: Colors.black, fontSize: 50);
 
-TextStyle titleAnton =
-    GoogleFonts.hammersmithOne(color: Colors.white, fontSize: 50);
+// TextStyle titleAnton =
+//     GoogleFonts.hammersmithOne(color: Colors.white, fontSize: 50);
+// TextStyle titleAntonblack =
+//     GoogleFonts.hammersmithOne(color: Colors.black87, fontSize: 50);
+// // phone
+// TextStyle titleBluePhone = GoogleFonts.nunito(color: btnColor, fontSize: 30);
+// TextStyle titleWhitePhone =
+//     GoogleFonts.nunito(color: Colors.white, fontSize: 30);
+// TextStyle titleblackPhone =
+//     GoogleFonts.nunito(color: Colors.black, fontSize: 30);
+
+// TextStyle titleAntonPhone =
+//     GoogleFonts.hammersmithOne(color: Colors.white, fontSize: 30);
+// TextStyle titleAntonblackPhone =
+//     GoogleFonts.hammersmithOne(color: Colors.black87, fontSize: 30);
+
+// // about
+// TextStyle key = GoogleFonts.caveat(
+//     color: const Color.fromARGB(255, 36, 137, 177), fontSize: 30);
+// TextStyle key2 = GoogleFonts.nunito(
+//     color: const Color.fromARGB(255, 41, 245, 235), fontSize: 30);
+// TextStyle value = GoogleFonts.caveat(color: Colors.white, fontSize: 30);
+
+TextStyle text18white = const TextStyle(color: Colors.white, fontSize: 16);
+TextStyle text18black = const TextStyle(color: Colors.black87, fontSize: 16);
+TextStyle text18blue = const TextStyle(color: btnColor, fontSize: 16);
+
+TextStyle titleBlue = const TextStyle(color: btnColor, fontSize: 50);
+TextStyle titleWhite = const TextStyle(color: Colors.white, fontSize: 50);
+TextStyle titleblack = const TextStyle(color: Colors.black, fontSize: 50);
+
+TextStyle titleAnton = const TextStyle(color: Colors.white, fontSize: 50);
 TextStyle titleAntonblack =
-    GoogleFonts.hammersmithOne(color: Colors.black87, fontSize: 50);
+    const TextStyle(color: Colors.black87, fontSize: 50);
 // phone
-TextStyle titleBluePhone = GoogleFonts.nunito(color: btnColor, fontSize: 30);
-TextStyle titleWhitePhone =
-    GoogleFonts.nunito(color: Colors.white, fontSize: 30);
-TextStyle titleblackPhone =
-    GoogleFonts.nunito(color: Colors.black, fontSize: 30);
+TextStyle titleBluePhone = const TextStyle(color: btnColor, fontSize: 30);
+TextStyle titleWhitePhone = const TextStyle(color: Colors.white, fontSize: 30);
+TextStyle titleblackPhone = const TextStyle(color: Colors.black, fontSize: 30);
 
-TextStyle titleAntonPhone =
-    GoogleFonts.hammersmithOne(color: Colors.white, fontSize: 30);
+TextStyle titleAntonPhone = const TextStyle(color: Colors.white, fontSize: 30);
 TextStyle titleAntonblackPhone =
-    GoogleFonts.hammersmithOne(color: Colors.black87, fontSize: 30);
+    const TextStyle(color: Colors.black87, fontSize: 30);
 
 // about
-TextStyle key = GoogleFonts.caveat(
-    color: const Color.fromARGB(255, 36, 137, 177), fontSize: 30);
-TextStyle key2 = GoogleFonts.nunito(
-    color: const Color.fromARGB(255, 41, 245, 235), fontSize: 30);
-TextStyle value = GoogleFonts.caveat(color: Colors.white, fontSize: 30);
+TextStyle key =
+    const TextStyle(color: Color.fromARGB(255, 36, 137, 177), fontSize: 30);
+TextStyle key2 =
+    const TextStyle(color: Color.fromARGB(255, 41, 245, 235), fontSize: 30);
+TextStyle value = const TextStyle(color: Colors.white, fontSize: 30);
 
 String textAbout = """Welcome to my world of innovation and creativity!
 I am a software engineer, specialized in Flutter and Python development. With a lead role in the mobile department at Letaff company, I create seamless cross-platform apps.

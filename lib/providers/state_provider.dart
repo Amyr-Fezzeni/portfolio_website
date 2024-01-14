@@ -1,5 +1,5 @@
 // ignore: avoid_web_libraries_in_flutter
-import 'dart:html';
+// import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
 import 'package:flutter_portfolio_website/desktop/custom%20widgets/photography/h_picture.dart';
@@ -203,9 +203,9 @@ class StateProvider with ChangeNotifier {
   }
 
   downloadFile() {
-    AnchorElement anchorElement = AnchorElement(href: resumeUrl);
-    anchorElement.download = resumeName;
-    anchorElement.click();
+    // AnchorElement anchorElement = AnchorElement(href: resumeUrl);
+    // anchorElement.download = resumeName;
+    // anchorElement.click();
   }
 
   TextEditingController subject = TextEditingController();

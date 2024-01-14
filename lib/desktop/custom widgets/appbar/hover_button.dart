@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_glow/flutter_glow.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
-import 'package:google_fonts/google_fonts.dart';
+// import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import '../../../providers/state_provider.dart';
@@ -22,6 +22,7 @@ class _HoverButtonState extends State<HoverButton> {
 
   @override
   Widget build(BuildContext context) {
+    var style = context.read<StateProvider>();
     return Container(
       margin: const EdgeInsets.all(10),
       height: 35,
@@ -45,7 +46,8 @@ class _HoverButtonState extends State<HoverButton> {
                       blurRadius: 2,
                       offset: const Offset(1, 2),
                       glowColor: btnColor,
-                      style: GoogleFonts.nunito(color: btnColor, fontSize: 18))
+                      style:
+                          style.text18.copyWith(color: btnColor, fontSize: 18))
                   : Text(widget.name,
                       style: context.watch<StateProvider>().text18),
             )),
@@ -70,7 +72,7 @@ class _HoverButtonMenuState extends State<HoverButtonMenu> {
   @override
   Widget build(BuildContext context) {
     var state = context.read<StateProvider>();
-    // var style = context.read<StateProvider>();
+    var style = context.read<StateProvider>();
     return Container(
       margin: const EdgeInsets.all(10),
       height: 35,
@@ -98,7 +100,8 @@ class _HoverButtonMenuState extends State<HoverButtonMenu> {
                       blurRadius: 2,
                       offset: const Offset(1, 2),
                       glowColor: btnColor,
-                      style: GoogleFonts.nunito(color: btnColor, fontSize: 18))
+                      style:
+                          style.text18.copyWith(color: btnColor, fontSize: 18))
                   : Text(widget.name, style: state.text18),
             )),
       ),

@@ -1,4 +1,4 @@
-import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 import 'package:flutter_portfolio_website/consts/consts.dart';
 import 'package:flutter_portfolio_website/desktop/custom%20widgets/contact/social_media.dart';
 import 'package:flutter_portfolio_website/desktop/custom%20widgets/home/title_widget.dart';
